@@ -15,7 +15,7 @@ public class PrintTicket
     private int dishNum;
     private String orderNum;
     private int method;
-    private float price;
+    private double price;
 
     public PrintTicket(Customer cusInfo, int method){
         this.customer = cusInfo;

@@ -13,6 +13,8 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JPasswordField;
 
 public class StaffLoginIn extends JFrame {
@@ -61,23 +63,20 @@ public class StaffLoginIn extends JFrame {
 		contentPane.add(UserName);
 		UserName.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Confirm");
-		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setBounds(171, 220, 100, 33);
-		contentPane.add(btnNewButton);
+		JButton btnConfrim = new JButton("Confirm");
+		btnConfrim.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnConfrim.addActionListener(this::btnLoginInActionPerformed);
+		btnConfrim.setBounds(171, 220, 100, 33);
+		contentPane.add(btnConfrim);
 		
-		JTextArea txtrUserName = new JTextArea();
-		txtrUserName.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		txtrUserName.setBackground(SystemColor.inactiveCaptionBorder);
-		txtrUserName.setForeground(SystemColor.desktop);
-		txtrUserName.setText("User Name");
-		txtrUserName.setBounds(10, 78, 82, 24);
-		contentPane.add(txtrUserName);
-		
+		JTextArea UserName = new JTextArea();
+		UserName.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		UserName.setBackground(SystemColor.inactiveCaptionBorder);
+		UserName.setForeground(SystemColor.desktop);
+		UserName.setText("User Name");
+		UserName.setBounds(10, 78, 82, 24);
+		contentPane.add(UserName);
+
 		JTextArea txtrPassword = new JTextArea();
 		txtrPassword.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		txtrPassword.setText("Password");
@@ -94,10 +93,7 @@ public class StaffLoginIn extends JFrame {
 		contentPane.add(txtrStaffLoginIn);
 		
 		JButton btnBack = new JButton("Back");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		btnBack.addActionListener(this::btnBackActionPerformed);
 		btnBack.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		btnBack.setBackground(Color.WHITE);
 		btnBack.setBounds(344, 226, 82, 29);
@@ -106,5 +102,31 @@ public class StaffLoginIn extends JFrame {
 		password = new JPasswordField();
 		password.setBounds(102, 136, 283, 33);
 		contentPane.add(password);
+	}
+	private void btnLoginInActionPerformed(ActionEvent evt) {
+		this.dispose();
+		EventQueue.invokeLater(() -> {
+			StaffOption staffOption = new StaffOption();
+			staffOption.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffOption.setVisible(true);
+		});
+	}
+	private void btnBackActionPerformed(ActionEvent evt) {
+		this.dispose();
+		EventQueue.invokeLater(() -> {
+			Begin begin = new Begin();
+			begin.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			begin.setVisible(true);
+		});
 	}
 }

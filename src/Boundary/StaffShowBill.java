@@ -10,6 +10,8 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class StaffShowBill extends JFrame {
 
@@ -68,16 +70,30 @@ public class StaffShowBill extends JFrame {
 		textArea.setBounds(198, 10, 228, 243);
 		contentPane.add(textArea);
 		
-		JButton btnNewButton_2_1 = new JButton("Back");
-		btnNewButton_2_1.setBounds(10, 230, 59, 23);
-		contentPane.add(btnNewButton_2_1);
+		JButton btnBack = new JButton("Back");
+		btnBack.setBounds(10, 230, 59, 23);
+		btnBack.addActionListener(this::btnBackActionPerformed);
+		contentPane.add(btnBack);
 		
-		JButton btnNewButton_2_1_1 = new JButton("Exit");
-		btnNewButton_2_1_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(this::btnExitActionPerformed);
+		btnExit.setBounds(79, 230, 59, 23);
+		contentPane.add(btnExit);
+	}
+	private void btnBackActionPerformed(ActionEvent evt) {
+		this.dispose();
+		EventQueue.invokeLater(() -> {
+			StaffOption staffOption = new StaffOption();
+			staffOption.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffOption.setVisible(true);
 		});
-		btnNewButton_2_1_1.setBounds(79, 230, 59, 23);
-		contentPane.add(btnNewButton_2_1_1);
+	}
+	private void btnExitActionPerformed(ActionEvent evt) {
+		System.exit(0);
 	}
 }

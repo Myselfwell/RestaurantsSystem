@@ -4,7 +4,11 @@ public class Dish {
     private String soup,noodles,onion;
     private boolean origNori,chashu,boiledEgg;
     private int spiciness;
-    private int exNori,exEgg,exBamboo,exChashu,sum;
+    private int exNori;
+    private int exEgg;
+    private int exBamboo;
+    private int exChashu;
+    private double sum;
 
     public Dish(String soup, String noodles, String onion, boolean origNori, boolean chashu, boolean boiledEgg, int spiciness, int exNori, int exEgg, int exBamboo, int exChashu) {
         this.soup = soup;
@@ -18,6 +22,7 @@ public class Dish {
         this.exEgg = exEgg;
         this.exBamboo = exBamboo;
         this.exChashu = exChashu;
+        sum=9.99+exNori+exEgg+exBamboo+2*exChashu;
     }
 
     public String getSoup() {
@@ -107,5 +112,7 @@ public class Dish {
     public void setExChashu(int exChashu) {
         this.exChashu = exChashu;
     }
+
+    public double getSum(){return sum;}
 
 }

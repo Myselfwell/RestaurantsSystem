@@ -21,7 +21,52 @@
   <component name="ChangeListManager">
     <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/BillList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/BillList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/MenuList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/MenuList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/UserList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/UserList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Dish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/RestaurantsSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/RestaurantsSystem$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/RestaurantsSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/RestaurantsSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffLoginIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffLoginIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffShowBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffShowBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/PrintTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/PrintTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Dish.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,22 +129,9 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.CustomerPayment">
+  <component name="RunManager" selected="Application.Begin">
     <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.Begin" />
-      <module name="RestaurantsSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Boundary.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomerLoginIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerLoginIn" />
       <module name="RestaurantsSystem" />
       <extension name="coverage">
         <pattern>
@@ -150,13 +182,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StaffShowBill" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.StaffShowBill" />
+      <module name="RestaurantsSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CustomerPayment" />
-        <item itemvalue="Application.CustomerLoginIn" />
-        <item itemvalue="Application.CustomerOrder" />
         <item itemvalue="Application.Begin" />
+        <item itemvalue="Application.CustomerPayment" />
+        <item itemvalue="Application.CustomerOrder" />
         <item itemvalue="Application.CustomerRegister" />
+        <item itemvalue="Application.StaffShowBill" />
       </list>
     </recent_temporary>
   </component>
@@ -334,12 +379,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -363,25 +409,33 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1585473748678" />
+    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588927851202">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1588927851202" />
     <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1587026993034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587026993034" />
-    <state width="1358" height="241" key="GridCell.Tab.0.bottom" timestamp="1588656175385">
-      <screen x="0" y="23" width="1680" height="947" />
+    <state width="671" height="195" key="GridCell.Tab.0.bottom" timestamp="1588930442522">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="671" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588930442522" />
     <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.947@0.23.1680.947" timestamp="1588656175385" />
-    <state width="1358" height="241" key="GridCell.Tab.0.center" timestamp="1588656175385">
-      <screen x="0" y="23" width="1680" height="947" />
+    <state width="671" height="195" key="GridCell.Tab.0.center" timestamp="1588930442521">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="671" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588930442521" />
     <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.947@0.23.1680.947" timestamp="1588656175385" />
-    <state width="1358" height="241" key="GridCell.Tab.0.left" timestamp="1588656175384">
-      <screen x="0" y="23" width="1680" height="947" />
+    <state width="671" height="195" key="GridCell.Tab.0.left" timestamp="1588930442521">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="671" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588930442521" />
     <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.947@0.23.1680.947" timestamp="1588656175384" />
-    <state width="1358" height="241" key="GridCell.Tab.0.right" timestamp="1588656175385">
-      <screen x="0" y="23" width="1680" height="947" />
+    <state width="671" height="195" key="GridCell.Tab.0.right" timestamp="1588930442522">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="671" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588930442522" />
     <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.947@0.23.1680.947" timestamp="1588656175385" />
     <state x="720" y="241" width="600" height="729" key="find.popup" timestamp="1588655219127">
       <screen x="0" y="23" width="1680" height="947" />

@@ -16,6 +16,8 @@ import javax.swing.border.LineBorder;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class CustomerOrder extends JFrame {
 
@@ -58,6 +60,7 @@ public class CustomerOrder extends JFrame {
         //上部的pane
         JButton btnBack = new JButton("Back");
         btnBack.setHorizontalAlignment(SwingConstants.LEFT);
+        btnBack.addActionListener(this::btnBackActionPerformed);
         panel_N.add(btnBack, BorderLayout.WEST);
         //返回键
         JLabel lblStamp = new JLabel("stamps:");
@@ -76,6 +79,7 @@ public class CustomerOrder extends JFrame {
         panel_S.add(lblTotal, BorderLayout.WEST);
         //消费的总价格信息
         JButton btnCheck = new JButton("Check");
+        btnCheck.addActionListener(this::btnCheckActionPerformed);
         panel_S.add(btnCheck, BorderLayout.EAST);
 
         JLabel lbl_Total_Price = new JLabel("0");
@@ -372,8 +376,8 @@ public class CustomerOrder extends JFrame {
 
         panel_Chashu.add(lbl_ChashuNum);
         //chashu Num
-        JButton btn_redece4 = new JButton("-1");
-        btn_redece4.addActionListener(new ActionListener() {
+        JButton btn_redece = new JButton("-1");
+        btn_redece.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 int num=Integer.parseInt(lbl_ChashuNum.getText());
                 if(num>0)
@@ -381,7 +385,7 @@ public class CustomerOrder extends JFrame {
                 lbl_ChashuNum.setText(String.valueOf(num));
 
             }});
-        panel_Chashu.add(btn_redece4);
+        panel_Chashu.add(btn_redece);
         JPanel panel = new JPanel();
         panel_Menu.add(panel);
         panel.setLayout(new BorderLayout(0, 0));
@@ -404,6 +408,32 @@ public class CustomerOrder extends JFrame {
                 Integer.parseInt(lbl_BambooNum.getText()),Integer.parseInt(lbl_ChashuNum.getText()))));
         JScrollPane sp=new JScrollPane(panel_Info);
         panel_C.add(sp);
+    }
+    private void btnCheckActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            CustomerPayment customerPayment = new CustomerPayment();
+            customerPayment.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            customerPayment.setVisible(true);
+        });
+    }
+    private void btnBackActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            CustomerLoginIn customerLoginIn = new CustomerLoginIn();
+            customerLoginIn.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            customerLoginIn.setVisible(true);
+        });
     }
 
 }

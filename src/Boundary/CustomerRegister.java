@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -101,26 +103,46 @@ public class CustomerRegister extends JFrame {
         //提示标签，用于注册条件不符合时进行提醒
         JButton btnSubmit = new JButton("Submit");
         btnSubmit.setBounds(52, 190, 113, 27);
-        btnSubmit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
-        });
+        btnSubmit.addActionListener(this::btnSubmitActionPerformed);
         pan_C.add(btnSubmit);
         //提交按钮，保存信息并进入登录界面
         JButton btnBack = new JButton("Back");
         btnBack.setBounds(242, 190, 113, 27);
-        btnBack.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
-        });
+        btnBack.addActionListener(this::btnBackActionPerformed);
         pan_C.add(btnBack);
         //back按钮回到主界面
         JPanel pan_N = new JPanel();
         contentPane.add(pan_N, BorderLayout.NORTH);
         //上部的panel
-        JLabel label1 = new JLabel("Welcome to Regster");
+        JLabel label1 = new JLabel("Welcome to Register");
         label1.setFont(new Font("Times New Roman", Font.BOLD, 20));
         pan_N.add(label1);
         label1.setBackground(new Color(240, 240, 240));
+    }
+    private void btnSubmitActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            CustomerOrder customerOrder = new CustomerOrder();
+            customerOrder.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            customerOrder.setVisible(true);
+        });
+    }
+    private void btnBackActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            Begin begin = new Begin();
+            begin.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            begin.setVisible(true);
+        });
     }
 }

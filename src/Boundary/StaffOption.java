@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class StaffOption extends JFrame {
 
@@ -40,17 +42,40 @@ public class StaffOption extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Modify Menu");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setBounds(130, 54, 168, 48);
-		contentPane.add(btnNewButton);
+		JButton btnModify = new JButton("Modify Menu");
+		btnModify.addActionListener(this::btnModifyActionPerformed);
+		btnModify.setBounds(130, 54, 168, 48);
+		contentPane.add(btnModify);
 		
 		JButton btnShowBills = new JButton("Show Bills");
 		btnShowBills.setBounds(130, 154, 168, 48);
+		btnShowBills.addActionListener(this::btnShowActionPerformed);
 		contentPane.add(btnShowBills);
 	}
-
+	private void btnModifyActionPerformed(ActionEvent evt) {
+		this.dispose();
+		EventQueue.invokeLater(() -> {
+			StaffModifyMenu staffModifyMenu = new StaffModifyMenu();
+			staffModifyMenu.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffModifyMenu.setVisible(true);
+		});
+	}
+	private void btnShowActionPerformed(ActionEvent evt) {
+		this.dispose();
+		EventQueue.invokeLater(() -> {
+			StaffShowBill staffShowBill = new StaffShowBill();
+			staffShowBill.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffShowBill.setVisible(true);
+		});
+	}
 }
