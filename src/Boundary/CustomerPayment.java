@@ -15,6 +15,9 @@ import java.awt.FlowLayout;
 import javax.swing.JRadioButton;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.border.LineBorder;
 
 public class CustomerPayment extends JFrame {
@@ -54,8 +57,9 @@ public class CustomerPayment extends JFrame {
         contentPane.add(panel_N, BorderLayout.NORTH);
         panel_N.setLayout(new BorderLayout(0, 0));
         //上部的pane
-        JButton btnNewButton = new JButton("Back");
-        panel_N.add(btnNewButton, BorderLayout.WEST);
+        JButton btnBack = new JButton("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+        panel_N.add(btnBack, BorderLayout.WEST);
         //返回键，返回order
         JPanel panel_C = new JPanel();
         panel_C.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -120,13 +124,39 @@ public class CustomerPayment extends JFrame {
         panel_S.add(panel_pay, BorderLayout.SOUTH);
         panel_pay.setLayout(new BorderLayout(0, 0));
 
-        JButton btnNewButton_1 = new JButton("Confirm payment");
-        panel_pay.add(btnNewButton_1, BorderLayout.SOUTH);
+        JButton btnConfirm = new JButton("Confirm payment");
+        btnConfirm.addActionListener(this::btnConfirmActionPerformed);
+        panel_pay.add(btnConfirm, BorderLayout.SOUTH);
         //确认支付
         JLabel lbl_Remind = new JLabel("");
         lbl_Remind.setForeground(Color.RED);
         panel_pay.add(lbl_Remind, BorderLayout.CENTER);
         //没有选择堂食还是外带或支付方式的时候进行提醒
     }
-
+    private void btnConfirmActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            Begin begin = new Begin();
+            begin.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            begin.setVisible(true);
+        });
+    }
+    private void btnBackActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            CustomerOrder customerOrder = new CustomerOrder();
+            customerOrder.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            customerOrder.setVisible(true);
+        });
+    }
 }

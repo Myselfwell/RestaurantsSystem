@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class CustomerLoginIn extends JFrame {
 
@@ -84,17 +86,11 @@ public class CustomerLoginIn extends JFrame {
         //提示标签，用于登录失败时进行提醒
         JButton btnLogin = new JButton("Log in");
         btnLogin.setBounds(68, 169, 113, 27);
-        btnLogin.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
-        });
+        btnLogin.addActionListener(this::btnLoginInActionPerformed);
         panel_C.add(btnLogin);
         //登录按钮
         JButton btnBack = new JButton("Back");
-        btnBack.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
-        });
+        btnBack.addActionListener(this::btnBackActionPerformed);
         btnBack.setBounds(230, 169, 113, 27);
         panel_C.add(btnBack);
         //返回按钮
@@ -102,13 +98,48 @@ public class CustomerLoginIn extends JFrame {
         contentPane.add(panel_S, BorderLayout.SOUTH);
         panel_S.setLayout(new BorderLayout(0, 0));
         JButton btnSkip = new JButton("Skip");
-        btnSkip.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
-        });
+        btnSkip.addActionListener(this::btnSkipActionPerformed);
         btnSkip.setFont(new Font("Times New Roman", Font.PLAIN, 7));
         panel_S.add(btnSkip, BorderLayout.EAST);
         //退出按钮
     }
-
+    private void btnLoginInActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            CustomerOrder customerOrder = new CustomerOrder();
+            customerOrder.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            customerOrder.setVisible(true);
+        });
+    }
+    private void btnBackActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            Begin begin = new Begin();
+            begin.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            begin.setVisible(true);
+        });
+    }
+    private void btnSkipActionPerformed(ActionEvent evt) {
+        this.dispose();
+        EventQueue.invokeLater(() -> {
+            CustomerOrder customerOrder = new CustomerOrder();
+            customerOrder.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+            customerOrder.setVisible(true);
+        });
+    }
 }
