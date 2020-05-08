@@ -1,96 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="update TODO List">
+    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerLogin$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerLogin$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerLogin$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerLogin$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerLogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerRegister$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerRegister$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerRegister$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/CustomerRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/Order$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/Payment$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Customer/Payment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/ANoodle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Begin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerPayment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Deleitem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/ShowABowl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffOption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/Calculation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/PrintTicket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/checkCusLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/checkRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/Bill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/BillList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/MenuList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/UserList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/checkCusLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/checkRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/BillList.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/MenuList.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/UserList.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Dish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/FoodList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Noodles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Staff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/RestaurantsSystem$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/RestaurantsSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffOption.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StaffLoginIn">
+  <component name="RunManager" selected="Application.RestaurantsSystem">
     <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.Begin" />
       <module name="RestaurantsSystem" />
@@ -177,15 +90,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerPayment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerPayment" />
+    <configuration name="RestaurantsSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RestaurantsSystem" />
       <module name="RestaurantsSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Boundary.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -231,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RestaurantsSystem" />
         <item itemvalue="Application.StaffLoginIn" />
         <item itemvalue="Application.Begin" />
         <item itemvalue="Application.StaffShowBill" />
         <item itemvalue="Application.StaffOption" />
-        <item itemvalue="Application.CustomerPayment" />
       </list>
     </recent_temporary>
   </component>
@@ -399,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585390546298</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="remove dir [out]">
+      <created>1588935906001</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1588935906001</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,6 +348,7 @@
     <MESSAGE value="update directory" />
     <MESSAGE value="update Entities" />
     <MESSAGE value="update TODO List" />
-    <option name="LAST_COMMIT_MESSAGE" value="update TODO List" />
+    <MESSAGE value="remove dir [out]" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove dir [out]" />
   </component>
 </project>
