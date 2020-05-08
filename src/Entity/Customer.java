@@ -122,20 +122,27 @@ public class Customer
 
     // When user finish registration, update information to database
     public void update(){
-        String vst = String.valueOf(this.vStamp);  // Transfer the int to string
-        List<String> cusInfo = new ArrayList<String>();
+        List<User> userList = UserList.getUserList();
 
-        cusInfo.set(0, this.loyaltyNum);
-        cusInfo.set(1, this.password);
-        cusInfo.set(2, this.firstName);
-        cusInfo.set(3, this.lastName);
-        cusInfo.set(4, this.emailAdr);
-        cusInfo.set(5, this.phoneNum);
-        cusInfo.set(6, String.valueOf(0));
-        cusInfo.set(7, vst);
+        if(userList != null && !userList.isEmpty()) {
+            for(int i = 0; i < userList.size(); i++) {
+                if(Integer.parseInt(this.loyaltyNum) == userList.get(i).getMenbershipNumber())
+                    userList.get(i).setPassword(this.password);
+                userList.get(i).setFirstName(this.firstName);
+                userList.get(i).setSurname(this.lastName);
+                userList.get(i).setEmail(this.emailAdr);
+                userList.get(i).setPhoneNumber(this.phoneNum);
+                userList.get(i).setVirtualStamps(this.vStamp);
+            }
+        }
 
-        File file = new File("/Database/UserList.csx");
+        boolean isSuccess=UserList.exportCsv(new File("UserList.csv"), UserList.setUserList(userList));
 
-        cus.exportCsv(file, cusInfo); // write the data into database
+        if(isSuccess){
+            System.out.println("Logs:Success to write UserList.");
+        }
+        else{
+            System.out.println("Logs:Fail to write UserList.");
+        }// write the data into database
     }
 }
