@@ -1,5 +1,7 @@
 package Entity;
 import java.util.*;
+import Data.*;
+import java.io.File;
 
 public class Customer
 {
@@ -132,6 +134,8 @@ public class Customer
         cusInfo.set(6, String.valueOf(0));
         cusInfo.set(7, vst);
 
-        cus.exportCsv("", cusInfo); // write the data into database
+        File file = new File("/Database/UserList.csx");
+
+        cus.exportCsv(file, cusInfo); // write the data into database
     }
 }

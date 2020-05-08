@@ -1,26 +1,19 @@
 package Boundary;
 
+import Entity.Dish;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import java.awt.FlowLayout;
-import javax.swing.SwingConstants;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.border.LineBorder;
-import javax.swing.JRadioButton;
 import java.awt.Font;
-import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -113,12 +106,17 @@ public class CustomerOrder extends JFrame {
         panel_Soup.add(lbl_Soup);
         //soup的label
         JRadioButton rdbtn_Soup1 = new JRadioButton("Tonkotsu");
+        rdbtn_Soup1.setActionCommand("Tonkotsu");
+        //rdbtn_Soup1.setSelected(true);
         panel_Soup.add(rdbtn_Soup1);
         //第一种汤
         JRadioButton rdbtn_Soup2 = new JRadioButton("Shoyu");
+        rdbtn_Soup2.setActionCommand("Shoyu");
+        rdbtn_Soup2.setSelected(true);
         panel_Soup.add(rdbtn_Soup2);
         //第二种汤
         JRadioButton rdbtn_Soup3 = new JRadioButton("Shio");
+        rdbtn_Soup3.setActionCommand("Shio");
         panel_Soup.add(rdbtn_Soup3);
         //第三种汤
         ButtonGroup group1=new ButtonGroup();
@@ -137,12 +135,16 @@ public class CustomerOrder extends JFrame {
         panel_Noodles.add(lbl_Noodles);
         //面的label
         JRadioButton rdbtn_Noodles1 = new JRadioButton("Soft");
+        rdbtn_Noodles1.setActionCommand("Soft");
+        rdbtn_Noodles1.setSelected(true);
         panel_Noodles.add(rdbtn_Noodles1);
         //第一种面
         JRadioButton rdbtn_Noodles2 = new JRadioButton("Medium");
+        rdbtn_Noodles2.setActionCommand("Medium");
         panel_Noodles.add(rdbtn_Noodles2);
         //第二种面
         JRadioButton rdbtn_Noodles3 = new JRadioButton("Firm");
+        rdbtn_Noodles3.setActionCommand("Firm");
         panel_Noodles.add(rdbtn_Noodles3);
         //第三种面
         ButtonGroup group2=new ButtonGroup();
@@ -161,12 +163,16 @@ public class CustomerOrder extends JFrame {
         panel_Spring.add(lbl_Spring);
         //面的label
         JRadioButton rdbtn_Spring1 = new JRadioButton("No please");
+        rdbtn_Spring1.setActionCommand("No");
+        rdbtn_Spring1.setSelected(true);
         panel_Spring.add(rdbtn_Spring1);
         //第一种面
         JRadioButton rdbtn_Spring2 = new JRadioButton(" A little");
+        rdbtn_Spring2.setActionCommand("Little");
         panel_Spring.add(rdbtn_Spring2);
         //第二种面
         JRadioButton rdbtn_Spring3 = new JRadioButton("A lot!");
+        rdbtn_Spring3.setActionCommand("Lot");
         panel_Spring.add(rdbtn_Spring3);
         //第三种面
         ButtonGroup group3=new ButtonGroup();
@@ -204,21 +210,28 @@ public class CustomerOrder extends JFrame {
         panel_Spiciness.add(lbl_Spiciness);
         //辣度label
         JRadioButton rdbtn_Spiciness0 = new JRadioButton("0(No)");
+        rdbtn_Spiciness0.setActionCommand("0");
+        rdbtn_Spiciness0.setSelected(true);
         panel_Spiciness.add(rdbtn_Spiciness0);
         //no
         JRadioButton rdbtn_Spiciness1 = new JRadioButton("1");
+        rdbtn_Spiciness1.setActionCommand("1");
         panel_Spiciness.add(rdbtn_Spiciness1);
         //1
         JRadioButton rdbtn_Spiciness2 = new JRadioButton("2");
+        rdbtn_Spiciness2.setActionCommand("2");
         panel_Spiciness.add(rdbtn_Spiciness2);
         //2
         JRadioButton rdbtn_Spiciness3 = new JRadioButton("3");
+        rdbtn_Spiciness3.setActionCommand("3");
         panel_Spiciness.add(rdbtn_Spiciness3);
         //3
         JRadioButton rdbtn_Spiciness4 = new JRadioButton("4");
+        rdbtn_Spiciness4.setActionCommand("4");
         panel_Spiciness.add(rdbtn_Spiciness4);
         //4
         JRadioButton rdbtn_Spiciness5 = new JRadioButton("5(Max)");
+        rdbtn_Spiciness5.setActionCommand("5");
         panel_Spiciness.add(rdbtn_Spiciness5);
         //max
         ButtonGroup group4=new ButtonGroup();
@@ -382,9 +395,60 @@ public class CustomerOrder extends JFrame {
         //提醒的label
         JPanel panel_Info = new JPanel();
         panel_Info.setBorder(new LineBorder(new Color(0, 0, 0)));
-        panel_C.add(panel_Info);
-        panel_Info.setLayout(new GridLayout(5, 0, 0, 0));
-        //
+        panel_Info.setLayout(new GridLayout(10,1));
+        btn_OK.addActionListener(new ShowABowl(panel_Info,new Dish(group1.getSelection().getActionCommand(),
+                group2.getSelection().getActionCommand(),group3.getSelection().getActionCommand(),
+                chckbx_Nori.isSelected(),chckbx_Chashu.isSelected(),chckbx_Egg.isSelected(),
+                Integer.parseInt(group4.getSelection().getActionCommand()),
+                Integer.parseInt(lbl_NoriNum.getText()),Integer.parseInt(lbl_EggNum.getText()),
+                Integer.parseInt(lbl_BambooNum.getText()),Integer.parseInt(lbl_ChashuNum.getText()))));
+        JScrollPane sp=new JScrollPane(panel_Info);
+        panel_C.add(sp);
     }
 
+}
+class ShowABowl implements ActionListener{ //展示一碗面
+    private JPanel where;
+    private Dish dish;
+    public ShowABowl(JPanel where, Dish dish){
+        this.where=where;
+        this.dish=dish;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        where.add(new ANoodle(where,dish));
+        where.validate();
+    }
+}
+class Deleitem implements ActionListener{
+    private ANoodle anoodle;
+    private JPanel parent;
+    public Deleitem(ANoodle anoodle,JPanel parent){
+        this.parent=parent;
+        this.anoodle=anoodle;
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        parent.remove(anoodle.parePanel);
+        parent.revalidate();
+        parent.repaint();
+    }
+}
+class ANoodle extends JPanel{
+    JButton delebutton=new JButton("Delete");
+    JPanel parePanel=this;
+    JPanel parent;
+    Dish dish;
+    public ANoodle(JPanel parent,Dish dish){
+        this.dish=dish;
+        this.parent=parent;
+        this.add(new JLabel(dish.getSoup()+"   "+dish.getNoodles()+"  "+"  onion  "+dish.getOnion()
+                +"  Nori: "+dish.isOrigNori()+"Chashu   "+dish.isChashu()
+                +"  BoiledEgg: "+dish.isBoiledEgg()+"  Spiciness: "+dish.getSpiciness()
+                +"  exNori: "+dish.getExNori()+"  exEgg: "+dish.getExEgg()
+                +"  exBamboo: "+dish.getExBamboo()+"  exChashu: "+dish.getExChashu()),BorderLayout.CENTER);
+        this.add(delebutton,BorderLayout.EAST);
+        delebutton.addActionListener(new Deleitem(this,parent));
+    }
 }
