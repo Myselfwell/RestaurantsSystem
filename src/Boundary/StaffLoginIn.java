@@ -13,6 +13,8 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JPasswordField;
 
 public class StaffLoginIn extends JFrame {
@@ -63,10 +65,7 @@ public class StaffLoginIn extends JFrame {
 		
 		JButton btnNewButton = new JButton("Confirm");
 		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		btnNewButton.addActionListener(this::btnNewButtonActionPerformed);
 		btnNewButton.setBounds(171, 220, 100, 33);
 		contentPane.add(btnNewButton);
 		
@@ -94,10 +93,7 @@ public class StaffLoginIn extends JFrame {
 		contentPane.add(txtrStaffLoginIn);
 		
 		JButton btnBack = new JButton("Back");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		btnBack.addActionListener(this::btnBackActionPerformed);
 		btnBack.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		btnBack.setBackground(Color.WHITE);
 		btnBack.setBounds(344, 226, 82, 29);
@@ -106,5 +102,33 @@ public class StaffLoginIn extends JFrame {
 		password = new JPasswordField();
 		password.setBounds(102, 136, 283, 33);
 		contentPane.add(password);
+	}
+
+	private void btnNewButtonActionPerformed(ActionEvent actionEvent) {
+		this.dispose();
+		EventQueue.invokeLater(() -> {
+			StaffOption staffOption = new StaffOption();
+			staffOption.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffOption.setVisible(true);
+		});
+	}
+
+	private void btnBackActionPerformed(ActionEvent actionEvent) {
+		this.dispose();
+		EventQueue.invokeLater(()->{
+			Begin begin = new Begin();
+			begin.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			begin.setVisible(true);
+		});
 	}
 }

@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class StaffModifyMenu extends JFrame {
 
@@ -70,11 +72,33 @@ public class StaffModifyMenu extends JFrame {
 		contentPane.add(btnChangePrice);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(this::btnBackActionPerformed);
 		btnBack.setBounds(415, 239, 158, 42);
 		contentPane.add(btnBack);
 		
 		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(this::btnExitActionPerformed);
 		btnExit.setBounds(415, 291, 158, 42);
 		contentPane.add(btnExit);
 	}
+
+	private void btnBackActionPerformed(ActionEvent actionEvent) {
+		this.dispose();
+		EventQueue.invokeLater(()->{
+			StaffOption staffOption = new StaffOption();
+			staffOption.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffOption.setVisible(true);
+		});
+	}
+
+	private void btnExitActionPerformed(ActionEvent actionEvent) {
+		System.exit(0);
+	}
+
+
 }

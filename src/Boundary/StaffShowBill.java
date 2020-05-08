@@ -10,6 +10,8 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class StaffShowBill extends JFrame {
 
@@ -69,15 +71,31 @@ public class StaffShowBill extends JFrame {
 		contentPane.add(textArea);
 		
 		JButton btnNewButton_2_1 = new JButton("Back");
+		btnNewButton_2_1.addActionListener(this::btnBackActionPerformed);
 		btnNewButton_2_1.setBounds(10, 230, 59, 23);
 		contentPane.add(btnNewButton_2_1);
 		
 		JButton btnNewButton_2_1_1 = new JButton("Exit");
 		btnNewButton_2_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
 			}
 		});
 		btnNewButton_2_1_1.setBounds(79, 230, 59, 23);
 		contentPane.add(btnNewButton_2_1_1);
+	}
+
+	private void btnBackActionPerformed(ActionEvent actionEvent) {
+		dispose();
+		EventQueue.invokeLater(() -> {
+			StaffOption staffOption = new StaffOption();
+			staffOption.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffOption.setVisible(true);
+		});
 	}
 }
