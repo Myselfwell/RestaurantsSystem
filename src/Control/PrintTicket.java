@@ -1,13 +1,15 @@
 package Control;
 
-import java.io.*;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import Entity.*;
+import Data.*;
 
 public class PrintTicket
 {
     private Customer customer;
+    private PrintBill prt;
+
     private String loyaltyNum;
     private String firstName;
     private String lastName;
