@@ -3,7 +3,7 @@ import java.io.*;
 
 public class PrintBill {
 
-    private static String path = "";//文件保存路径，记得写，别忘了，不然用不了
+    private static String path = "src/Database/Ticket";//文件保存路径，记得写，别忘了，不然用不了
     private static String filenameTemp;
     public static void creatTxt(String fName) throws IOException{
         // 防止文件建立或读取失败，用catch捕捉错误并打印，也可以throw
