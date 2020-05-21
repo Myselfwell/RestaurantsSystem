@@ -18,10 +18,13 @@ public class PrintTicket
     private int dishNum;
     private String orderNum;
     private int method;
+    private Boolean istakeout;
     private double price;
 
-    public PrintTicket(Customer cusInfo, int method){
+    public PrintTicket(Customer cusInfo, int method, Boolean istakeout){
         this.customer = cusInfo;
+        this.method = method;
+        this.istakeout = istakeout;
     }
 
     public void printTicket() throws IOException{
@@ -54,6 +57,7 @@ public class PrintTicket
             customer.clearVStamp();
             customer.update();
             dishNum --;
+            method = 3;
         }
 
         for(int i = 1; i <= dishNum; i++){
@@ -63,6 +67,25 @@ public class PrintTicket
         }
         prt.writeTxt("Total Price : " + price);
         prt.writeTxt("Number of Virtual Stamp : " + customer.getVStamp());
+
+        if(method == 0){
+            if(istakeout == true){
+                prt.writeTxt("Take out   By Cash");
+            }
+            else prt.writeTxt("Eat in   By Cash");
+        }
+        else if(method == 1){
+            if(istakeout == true){
+                prt.writeTxt("Take out   By Card");
+            }
+            else prt.writeTxt("Eat in   By Card");
+        }
+        else{
+            if(istakeout == true){
+                prt.writeTxt("Take out   By Virtual Stamp");
+            }
+            else prt.writeTxt("Eat in   By Virtual Stamp");
+        }
 
 
     }
