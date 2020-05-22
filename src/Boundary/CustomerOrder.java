@@ -1,5 +1,6 @@
 package Boundary;
 
+import Data.MenuList;
 import Entity.Dish;
 
 import java.awt.BorderLayout;
@@ -258,7 +259,7 @@ public class CustomerOrder extends JFrame {
         panel_Nori.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_addson1.add(panel_Nori);
         //Nori面板
-        JLabel lbl_XrNori = new JLabel("Extra Nori(\u00A3"+ qian + " )");
+        JLabel lbl_XrNori = new JLabel("Extra Nori(\u00A3"+ MenuList.getAddonePrice("Nori") + " )");
         panel_Nori.add(lbl_XrNori);
         JLabel lbl_NoriNum = new JLabel("0");
         //Nori Num
@@ -289,7 +290,7 @@ public class CustomerOrder extends JFrame {
         panel_egg.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_addson1.add(panel_egg);
         //Extra boiled egg
-        JLabel lbl_egg = new JLabel("Extra boiled egg(\u00A31 )");
+        JLabel lbl_egg = new JLabel("Extra boiled egg(\u00A3"+ MenuList.getAddonePrice("Egg") + " )");
         panel_egg.add(lbl_egg);
         //Extra boiled egg label
         JButton btn_Add2 = new JButton("+1");
@@ -326,7 +327,7 @@ public class CustomerOrder extends JFrame {
         panel_Bamboo.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_addson2.add(panel_Bamboo);
         //竹子面板
-        JLabel lbl_Bamboo = new JLabel("Bamboo shoots(\u00A31)");
+        JLabel lbl_Bamboo = new JLabel("Bamboo shoots(\u00A3"+ MenuList.getAddonePrice("Bamboo") + ")");
         panel_Bamboo.add(lbl_Bamboo);
         //竹子标签
         JLabel lbl_BambooNum = new JLabel("0");
@@ -359,7 +360,7 @@ public class CustomerOrder extends JFrame {
         panel_addson2.add(panel_Chashu);
         panel_Chashu.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         //chashu面板
-        JLabel lbl_Chashu = new JLabel("Extra Chashu(\u00A32)");
+        JLabel lbl_Chashu = new JLabel("Extra Chashu(\u00A3"+ MenuList.getAddonePrice("Chashu") + ")");
         panel_Chashu.add(lbl_Chashu);
         //chashu标签
         JLabel lbl_ChashuNum = new JLabel("0");
@@ -400,12 +401,9 @@ public class CustomerOrder extends JFrame {
         JPanel panel_Info = new JPanel();
         panel_Info.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Info.setLayout(new GridLayout(10,1));
-        btn_OK.addActionListener(new ShowABowl(panel_Info,new Dish(group1.getSelection().getActionCommand(),
-                group2.getSelection().getActionCommand(),group3.getSelection().getActionCommand(),
-                chckbx_Nori.isSelected(),chckbx_Chashu.isSelected(),chckbx_Egg.isSelected(),
-                Integer.parseInt(group4.getSelection().getActionCommand()),
-                Integer.parseInt(lbl_NoriNum.getText()),Integer.parseInt(lbl_EggNum.getText()),
-                Integer.parseInt(lbl_BambooNum.getText()),Integer.parseInt(lbl_ChashuNum.getText()))));
+        btn_OK.addActionListener(new ShowABowl(panel_Info,group1, group2,group3,group4,
+                chckbx_Nori,chckbx_Chashu,chckbx_Egg,
+                lbl_NoriNum,lbl_EggNum,lbl_BambooNum,lbl_ChashuNum));
         JScrollPane sp=new JScrollPane(panel_Info);
         panel_C.add(sp);
     }
@@ -440,13 +438,33 @@ public class CustomerOrder extends JFrame {
 class ShowABowl implements ActionListener{ //展示一碗面
     private JPanel where;
     private Dish dish;
-    public ShowABowl(JPanel where, Dish dish){
-        this.where=where;
-        this.dish=dish;
+    private ButtonGroup group1,group2,group3,group4;
+    private JCheckBox chckbx_Nori,chckbx_Chashu,chckbx_Egg;
+    private JLabel lbl_NoriNum,lbl_EggNum,lbl_BambooNum,lbl_ChashuNum;
+
+    public ShowABowl(JPanel where, ButtonGroup group1, ButtonGroup group2, ButtonGroup group3, ButtonGroup group4, JCheckBox chckbx_Nori, JCheckBox chckbx_Chashu, JCheckBox chckbx_Egg, JLabel lbl_NoriNum, JLabel lbl_EggNum, JLabel lbl_BambooNum, JLabel lbl_ChashuNum) {
+        this.where = where;
+        this.group1 = group1;
+        this.group2 = group2;
+        this.group3 = group3;
+        this.group4 = group4;
+        this.chckbx_Nori = chckbx_Nori;
+        this.chckbx_Chashu = chckbx_Chashu;
+        this.chckbx_Egg = chckbx_Egg;
+        this.lbl_NoriNum = lbl_NoriNum;
+        this.lbl_EggNum = lbl_EggNum;
+        this.lbl_BambooNum = lbl_BambooNum;
+        this.lbl_ChashuNum = lbl_ChashuNum;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        this.dish=new Dish(group1.getSelection().getActionCommand(),
+                group2.getSelection().getActionCommand(),group3.getSelection().getActionCommand(),
+                chckbx_Nori.isSelected(),chckbx_Chashu.isSelected(),chckbx_Egg.isSelected(),
+                Integer.parseInt(group4.getSelection().getActionCommand()),
+                Integer.parseInt(lbl_NoriNum.getText()),Integer.parseInt(lbl_EggNum.getText()),
+                Integer.parseInt(lbl_BambooNum.getText()),Integer.parseInt(lbl_ChashuNum.getText()));
         where.add(new ANoodle(where,dish));
         where.validate();
     }
@@ -454,12 +472,15 @@ class ShowABowl implements ActionListener{ //展示一碗面
 class Deleitem implements ActionListener{
     private ANoodle anoodle;
     private JPanel parent;
-    public Deleitem(ANoodle anoodle,JPanel parent){
+    private Dish dish;
+    public Deleitem(ANoodle anoodle,JPanel parent,Dish dish){
         this.parent=parent;
         this.anoodle=anoodle;
+        this.dish=dish;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        dish.setIsvalid(false);
         parent.remove(anoodle.parePanel);
         parent.revalidate();
         parent.repaint();
@@ -479,6 +500,6 @@ class ANoodle extends JPanel{
                 +"  exNori: "+dish.getExNori()+"  exEgg: "+dish.getExEgg()
                 +"  exBamboo: "+dish.getExBamboo()+"  exChashu: "+dish.getExChashu()),BorderLayout.CENTER);
         this.add(delebutton,BorderLayout.EAST);
-        delebutton.addActionListener(new Deleitem(this,parent));
+        delebutton.addActionListener(new Deleitem(this,parent,dish));
     }
 }

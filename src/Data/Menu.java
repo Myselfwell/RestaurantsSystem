@@ -1,7 +1,7 @@
 package Data;
 
 public class Menu {
-    String tayp;
+    String type;
     String name;
     int level;
     int price;
@@ -10,7 +10,7 @@ public class Menu {
 
     public Menu (String s) {
         String[] as = s.split(",");
-        this.setTayp(as[0]);
+        this.setType(as[0]);
         this.setName(as[1]);
         this.setLevel(Integer.parseInt(as[2]));
         this.setPrice(Integer.parseInt(as[3]));
@@ -18,8 +18,10 @@ public class Menu {
         this.setInventory(Integer.parseInt(as[5]));
     }
 
-    public void setTayp (String t) {
-        this.tayp = t;
+
+
+    public void setType (String t) {
+        this.type = t;
     }
 
     public void setName (String n) {
@@ -42,8 +44,8 @@ public class Menu {
         this.inventory = i;
     }
 
-    public String getTayp () {
-        return this.tayp;
+    public String getType () {
+        return this.type;
     }
 
     public String getName () {
@@ -65,4 +67,8 @@ public class Menu {
     public int getInventory () {
         return this.inventory;
     }
+
+
+
+
 }
