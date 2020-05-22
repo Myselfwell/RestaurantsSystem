@@ -27,7 +27,7 @@ public class PrintTicket
         this.istakeout = istakeout;
     }
 
-    public void printTicket() throws IOException{
+    public void printTic() throws IOException{
         SimpleDateFormat datePtrn = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         SimpleDateFormat orderDatePtrn = new SimpleDateFormat("yyyyMMddHHmmss");
         String time = datePtrn.format(new Date());

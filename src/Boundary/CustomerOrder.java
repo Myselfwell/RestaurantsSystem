@@ -258,7 +258,7 @@ public class CustomerOrder extends JFrame {
         panel_Nori.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_addson1.add(panel_Nori);
         //Nori面板
-        JLabel lbl_XrNori = new JLabel("Extra Nori(\u00A31 )");
+        JLabel lbl_XrNori = new JLabel("Extra Nori(\u00A3"+ qian + " )");
         panel_Nori.add(lbl_XrNori);
         JLabel lbl_NoriNum = new JLabel("0");
         //Nori Num

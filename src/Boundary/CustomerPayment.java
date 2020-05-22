@@ -1,5 +1,7 @@
 package Boundary;
 
+import Entity.Customer;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -23,6 +25,7 @@ import javax.swing.border.LineBorder;
 public class CustomerPayment extends JFrame {
 
     private JPanel contentPane;
+    private Customer cus;
 
     /**
      * Launch the application.
@@ -31,7 +34,7 @@ public class CustomerPayment extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    CustomerPayment frame = new CustomerPayment();
+                    CustomerPayment frame = new CustomerPayment(new Customer());
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -43,7 +46,9 @@ public class CustomerPayment extends JFrame {
     /**
      * Create the frame.
      */
-    public CustomerPayment() {
+    public CustomerPayment(Customer cus) {
+        this.cus = cus;
+
         setTitle("Welcome xxx!");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
@@ -73,7 +78,7 @@ public class CustomerPayment extends JFrame {
         lblNewLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_C.add(lblNewLabel, BorderLayout.NORTH);
 
-        JLabel lbl_Info = new JLabel("");
+        JLabel lbl_Info = new JLabel("     ");
         lbl_Info.setForeground(new Color(0, 0, 0));
         lbl_Info.setBackground(Color.WHITE);
         lbl_Info.setVerticalAlignment(SwingConstants.TOP);
@@ -135,6 +140,8 @@ public class CustomerPayment extends JFrame {
     }
     private void btnConfirmActionPerformed(ActionEvent evt) {
         this.dispose();
+        //
+
         EventQueue.invokeLater(() -> {
             Begin begin = new Begin();
             begin.addWindowListener(new WindowAdapter() {
