@@ -1,5 +1,6 @@
 package Boundary;
 
+import Control.PrintTicket;
 import Entity.Customer;
 
 import java.awt.BorderLayout;
@@ -20,12 +21,15 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import javax.swing.border.LineBorder;
 
 public class CustomerPayment extends JFrame {
 
     private JPanel contentPane;
     private Customer cus;
+    private int method;
+    private Boolean isTakeOut;
 
     /**
      * Launch the application.
@@ -140,7 +144,10 @@ public class CustomerPayment extends JFrame {
     }
     private void btnConfirmActionPerformed(ActionEvent evt) {
         this.dispose();
-        //
+        PrintTicket prt = new PrintTicket(cus,0,true);
+        try {
+            prt.printTic();
+        }catch(IOException e){}
 
         EventQueue.invokeLater(() -> {
             Begin begin = new Begin();

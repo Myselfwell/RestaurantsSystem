@@ -21,10 +21,10 @@ public class PrintTicket
     private Boolean istakeout;
     private double price;
 
-    public PrintTicket(Customer cusInfo, int method, Boolean istakeout){
+    public PrintTicket(Customer cusInfo, int method, Boolean isTakeOut){
         this.customer = cusInfo;
         this.method = method;
-        this.istakeout = istakeout;
+        this.istakeout = isTakeOut;
     }
 
     public void printTic() throws IOException{
@@ -49,7 +49,7 @@ public class PrintTicket
         prt.writeTxt("Loyalty Number : " + loyaltyNum);
         prt.writeTxt("Your have been order :");
 
-        if(vStamp != 10){
+        if(vStamp < 10){
             customer.incVStamp();
             customer.update();
         }
@@ -62,9 +62,13 @@ public class PrintTicket
 
         for(int i = 1; i <= dishNum; i++){
             Dish dish = customer.getOrder(i);
-            price = price + dish.getSum();
-            prt.writeTxt(dish.getNoodles() + "     " + dish.getSum());
+            price = price + dish.calculationPrice();
+            prt.writeTxt(dish.getNoodles() + "     " + dish.calculationPrice());
+            customer.incVStamp();
         }
+
+        customer.update();
+
         prt.writeTxt("Total Price : " + price);
         prt.writeTxt("Number of Virtual Stamp : " + customer.getVStamp());
 
