@@ -70,18 +70,23 @@ public class StaffShowBill extends JFrame {
 		textArea.setBounds(198, 10, 228, 243);
 		contentPane.add(textArea);
 		
-		JButton btnBack = new JButton("Back");
-		btnBack.setBounds(10, 230, 59, 23);
-		btnBack.addActionListener(this::btnBackActionPerformed);
-		contentPane.add(btnBack);
+		JButton btnNewButton_2_1 = new JButton("Back");
+		btnNewButton_2_1.addActionListener(this::btnBackActionPerformed);
+		btnNewButton_2_1.setBounds(10, 230, 59, 23);
+		contentPane.add(btnNewButton_2_1);
 		
-		JButton btnExit = new JButton("Exit");
-		btnExit.addActionListener(this::btnExitActionPerformed);
-		btnExit.setBounds(79, 230, 59, 23);
-		contentPane.add(btnExit);
+		JButton btnNewButton_2_1_1 = new JButton("Exit");
+		btnNewButton_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		btnNewButton_2_1_1.setBounds(79, 230, 59, 23);
+		contentPane.add(btnNewButton_2_1_1);
 	}
-	private void btnBackActionPerformed(ActionEvent evt) {
-		this.dispose();
+
+	private void btnBackActionPerformed(ActionEvent actionEvent) {
+		dispose();
 		EventQueue.invokeLater(() -> {
 			StaffOption staffOption = new StaffOption();
 			staffOption.addWindowListener(new WindowAdapter() {
@@ -92,8 +97,5 @@ public class StaffShowBill extends JFrame {
 			});
 			staffOption.setVisible(true);
 		});
-	}
-	private void btnExitActionPerformed(ActionEvent evt) {
-		System.exit(0);
 	}
 }

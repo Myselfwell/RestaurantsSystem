@@ -1,12 +1,8 @@
 package Boundary;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -42,32 +38,20 @@ public class StaffOption extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnModify = new JButton("Modify Menu");
-		btnModify.addActionListener(this::btnModifyActionPerformed);
-		btnModify.setBounds(130, 54, 168, 48);
-		contentPane.add(btnModify);
+		JButton btnNewButton = new JButton("Modify Menu");
+		btnNewButton.addActionListener(this::btnNewButtonActionPerformed);
+		btnNewButton.setBounds(130, 54, 168, 48);
+		contentPane.add(btnNewButton);
 		
 		JButton btnShowBills = new JButton("Show Bills");
+		btnShowBills.addActionListener(this::btnShowBillsActionPerformed);
 		btnShowBills.setBounds(130, 154, 168, 48);
-		btnShowBills.addActionListener(this::btnShowActionPerformed);
 		contentPane.add(btnShowBills);
 	}
-	private void btnModifyActionPerformed(ActionEvent evt) {
+
+	private void btnShowBillsActionPerformed(ActionEvent actionEvent) {
 		this.dispose();
-		EventQueue.invokeLater(() -> {
-			StaffModifyMenu staffModifyMenu = new StaffModifyMenu();
-			staffModifyMenu.addWindowListener(new WindowAdapter() {
-				@Override
-				public void windowClosing(WindowEvent e) {
-					System.exit(0);
-				}
-			});
-			staffModifyMenu.setVisible(true);
-		});
-	}
-	private void btnShowActionPerformed(ActionEvent evt) {
-		this.dispose();
-		EventQueue.invokeLater(() -> {
+		EventQueue.invokeLater(()->{
 			StaffShowBill staffShowBill = new StaffShowBill();
 			staffShowBill.addWindowListener(new WindowAdapter() {
 				@Override
@@ -78,4 +62,19 @@ public class StaffOption extends JFrame {
 			staffShowBill.setVisible(true);
 		});
 	}
+
+	private void btnNewButtonActionPerformed(ActionEvent actionEvent) {
+		this.dispose();
+		EventQueue.invokeLater(()->{
+			StaffModifyMenu staffModifyMenu = new StaffModifyMenu();
+			staffModifyMenu.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffModifyMenu.setVisible(true);
+		});
+	}
+
 }

@@ -63,20 +63,20 @@ public class StaffLoginIn extends JFrame {
 		contentPane.add(UserName);
 		UserName.setColumns(10);
 		
-		JButton btnConfrim = new JButton("Confirm");
-		btnConfrim.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnConfrim.addActionListener(this::btnLoginInActionPerformed);
-		btnConfrim.setBounds(171, 220, 100, 33);
-		contentPane.add(btnConfrim);
+		JButton btnNewButton = new JButton("Confirm");
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton.addActionListener(this::btnNewButtonActionPerformed);
+		btnNewButton.setBounds(171, 220, 100, 33);
+		contentPane.add(btnNewButton);
 		
-		JTextArea UserName = new JTextArea();
-		UserName.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		UserName.setBackground(SystemColor.inactiveCaptionBorder);
-		UserName.setForeground(SystemColor.desktop);
-		UserName.setText("User Name");
-		UserName.setBounds(10, 78, 82, 24);
-		contentPane.add(UserName);
-
+		JTextArea txtrUserName = new JTextArea();
+		txtrUserName.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		txtrUserName.setBackground(SystemColor.inactiveCaptionBorder);
+		txtrUserName.setForeground(SystemColor.desktop);
+		txtrUserName.setText("User Name");
+		txtrUserName.setBounds(10, 78, 82, 24);
+		contentPane.add(txtrUserName);
+		
 		JTextArea txtrPassword = new JTextArea();
 		txtrPassword.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		txtrPassword.setText("Password");
@@ -103,7 +103,8 @@ public class StaffLoginIn extends JFrame {
 		password.setBounds(102, 136, 283, 33);
 		contentPane.add(password);
 	}
-	private void btnLoginInActionPerformed(ActionEvent evt) {
+
+	private void btnNewButtonActionPerformed(ActionEvent actionEvent) {
 		this.dispose();
 		EventQueue.invokeLater(() -> {
 			StaffOption staffOption = new StaffOption();
@@ -116,9 +117,10 @@ public class StaffLoginIn extends JFrame {
 			staffOption.setVisible(true);
 		});
 	}
-	private void btnBackActionPerformed(ActionEvent evt) {
+
+	private void btnBackActionPerformed(ActionEvent actionEvent) {
 		this.dispose();
-		EventQueue.invokeLater(() -> {
+		EventQueue.invokeLater(()->{
 			Begin begin = new Begin();
 			begin.addWindowListener(new WindowAdapter() {
 				@Override

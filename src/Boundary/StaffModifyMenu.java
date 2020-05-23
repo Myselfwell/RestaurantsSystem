@@ -72,18 +72,19 @@ public class StaffModifyMenu extends JFrame {
 		contentPane.add(btnChangePrice);
 		
 		JButton btnBack = new JButton("Back");
-		btnBack.setBounds(415, 239, 158, 42);
 		btnBack.addActionListener(this::btnBackActionPerformed);
+		btnBack.setBounds(415, 239, 158, 42);
 		contentPane.add(btnBack);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.setBounds(415, 291, 158, 42);
 		btnExit.addActionListener(this::btnExitActionPerformed);
+		btnExit.setBounds(415, 291, 158, 42);
 		contentPane.add(btnExit);
 	}
-	private void btnBackActionPerformed(ActionEvent evt) {
+
+	private void btnBackActionPerformed(ActionEvent actionEvent) {
 		this.dispose();
-		EventQueue.invokeLater(() -> {
+		EventQueue.invokeLater(()->{
 			StaffOption staffOption = new StaffOption();
 			staffOption.addWindowListener(new WindowAdapter() {
 				@Override
@@ -94,7 +95,10 @@ public class StaffModifyMenu extends JFrame {
 			staffOption.setVisible(true);
 		});
 	}
-	private void btnExitActionPerformed(ActionEvent evt) {
+
+	private void btnExitActionPerformed(ActionEvent actionEvent) {
 		System.exit(0);
 	}
+
+
 }

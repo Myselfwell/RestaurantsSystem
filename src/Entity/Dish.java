@@ -1,14 +1,17 @@
 package Entity;
 
+import Data.Menu;
+import Data.MenuList;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Dish {
     private String soup,noodles,onion;
-    private boolean origNori,chashu,boiledEgg;
+    private boolean origNori,chashu,boiledEgg,isvalid;
     private int spiciness;
-    private int exNori;
-    private int exEgg;
-    private int exBamboo;
-    private int exChashu;
-    private double sum;
+    private int exNori,exEgg,exBamboo,exChashu,sum;
+
 
     public Dish(String soup, String noodles, String onion, boolean origNori, boolean chashu, boolean boiledEgg, int spiciness, int exNori, int exEgg, int exBamboo, int exChashu) {
         this.soup = soup;
@@ -22,7 +25,7 @@ public class Dish {
         this.exEgg = exEgg;
         this.exBamboo = exBamboo;
         this.exChashu = exChashu;
-        sum=9.99+exNori+exEgg+exBamboo+2*exChashu;
+        this.isvalid=true;
     }
 
     public String getSoup() {
@@ -112,7 +115,35 @@ public class Dish {
     public void setExChashu(int exChashu) {
         this.exChashu = exChashu;
     }
+    public double calculationPrice () {
+        double allPrice = 9.9;
+        List<Menu> menuList = MenuList.getMenuList();
+        if(menuList != null && !menuList.isEmpty()) {
+            for(int i = 0; i < menuList.size()+1; i++) {
+                if(menuList.get(i).getType().equals("AddOne")) {
+                    if(menuList.get(i).getName().equals("Nori")){
+                        allPrice += this.exNori * menuList.get(i).getPrice();
+                    }
+                    if(menuList.get(i).getName().equals("Egg")){
+                        allPrice += this.exEgg * menuList.get(i).getPrice();
+                    }
+                    if(menuList.get(i).getName().equals("Bamboo")){
+                        allPrice += this.exBamboo  * menuList.get(i).getPrice();
+                    }
+                    if(menuList.get(i).getName().equals("Chashu")){
+                        allPrice += this.exChashu * menuList.get(i).getPrice();
+                    }
+                }
+            }
+        }
+        return allPrice;
+    }
 
-    public double getSum(){return sum;}
+    public boolean isIsvalid() {
+        return isvalid;
+    }
 
+    public void setIsvalid(boolean isvalid) {
+        this.isvalid = isvalid;
+    }
 }
