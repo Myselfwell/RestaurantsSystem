@@ -91,9 +91,35 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.ShowLoyaltyNum">
-    <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.Begin" />
+  <component name="RunManager" selected="Application.CustomerPayment">
+    <configuration name="CustomerLoginIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerLoginIn" />
+      <module name="RestaurantsSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerOrder" />
+      <module name="RestaurantsSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerPayment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerPayment" />
       <module name="RestaurantsSystem" />
       <extension name="coverage">
         <pattern>
@@ -118,13 +144,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestaurantsSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RestaurantsSystem" />
-      <module name="RestaurantsSystem" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShowLoyaltyNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.ShowLoyaltyNum" />
       <module name="RestaurantsSystem" />
@@ -138,26 +157,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StaffLoginIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.StaffLoginIn" />
-      <module name="RestaurantsSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Boundary.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CustomerPayment" />
+        <item itemvalue="Application.CustomerOrder" />
+        <item itemvalue="Application.CustomerLoginIn" />
         <item itemvalue="Application.ShowLoyaltyNum" />
         <item itemvalue="Application.CustomerRegister" />
-        <item itemvalue="Application.RestaurantsSystem" />
-        <item itemvalue="Application.StaffLoginIn" />
-        <item itemvalue="Application.Begin" />
       </list>
     </recent_temporary>
   </component>
@@ -195,6 +201,8 @@
       <workItem from="1589810848440" duration="57000" />
       <workItem from="1589857880455" duration="150000" />
       <workItem from="1589858033714" duration="1362000" />
+      <workItem from="1590303779637" duration="1291000" />
+      <workItem from="1590332783920" duration="989000" />
     </task>
     <task id="LOCAL-00001" summary="init repo">
       <created>1585061384078</created>
@@ -347,13 +355,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -383,22 +390,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="364" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590291099693" />
-    <state width="746" height="58" key="GridCell.Tab.0.bottom" timestamp="1590245919623">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1358" height="241" key="GridCell.Tab.0.bottom" timestamp="1590333775797">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
-    <state width="746" height="58" key="GridCell.Tab.0.center" timestamp="1590245919623">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1590333775797" />
+    <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1590321723400" />
+    <state width="1358" height="241" key="GridCell.Tab.0.center" timestamp="1590333775796">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
-    <state width="746" height="58" key="GridCell.Tab.0.left" timestamp="1590245919623">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1590333775796" />
+    <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1590321723399" />
+    <state width="1358" height="241" key="GridCell.Tab.0.left" timestamp="1590333775796">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
-    <state width="746" height="58" key="GridCell.Tab.0.right" timestamp="1590245919623">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1590333775796" />
+    <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1590321723398" />
+    <state width="1358" height="241" key="GridCell.Tab.0.right" timestamp="1590333775797">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1590333775797" />
+    <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1590321723399" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590291151688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

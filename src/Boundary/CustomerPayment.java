@@ -2,6 +2,7 @@ package Boundary;
 
 import Control.PrintTicket;
 import Entity.Customer;
+import Entity.Dish;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -30,6 +31,8 @@ public class CustomerPayment extends JFrame {
     private Customer cus;
     private int method;
     private Boolean isTakeOut;
+    private String display;
+    private double price;
 
     /**
      * Launch the application.
@@ -81,7 +84,16 @@ public class CustomerPayment extends JFrame {
         lblNewLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_C.add(lblNewLabel, BorderLayout.NORTH);
 
-        JLabel lbl_Info = new JLabel("     ");
+        int dishNum = cus.getDishNum();
+        for(int i = 1; i <= dishNum; i++){
+            Dish dish = cus.getOrder(i);
+            display = dish.getNoodles() + "\n";
+            price = price + dish.calculationPrice();
+        }
+
+        JLabel lbl_Info = new JLabel(display + "\n" + "Total price is $" + price );
+
+
         lbl_Info.setForeground(new Color(0, 0, 0));
         lbl_Info.setBackground(Color.WHITE);
         lbl_Info.setVerticalAlignment(SwingConstants.TOP);
