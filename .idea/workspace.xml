@@ -379,6 +379,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1590288217276" />
+    <state x="364" y="5" key="CommitChangelistDialog2" timestamp="1590291099693">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="364" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590291099693" />
     <state width="746" height="58" key="GridCell.Tab.0.bottom" timestamp="1590245919623">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -395,5 +399,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590291151688">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590291151688" />
   </component>
 </project>
