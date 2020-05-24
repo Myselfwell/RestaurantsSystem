@@ -1,6 +1,7 @@
 package Boundary;
 
 import Data.MenuList;
+import Entity.Customer;
 import Entity.Dish;
 
 import java.awt.BorderLayout;
@@ -23,8 +24,7 @@ import java.awt.event.WindowEvent;
 public class CustomerOrder extends JFrame {
 
     private JPanel contentPane;
-    private JPanel contentPane2;
-
+    private Customer customer;
     /**
      * Launch the application.
      */
@@ -32,7 +32,7 @@ public class CustomerOrder extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    CustomerOrder frame = new CustomerOrder();
+                    CustomerOrder frame = new CustomerOrder(new Customer());
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -44,8 +44,8 @@ public class CustomerOrder extends JFrame {
     /**
      * Create the frame.
      */
-    public CustomerOrder() {
-
+    public CustomerOrder(Customer customer) {
+        this.customer=customer;
         setTitle("Welcome xxx!");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 638, 709);
@@ -68,7 +68,7 @@ public class CustomerOrder extends JFrame {
         lblStamp.setHorizontalAlignment(SwingConstants.RIGHT);
         panel_N.add(lblStamp, BorderLayout.CENTER);
 
-        JLabel lblStampNum = new JLabel("0");
+        JLabel lblStampNum = new JLabel(String.valueOf(customer.getVStamp()));
         panel_N.add(lblStampNum, BorderLayout.EAST);
         //用户的虚拟邮票信息
         JPanel panel_S = new JPanel();
@@ -410,7 +410,7 @@ public class CustomerOrder extends JFrame {
     private void btnCheckActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {
-            CustomerPayment customerPayment = new CustomerPayment();
+            CustomerPayment customerPayment = new CustomerPayment(this.customer);
             customerPayment.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {

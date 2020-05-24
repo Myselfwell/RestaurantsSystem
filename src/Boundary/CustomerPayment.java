@@ -52,7 +52,6 @@ public class CustomerPayment extends JFrame {
      */
     public CustomerPayment(Customer cus) {
         this.cus = cus;
-
         setTitle("Welcome xxx!");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
@@ -163,7 +162,7 @@ public class CustomerPayment extends JFrame {
     private void btnBackActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {
-            CustomerOrder customerOrder = new CustomerOrder();
+            CustomerOrder customerOrder = new CustomerOrder(this.cus);
             customerOrder.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {

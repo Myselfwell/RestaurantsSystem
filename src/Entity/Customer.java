@@ -19,7 +19,10 @@ public class Customer
     private UserList cus = new UserList();    // File I/O class
 
     // Used for registration
-    public Customer(){}
+    public Customer(){
+
+        vStamp=0;
+    }
 
     // Creat customer instance through passing the loyalty number
     // Used for login
@@ -126,10 +129,10 @@ public class Customer
 
         if(userList != null && !userList.isEmpty()) {
             for(int i = 0; i < userList.size(); i++) {
-                if(Integer.parseInt(this.loyaltyNum) == userList.get(i).getMenbershipNumber())
+                if(Integer.parseInt(this.loyaltyNum) == userList.get(i).getMembershipNumber())
                     userList.get(i).setPassword(this.password);
                 userList.get(i).setFirstName(this.firstName);
-                userList.get(i).setSurname(this.lastName);
+                userList.get(i).setSurName(this.lastName);
                 userList.get(i).setEmail(this.emailAdr);
                 userList.get(i).setPhoneNumber(this.phoneNum);
                 userList.get(i).setVirtualStamps(this.vStamp);

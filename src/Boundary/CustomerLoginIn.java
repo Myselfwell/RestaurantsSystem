@@ -1,5 +1,8 @@
 package Boundary;
 
+import Control.CheckCusLog;
+import Entity.Customer;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -16,11 +19,13 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerLoginIn extends JFrame {
 
     private JPanel contentPane;
-    private JTextField username;
+    private JTextField LoyaltyNum;
     private JPasswordField pwd;
 
     /**
@@ -63,14 +68,14 @@ public class CustomerLoginIn extends JFrame {
         contentPane.add(panel_C, BorderLayout.CENTER);
         panel_C.setLayout(null);
         //设置中部的panel
-        JLabel lbl_Username = new JLabel("Username");
+        JLabel lbl_Username = new JLabel("Loyalty Num");
         lbl_Username.setFont(new Font("SimSun", Font.PLAIN, 15));
         lbl_Username.setBounds(54, 26, 72, 18);
         panel_C.add(lbl_Username);
-        username = new JTextField();
-        username.setBounds(140, 23, 200, 24);
-        panel_C.add(username);
-        username.setColumns(10);
+        LoyaltyNum = new JTextField();
+        LoyaltyNum.setBounds(140, 23, 200, 24);
+        panel_C.add(LoyaltyNum);
+        LoyaltyNum.setColumns(10);
         //用户名标签和文本区
         JLabel lbl_Password = new JLabel("Password");
         lbl_Password.setBounds(54, 73, 72, 18);
@@ -104,17 +109,25 @@ public class CustomerLoginIn extends JFrame {
         //退出按钮
     }
     private void btnLoginInActionPerformed(ActionEvent evt) {
-        this.dispose();
-        EventQueue.invokeLater(() -> {
-            CustomerOrder customerOrder = new CustomerOrder();
-            customerOrder.addWindowListener(new WindowAdapter() {
-                @Override
-                public void windowClosing(WindowEvent e) {
-                    System.exit(0);
-                }
-            });
-            customerOrder.setVisible(true);
-        });
+        List<String> userInfo = new ArrayList<String>();
+        CheckCusLog checkCusLog=new CheckCusLog();
+        userInfo=checkCusLog.isAccount(LoyaltyNum.getText());
+        if (userInfo!=null){
+            if (checkCusLog.isPwd(new String(pwd.getPassword()), userInfo)) {
+                Customer customer=new Customer(userInfo);
+                this.dispose();
+                EventQueue.invokeLater(() -> {
+                    CustomerOrder customerOrder = new CustomerOrder(customer);
+                    customerOrder.addWindowListener(new WindowAdapter() {
+                        @Override
+                        public void windowClosing(WindowEvent e) {
+                            System.exit(0);
+                        }
+                    });
+                    customerOrder.setVisible(true);
+                });
+            }
+        }
     }
     private void btnBackActionPerformed(ActionEvent evt) {
         this.dispose();
@@ -132,7 +145,7 @@ public class CustomerLoginIn extends JFrame {
     private void btnSkipActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {
-            CustomerOrder customerOrder = new CustomerOrder();
+            CustomerOrder customerOrder = new CustomerOrder(new Customer());
             customerOrder.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {

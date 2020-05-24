@@ -2,34 +2,36 @@ package Data;
 
 import java.util.*;
 
+//membershipNumber,password,firstName,surname,email,phoneNumber,isAdmin,virtualStamps
+
 public class User {
-    int menbershipNumber;
+    int membershipNumber;
     String password;
     String firstName;
-    String surname;
+    String surName;
     String email;
-    String phoneNumnber;
+    String phoneNumber;
     boolean isAdmin;
     int virtualStamps;
 
     public User (String s) {
         String[] as = s.split(",");
-        this.setMenbershipNumber(Integer.parseInt(as[0]));
+        this.setMembershipNumber(Integer.parseInt(as[0]));
         this.setPassword(as[1]);
         this.setFirstName(as[2]);
-        this.setSurname(as[3]);
+        this.setSurName(as[3]);
         this.setEmail(as[4]);
         this.setPhoneNumber(as[5]);
         this.setIsAdmin(as[6].equals("true"));
         this.setVirtualStamps(Integer.parseInt(as[7]));
     }
 
-    public static boolean findUserNum (String lNum) {//检测是否存在相同lNum,若存在返回true,反之false
+    public boolean findUserNum (String lNum) {//检测是否存在相同lNum,若存在返回true,反之false
         List<User> userList = UserList.getUserList();//全user list
         if(userList != null && !userList.isEmpty()) {//遍历list
             for(int i = 0; i < userList.size()+1; i++) {
                 if(i != 0) {
-                    if(lNum.equals(Integer.toString(userList.get(i-1).getMenbershipNumber()))) {
+                    if(lNum.equals(Integer.toString(userList.get(i-1).getMembershipNumber()))) {
                         return true;
                     }
                 }
@@ -38,17 +40,34 @@ public class User {
         return false;
     }
 
-    public static List<String> findUser (String lNum){//获得该lNum所有的信息，储存在一个String的ArrayList中，若无对应lNum则返回null
+    public boolean findUserName (String firstName,String surName) {//检测是否存在相同Name,若存在返回true,反之false
+        List<User> userList = UserList.getUserList();//全user list
+        if(userList != null && !userList.isEmpty()) {//遍历list
+            for(int i = 0; i < userList.size()+1; i++) {
+                if(i != 0) {
+                    if(firstName.equals(userList.get(i-1).getFirstName())) {
+                        if(surName.equals(userList.get(i-1).getSurName())) {
+                            return true;
+                        }
+
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public List<String> findUser (String lNum){//获得该lNum所有的信息，储存在一个String的ArrayList中，若无对应lNum则返回null
         List<String> user = new ArrayList<String>();
         List<User> userList = UserList.getUserList();//全user list
         if(userList != null && !userList.isEmpty()) {//遍历list
             for(int i = 0; i < userList.size()+1; i++) {
                 if(i != 0) {
-                    if(lNum.equals(Integer.toString(userList.get(i-1).getMenbershipNumber()))) {
-                        user.add(Integer.toString(userList.get(i-1).getMenbershipNumber()));
+                    if(lNum.equals(Integer.toString(userList.get(i-1).getMembershipNumber()))) {
+                        user.add(Integer.toString(userList.get(i-1).getMembershipNumber()));
                         user.add(userList.get(i-1).getPassword());
                         user.add(userList.get(i-1).getFirstName());
-                        user.add(userList.get(i-1).getSurname());
+                        user.add(userList.get(i-1).getSurName());
                         user.add(userList.get(i-1).getEmail());
                         user.add(userList.get(i-1).getPhoneNumber());
                         if(userList.get(i-1).getIsAdmin()) {
@@ -66,8 +85,38 @@ public class User {
         return null;
     }
 
-    public void setMenbershipNumber (int m) {
-        this.menbershipNumber = m;
+    public List<String> findUserByName (String firstName,String surName){//获得该Name所有的信息，储存在一个String的ArrayList中，若无对应lNum则返回null
+        List<String> user = new ArrayList<String>();
+        List<User> userList = UserList.getUserList();//全user list
+        if(userList != null && !userList.isEmpty()) {//遍历list
+            for(int i = 0; i < userList.size()+1; i++) {
+                if(i != 0) {
+                    if(firstName.equals(userList.get(i-1).getFirstName())){
+                        if(surName.equals(userList.get(i-1).getSurName())) {
+                            user.add(Integer.toString(userList.get(i-1).getMembershipNumber()));
+                            user.add(userList.get(i-1).getPassword());
+                            user.add(userList.get(i-1).getFirstName());
+                            user.add(userList.get(i-1).getSurName());
+                            user.add(userList.get(i-1).getEmail());
+                            user.add(userList.get(i-1).getPhoneNumber());
+                            if(userList.get(i-1).getIsAdmin()) {
+                                user.add("true");
+                            }
+                            else {
+                                user.add("false");
+                            }
+                            user.add(Integer.toString(userList.get(i-1).getVirtualStamps()));
+                            return user;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public void setMembershipNumber (int m) {
+        this.membershipNumber = m;
     }
 
     public void setPassword (String p) {
@@ -78,8 +127,8 @@ public class User {
         this.firstName = fN;
     }
 
-    public void setSurname (String s) {
-        this.surname = s;
+    public void setSurName (String sN) {
+        this.surName = sN;
     }
 
     public void setEmail (String e) {
@@ -87,7 +136,7 @@ public class User {
     }
 
     public void setPhoneNumber (String p) {
-        this.phoneNumnber = p;
+        this.phoneNumber = p;
     }
 
     public void setIsAdmin (boolean i) {
@@ -98,8 +147,8 @@ public class User {
         this.virtualStamps = v;
     }
 
-    public int getMenbershipNumber () {
-        return this.menbershipNumber;
+    public int getMembershipNumber () {
+        return this.membershipNumber;
     }
 
     public String getPassword () {
@@ -110,8 +159,8 @@ public class User {
         return this.firstName;
     }
 
-    public String getSurname () {
-        return this.surname;
+    public String getSurName () {
+        return this.surName;
     }
 
     public String getEmail () {
@@ -119,7 +168,7 @@ public class User {
     }
 
     public String getPhoneNumber () {
-        return phoneNumnber;
+        return phoneNumber;
     }
 
 
@@ -130,4 +179,6 @@ public class User {
     public int getVirtualStamps () {
         return this.virtualStamps;
     }
+
+
 }

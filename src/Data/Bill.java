@@ -1,9 +1,9 @@
 package Data;
 
 public class Bill {
-    //menbershipNumber,password,firstName,surname,email,phoneNumber,isAdmin,virtualStamps
+    //membershipNumber,password,firstName,surname,email,phoneNumber,isAdmin,virtualStamps
     int BillNumber;
-    int MenbershipNumber;
+    int MembershipNumber;
     int Data;
     double Price;
     int Payment;
@@ -24,7 +24,7 @@ public class Bill {
     }
 
     public void setMenbershipNumber (int m) {
-        this.MenbershipNumber = m;
+        this.MembershipNumber = m;
     }
 
     public void setData (int v) {
@@ -48,7 +48,7 @@ public class Bill {
     }
 
     public int getMenbershipNumber () {
-        return this.MenbershipNumber;
+        return this.MembershipNumber;
     }
 
     public int getData () {
