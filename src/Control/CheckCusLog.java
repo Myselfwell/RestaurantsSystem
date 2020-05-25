@@ -8,8 +8,9 @@ public class CheckCusLog {
     List<String> userInfo = new ArrayList <String>();//存储该用户所有信息
 
     public List<String> isAccount(String account){//检查account是否在csv中
-        if (account==null)
+        if (account==null){
             return null;
+        }
         boolean isAccount = User.findUserNum(account);
         if(isAccount){
             userInfo = User.findUser(account);//根据用户名找到的用户其他信息

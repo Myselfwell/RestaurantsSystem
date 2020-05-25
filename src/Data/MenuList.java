@@ -86,7 +86,7 @@ public class MenuList {
 
     public static List<Menu> getMenuList () {//使用方法List<Menu> menuList = MenuList.getMenuList();
 
-        List<String> dataList=MenuList.importCsv(new File("MenuList.csv"));
+        List<String> dataList=MenuList.importCsv(new File("/src/database/MenuList.csv"));
         List<Menu> menuList = new ArrayList<Menu>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据

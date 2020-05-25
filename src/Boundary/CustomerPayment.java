@@ -59,6 +59,8 @@ public class CustomerPayment extends JFrame {
      */
     public CustomerPayment(Customer cus) {
         this.cus = cus;
+        System.out.println(cus.getDishNum());
+
         setTitle("Welcome xxx!");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);

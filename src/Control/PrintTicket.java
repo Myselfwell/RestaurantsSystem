@@ -31,7 +31,7 @@ public class PrintTicket
         SimpleDateFormat datePtrn = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         SimpleDateFormat orderDatePtrn = new SimpleDateFormat("yyyyMMddHHmmss");
         String time = datePtrn.format(new Date());
-        orderNum = orderDatePtrn.format(new Date()) + loyaltyNum;
+        orderNum = orderDatePtrn.format(new Date()) + customer.getLoyaltyNum();
 
         prt = new PrintBill();
         prt.creatTxt(orderNum);

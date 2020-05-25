@@ -91,10 +91,11 @@ public class UserList {
 
     public static List<User> getUserList () {//使用方法List<User> userList = UserList.getUserList();
 
-        List<String> dataList=UserList.importCsv(new File("UserList.csv"));
+        List<String> dataList=UserList.importCsv(new File("src/Database/UserList.csv"));
         List<User> userList = new ArrayList<User>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
+            System.out.println("1");
             for(int i=0; i<dataList.size();i++ ){
                 if(i!=0){
                     String s=dataList.get(i);

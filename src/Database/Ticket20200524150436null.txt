@@ -1,8 +1,0 @@
-Welcome to the restaurant nullnull
-Order Number : 20200524150436null
-Date : 2020-05-24 15:04:36
-Loyalty Number : null
-Your have been order :
-Total Price : 0.0
-Number of Virtual Stamp : 1
-Take out   By Cash
