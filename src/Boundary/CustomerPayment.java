@@ -87,8 +87,10 @@ public class CustomerPayment extends JFrame {
         int dishNum = cus.getDishNum();
         for(int i = 1; i <= dishNum; i++){
             Dish dish = cus.getOrder(i);
-            display = dish.getNoodles() + "\n";
-            price = price + dish.calculationPrice();
+            if(dish.isIsvalid()) {
+                display = dish.getNoodles() + "\n";
+                price = price + dish.calculationPrice();
+            }
         }
 
         JLabel lbl_Info = new JLabel(display + "\n" + "Total price is $" + price );

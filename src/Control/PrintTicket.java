@@ -62,9 +62,11 @@ public class PrintTicket
 
         for(int i = 1; i <= dishNum; i++){
             Dish dish = customer.getOrder(i);
-            price = price + dish.calculationPrice();
-            prt.writeTxt(dish.getNoodles() + "     " + dish.calculationPrice());
-            customer.incVStamp();
+            if(dish.isIsvalid()){
+                price = price + dish.calculationPrice();
+                prt.writeTxt(dish.getNoodles() + "     " + dish.calculationPrice());
+                customer.incVStamp();
+            }
         }
 
         customer.update();
