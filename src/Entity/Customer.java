@@ -117,6 +117,7 @@ public class Customer
 
     // Add one dish instance
     public void setOrder(Dish dish){
+        dishNum++;
         order.add(dish);
     }
 
