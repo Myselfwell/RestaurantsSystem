@@ -85,7 +85,7 @@ public class BillList {
     }
 
     public static List<Bill> getBillList () {
-        List<String> dataList=BillList.importCsv(new File("BillList.csv"));
+        List<String> dataList=BillList.importCsv(new File("src/Database/BillList.csv"));
         List<Bill> billList = new ArrayList<Bill>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
@@ -105,7 +105,7 @@ public class BillList {
         if(billList != null && !billList.isEmpty()) {
             for(int i = 0; i < billList.size()+1; i++) {
                 if(i == 0) {
-                    dataList.add("BillNumber,MenbershipNumber,Data,Price,Payment,TakeOut");
+                    dataList.add("BillNumber,MembershipNumber,Data,Price,Payment,TakeOut");
                 }
                 else {
                     String s = Integer.toString(billList.get(i-1).getBillNumber());s += ",";
@@ -137,7 +137,7 @@ public class BillList {
 
 
     public static void importCsv()  {
-        List<String> dataList=UserList.importCsv(new File("BillList.csv"));
+        List<String> dataList=UserList.importCsv(new File("src/Database/BillList.csv"));
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
             for(int i=0; i<dataList.size();i++ ){
@@ -159,9 +159,9 @@ public class BillList {
 
     public static void exportCsv() {
         List<String> dataList=new ArrayList<String>();
-        dataList.add("BillNumber,MenbershipNumber,Data,Price,Payment,TakeOut");
+        dataList.add("BillNumber,MembershipNumber,Data,Price,Payment,TakeOut");
         dataList.add("11111111,11111111,20200331,9.9,1,true");
-        boolean isSuccess=BillList.exportCsv(new File("BillList.csv"), dataList);
+        boolean isSuccess=BillList.exportCsv(new File("src/Database/BillList.csv"), dataList);
         System.out.println(isSuccess);
     }
 

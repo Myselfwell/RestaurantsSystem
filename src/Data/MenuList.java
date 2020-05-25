@@ -86,7 +86,7 @@ public class MenuList {
 
     public static List<Menu> getMenuList () {//使用方法List<Menu> menuList = MenuList.getMenuList();
 
-        List<String> dataList=MenuList.importCsv(new File("/src/database/MenuList.csv"));
+        List<String> dataList=MenuList.importCsv(new File("src/database/MenuList.csv"));
         List<Menu> menuList = new ArrayList<Menu>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
@@ -113,7 +113,7 @@ public class MenuList {
                     String s = menuList.get(i-1).getType();s += ",";
                     s += menuList.get(i-1).getName();s += ",";
                     s += Integer.toString(menuList.get(i-1).getLevel());s += ",";
-                    s += Integer.toString(menuList.get(i-1).getPrice());s += ",";
+                    s += Double.toString(menuList.get(i-1).getPrice());s += ",";
                     s += Integer.toString(menuList.get(i-1).getSales());s += ",";
                     s += Integer.toString(menuList.get(i-1).getInventory());
                     dataList.add(s);
@@ -124,7 +124,7 @@ public class MenuList {
         return dataList;
     }
 
-    public static int getAddonePrice (String name) {//用法 getAddonePrice("Nori")
+    public static double getAddonePrice (String name) {//用法 getAddonePrice("Nori")
         String type = "AddOne";
         List<Menu> menuList = MenuList.getMenuList();
         if(menuList != null && !menuList.isEmpty()) {
@@ -138,7 +138,6 @@ public class MenuList {
         }
         return -1;
     }
-
     public static List<Menu> checkInventory (List<Menu> menuList) {//使用方法List<Menu> menuList = new ArrayList<Menu>(MenuList.checkInventory(mList));
         if(menuList != null && !menuList.isEmpty()) {
             for(int i = 0; i < menuList.size(); i++) {
@@ -191,7 +190,7 @@ public class MenuList {
         dataList.add("AddOne,Egg,1,1,0,100");
         dataList.add("AddOne,Bamboo,1,1,0,100");
         dataList.add("AddOne,Chashu,1,2,0,100");
-        boolean isSuccess=UserList.exportCsv(new File("MenuList.csv"), dataList);
+        boolean isSuccess=UserList.exportCsv(new File("src/Database/MenuList.csv"), dataList);
         System.out.println(isSuccess);
     }
 

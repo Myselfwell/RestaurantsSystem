@@ -4,7 +4,7 @@ public class Menu {
     String type;
     String name;
     int level;
-    int price;
+    double price;
     int sales;
     int inventory;
 
@@ -32,7 +32,7 @@ public class Menu {
         this.level = l;
     }
 
-    public void setPrice (int p) {
+    public void setPrice (double p) {
         this.price = p;
     }
 
@@ -56,7 +56,7 @@ public class Menu {
         return this.level;
     }
 
-    public int getPrice () {
+    public double getPrice () {
         return this.price;
     }
 

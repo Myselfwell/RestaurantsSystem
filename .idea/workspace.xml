@@ -21,11 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/CheckCusLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckCusLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/CheckRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/BillList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/BillList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/MenuList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/MenuList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/UserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/BillList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/BillList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/MenuList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/MenuList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/UserList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/UserList.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.CustomerLoginIn">
+  <component name="RunManager" selected="Application.CustomerOrder">
     <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.Begin" />
       <module name="RestaurantsSystem" />
@@ -153,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CustomerOrder" />
         <item itemvalue="Application.CustomerLoginIn" />
         <item itemvalue="Application.StaffModifyMenu" />
         <item itemvalue="Application.Begin" />
         <item itemvalue="Application.CustomerPayment" />
-        <item itemvalue="Application.CustomerOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -354,12 +356,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
