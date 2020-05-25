@@ -4,8 +4,6 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import Boundary.CustomerRegister;
 import Data.User;
 import Data.UserList;
 import java.util.regex.Matcher;

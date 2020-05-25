@@ -20,19 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Boundary/ShowLoyaltyNum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/checkCusLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckCusLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/checkRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/BillList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/BillList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/CheckCusLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckCusLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/CheckRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/UserList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +77,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -91,7 +85,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.CustomerOrder">
+  <component name="RunManager" selected="Application.CustomerPayment">
     <configuration name="CustomerLoginIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.CustomerLoginIn" />
       <module name="RestaurantsSystem" />
@@ -159,9 +153,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CustomerPayment" />
         <item itemvalue="Application.CustomerOrder" />
         <item itemvalue="Application.CustomerLoginIn" />
-        <item itemvalue="Application.CustomerPayment" />
         <item itemvalue="Application.ShowLoyaltyNum" />
         <item itemvalue="Application.CustomerRegister" />
       </list>
@@ -359,12 +353,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -426,5 +421,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590291151688" />
+    <state x="499" y="176" key="extract.method.dialog" timestamp="1590414939149">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="176" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1590414939149" />
   </component>
 </project>

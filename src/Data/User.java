@@ -26,7 +26,7 @@ public class User {
         this.setVirtualStamps(Integer.parseInt(as[7]));
     }
 
-    public boolean findUserNum (String lNum) {//检测是否存在相同lNum,若存在返回true,反之false
+    public static boolean findUserNum (String lNum) {//检测是否存在相同lNum,若存在返回true,反之false
         List<User> userList = UserList.getUserList();//全user list
         if(userList != null && !userList.isEmpty()) {//遍历list
             for(int i = 0; i < userList.size()+1; i++) {
@@ -40,7 +40,7 @@ public class User {
         return false;
     }
 
-    public boolean findUserName (String firstName,String surName) {//检测是否存在相同Name,若存在返回true,反之false
+    public static boolean findUserName (String firstName,String surName) {//检测是否存在相同Name,若存在返回true,反之false
         List<User> userList = UserList.getUserList();//全user list
         if(userList != null && !userList.isEmpty()) {//遍历list
             for(int i = 0; i < userList.size()+1; i++) {
@@ -57,7 +57,7 @@ public class User {
         return false;
     }
 
-    public List<String> findUser (String lNum){//获得该lNum所有的信息，储存在一个String的ArrayList中，若无对应lNum则返回null
+    public static List<String> findUser (String lNum){//获得该lNum所有的信息，储存在一个String的ArrayList中，若无对应lNum则返回null
         List<String> user = new ArrayList<String>();
         List<User> userList = UserList.getUserList();//全user list
         if(userList != null && !userList.isEmpty()) {//遍历list

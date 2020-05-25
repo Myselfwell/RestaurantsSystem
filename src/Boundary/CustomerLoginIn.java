@@ -111,7 +111,10 @@ public class CustomerLoginIn extends JFrame {
     private void btnLoginInActionPerformed(ActionEvent evt) {
         List<String> userInfo = new ArrayList<String>();
         CheckCusLog checkCusLog=new CheckCusLog();
-        userInfo=checkCusLog.isAccount(LoyaltyNum.getText());
+        if (LoyaltyNum.getText()!=null&&LoyaltyNum.getText()!="")
+            userInfo=checkCusLog.isAccount(LoyaltyNum.getText());
+        else
+            userInfo=null;
         if (userInfo!=null){
             if (checkCusLog.isPwd(new String(pwd.getPassword()), userInfo)) {
                 Customer customer=new Customer(userInfo);
