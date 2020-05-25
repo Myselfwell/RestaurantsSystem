@@ -145,7 +145,8 @@ public class CustomerLoginIn extends JFrame {
     private void btnSkipActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {
-            CustomerOrder customerOrder = new CustomerOrder(new Customer());
+            Customer customer = new Customer();
+            CustomerOrder customerOrder = new CustomerOrder(customer);
             customerOrder.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {

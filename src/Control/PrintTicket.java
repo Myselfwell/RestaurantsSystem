@@ -62,12 +62,16 @@ public class PrintTicket
 
         for(int i = 1; i <= dishNum; i++){
             Dish dish = customer.getOrder(i);
-            price = price + dish.calculationPrice();
-            prt.writeTxt(dish.getNoodles() + "     " + dish.calculationPrice());
-            customer.incVStamp();
+            if(dish.isIsvalid()){
+                price = price + dish.calculationPrice();
+                prt.writeTxt(dish.getNoodles() + "     " + dish.calculationPrice());
+                customer.incVStamp();
+            }
         }
 
-        customer.update();
+        if(customer.getLoyaltyNum() != "00000000"){
+            customer.update();
+        }
 
         prt.writeTxt("Total Price : " + price);
         prt.writeTxt("Number of Virtual Stamp : " + customer.getVStamp());

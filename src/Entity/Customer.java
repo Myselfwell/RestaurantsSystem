@@ -20,8 +20,10 @@ public class Customer
 
     // Used for registration
     public Customer(){
-
-        vStamp=0;
+        this.loyaltyNum = "00000000";
+        this.firstName = "Guest";
+        this.lastName = "guest";
+        this.vStamp=0;
     }
 
     // Creat customer instance through passing the loyalty number

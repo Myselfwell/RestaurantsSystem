@@ -20,12 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Boundary/ShowLoyaltyNum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/CheckCusLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckCusLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/CheckRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/checkCusLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckCusLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/checkRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/BillList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/BillList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/UserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,18 +85,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Begin">
-    <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.Begin" />
+  <component name="RunManager" selected="Application.CustomerOrder">
+    <configuration name="CustomerLoginIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerLoginIn" />
       <module name="RestaurantsSystem" />
       <extension name="coverage">
         <pattern>
@@ -101,8 +105,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerLoginIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerLoginIn" />
+    <configuration name="CustomerOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerOrder" />
+      <module name="RestaurantsSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerPayment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerPayment" />
       <module name="RestaurantsSystem" />
       <extension name="coverage">
         <pattern>
@@ -127,13 +144,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestaurantsSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RestaurantsSystem" />
-      <module name="RestaurantsSystem" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShowLoyaltyNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.ShowLoyaltyNum" />
       <module name="RestaurantsSystem" />
@@ -149,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Begin" />
+        <item itemvalue="Application.CustomerOrder" />
         <item itemvalue="Application.CustomerLoginIn" />
+        <item itemvalue="Application.CustomerPayment" />
         <item itemvalue="Application.ShowLoyaltyNum" />
         <item itemvalue="Application.CustomerRegister" />
-        <item itemvalue="Application.RestaurantsSystem" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +201,12 @@
       <workItem from="1589810848440" duration="57000" />
       <workItem from="1589857880455" duration="150000" />
       <workItem from="1589858033714" duration="1362000" />
-      <workItem from="1590402386342" duration="6690000" />
+      <workItem from="1590303779637" duration="1291000" />
+      <workItem from="1590332783920" duration="989000" />
+      <workItem from="1590388157474" duration="185000" />
+      <workItem from="1590401434427" duration="569000" />
+      <workItem from="1590402588104" duration="71000" />
+      <workItem from="1590402692711" duration="2658000" />
     </task>
     <task id="LOCAL-00001" summary="init repo">
       <created>1585061384078</created>
@@ -333,38 +348,23 @@
       <option name="project" value="LOCAL" />
       <updated>1588935906001</updated>
     </task>
-    <task id="LOCAL-00021" summary="remove dir [out]">
-      <created>1590291101439</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1590291101439</updated>
-    </task>
-    <task id="LOCAL-00022" summary="remove dir [out]">
-      <created>1590291186802</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1590291186802</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -386,41 +386,45 @@
     <option name="LAST_COMMIT_MESSAGE" value="remove dir [out]" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590408502149">
+    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590288217276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1590408502149" />
-    <state x="364" y="5" key="CommitChangelistDialog2" timestamp="1590291200278">
+    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1590288217276" />
+    <state x="364" y="5" key="CommitChangelistDialog2" timestamp="1590291099693">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="364" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590291200278" />
-    <state width="746" height="58" key="GridCell.Tab.0.bottom" timestamp="1590402019361">
+    <state x="364" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590291099693" />
+    <state width="1358" height="241" key="GridCell.Tab.0.bottom" timestamp="1590405786886">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="746" height="58" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1590405786886" />
+    <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1590388342483" />
+    <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1590321723400" />
+    <state width="1358" height="241" key="GridCell.Tab.0.center" timestamp="1590405786886">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="746" height="58" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1590405786886" />
+    <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1590388342482" />
+    <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1590321723399" />
+    <state width="1358" height="241" key="GridCell.Tab.0.left" timestamp="1590405786885">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="746" height="58" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1590405786885" />
+    <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1590388342481" />
+    <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1590321723398" />
+    <state width="1358" height="241" key="GridCell.Tab.0.right" timestamp="1590405786886">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="746" height="58" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1590405786886" />
+    <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1590388342482" />
+    <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1590321723399" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590291151688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="58" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590402019361" />
-    <state width="746" height="58" key="GridCell.Tab.0.center" timestamp="1590402019361">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="746" height="58" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590402019361" />
-    <state width="746" height="58" key="GridCell.Tab.0.left" timestamp="1590402019360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="746" height="58" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590402019360" />
-    <state width="746" height="58" key="GridCell.Tab.0.right" timestamp="1590402019361">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="746" height="58" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590402019361" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590291211742">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590291211742" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590402389365">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590402389365" />
-    <state x="511" y="29" key="refactoring.ChangeSignatureDialog" timestamp="1590407353625">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="511" y="29" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1590407353625" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590291151688" />
   </component>
 </project>

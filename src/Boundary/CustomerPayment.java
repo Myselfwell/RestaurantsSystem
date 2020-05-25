@@ -2,6 +2,7 @@ package Boundary;
 
 import Control.PrintTicket;
 import Entity.Customer;
+import Entity.Dish;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -30,6 +31,12 @@ public class CustomerPayment extends JFrame {
     private Customer cus;
     private int method;
     private Boolean isTakeOut;
+    private String display;
+    private double price;
+    private JRadioButton rdbtn_Cash;
+    private JRadioButton rdbtn_Card;
+    private JRadioButton rdbtn_Here;
+    private JRadioButton rdbtn_Out;
 
     /**
      * Launch the application.
@@ -81,7 +88,18 @@ public class CustomerPayment extends JFrame {
         lblNewLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_C.add(lblNewLabel, BorderLayout.NORTH);
 
-        JLabel lbl_Info = new JLabel("     ");
+        int dishNum = cus.getDishNum();
+        for(int i = 1; i <= dishNum; i++){
+            Dish dish = cus.getOrder(i);
+            if(dish.isIsvalid()) {
+                display = dish.getNoodles() + "\n";
+                price = price + dish.calculationPrice();
+            }
+        }
+
+        JLabel lbl_Info = new JLabel(display + "\n" + "Total price is $" + price );
+
+
         lbl_Info.setForeground(new Color(0, 0, 0));
         lbl_Info.setBackground(Color.WHITE);
         lbl_Info.setVerticalAlignment(SwingConstants.TOP);
@@ -103,10 +121,10 @@ public class CustomerPayment extends JFrame {
         panel_select.add(panel_E);
         panel_E.setLayout(new BorderLayout(0, 0));
         //堂食or外带
-        JRadioButton rdbtn_Here = new JRadioButton("for here");
+        rdbtn_Here = new JRadioButton("for here");
         panel_E.add(rdbtn_Here, BorderLayout.NORTH);
 
-        JRadioButton rdbtn_Out = new JRadioButton("Take out");
+        rdbtn_Out = new JRadioButton("Take out");
         panel_E.add(rdbtn_Out, BorderLayout.SOUTH);
 
         ButtonGroup group1=new ButtonGroup();
@@ -118,7 +136,7 @@ public class CustomerPayment extends JFrame {
         panel_select.add(panel_W);
         panel_W.setLayout(new BorderLayout(0, 0));
         //cash or card
-        JRadioButton rdbtn_Cash = new JRadioButton("Cash");
+        rdbtn_Cash = new JRadioButton("Cash");
         panel_W.add(rdbtn_Cash, BorderLayout.SOUTH);
 
         JRadioButton rdbtn_Card = new JRadioButton("Card");
@@ -143,6 +161,15 @@ public class CustomerPayment extends JFrame {
     }
     private void btnConfirmActionPerformed(ActionEvent evt) {
         this.dispose();
+
+        if(rdbtn_Here.isSelected()){
+            this.isTakeOut = false;
+        }else this.isTakeOut = true;
+
+        if(rdbtn_Cash.isSelected()){
+            this.method = 0;
+        }else this.method = 1;
+
         PrintTicket prt = new PrintTicket(cus,0,true);
         try {
             prt.printTic();
