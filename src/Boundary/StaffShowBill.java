@@ -51,7 +51,7 @@ public class StaffShowBill extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(42, 80, 124, 23);
+		btnNewButton.setBounds(10, 45, 152, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnSendBill = new JButton("Send Bill");
@@ -59,11 +59,15 @@ public class StaffShowBill extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnSendBill.setBounds(42, 113, 124, 23);
+		btnSendBill.setBounds(10, 95, 152, 23);
 		contentPane.add(btnSendBill);
 		
 		JButton btnYearlyReport = new JButton("Yearly Report");
-		btnYearlyReport.setBounds(42, 145, 124, 23);
+		btnYearlyReport.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnYearlyReport.setBounds(10, 145, 152, 23);
 		contentPane.add(btnYearlyReport);
 		
 		JTextArea textArea = new JTextArea();
@@ -72,7 +76,7 @@ public class StaffShowBill extends JFrame {
 		
 		JButton btnNewButton_2_1 = new JButton("Back");
 		btnNewButton_2_1.addActionListener(this::btnBackActionPerformed);
-		btnNewButton_2_1.setBounds(10, 230, 59, 23);
+		btnNewButton_2_1.setBounds(10, 195, 70, 23);
 		contentPane.add(btnNewButton_2_1);
 		
 		JButton btnNewButton_2_1_1 = new JButton("Exit");
@@ -81,7 +85,7 @@ public class StaffShowBill extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnNewButton_2_1_1.setBounds(79, 230, 59, 23);
+		btnNewButton_2_1_1.setBounds(92, 195, 70, 23);
 		contentPane.add(btnNewButton_2_1_1);
 	}
 

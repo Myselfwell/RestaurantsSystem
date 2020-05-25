@@ -51,34 +51,22 @@ public class StaffModifyMenu extends JFrame {
 		JLabel lblNewLabel = new JLabel("Menu");
 		panel.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("New");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setBounds(415, 31, 158, 42);
-		contentPane.add(btnNewButton);
-		
-		JButton btnChange = new JButton("Delete");
-		btnChange.setBounds(415, 83, 158, 42);
-		contentPane.add(btnChange);
-		
 		JButton btnChangeName = new JButton("Change Name");
-		btnChangeName.setBounds(415, 135, 158, 42);
+		btnChangeName.setBounds(415, 35, 158, 42);
 		contentPane.add(btnChangeName);
 		
 		JButton btnChangePrice = new JButton("Change Price");
-		btnChangePrice.setBounds(415, 187, 158, 42);
+		btnChangePrice.setBounds(415, 110, 158, 42);
 		contentPane.add(btnChangePrice);
 		
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(this::btnBackActionPerformed);
-		btnBack.setBounds(415, 239, 158, 42);
+		btnBack.setBounds(415, 185, 158, 42);
 		contentPane.add(btnBack);
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(this::btnExitActionPerformed);
-		btnExit.setBounds(415, 291, 158, 42);
+		btnExit.setBounds(415, 260, 158, 42);
 		contentPane.add(btnExit);
 	}
 
