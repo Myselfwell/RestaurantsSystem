@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerLoginIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/CustomerPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/CheckCusLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckCusLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/CheckRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/CheckRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffShowBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffShowBill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +80,18 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.CustomerLoginIn">
     <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -354,12 +362,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
