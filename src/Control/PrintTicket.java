@@ -69,7 +69,9 @@ public class PrintTicket
             }
         }
 
-        customer.update();
+        if(customer.getLoyaltyNum() != "00000000"){
+            customer.update();
+        }
 
         prt.writeTxt("Total Price : " + price);
         prt.writeTxt("Number of Virtual Stamp : " + customer.getVStamp());
