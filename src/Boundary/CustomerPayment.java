@@ -91,15 +91,17 @@ public class CustomerPayment extends JFrame {
         panel_C.add(lblNewLabel, BorderLayout.NORTH);
 
         int dishNum = cus.getDishNum();
+        display = display + "<html>";
         for(int i = 1; i <= dishNum; i++){
             Dish dish = cus.getOrder(i);
             if(dish.isIsvalid()) {
-                display = display+dish.getNoodles() + "\n";
+                display = display + dish.getNoodles() + "<br/>";
                 price = price + dish.calculationPrice();
             }
         }
+        System.out.println(display);
 
-        JLabel lbl_Info = new JLabel(display + "\n" + "Total price is $" + price );
+        JLabel lbl_Info = new JLabel(display + "<br/>" + "Total price is $" + price + "</html>");
 
 
         lbl_Info.setForeground(new Color(0, 0, 0));
