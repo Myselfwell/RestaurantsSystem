@@ -45,7 +45,7 @@ public class StaffShowBill extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton btnNewButton = new JButton("Change Menu");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -53,7 +53,7 @@ public class StaffShowBill extends JFrame {
 		});
 		btnNewButton.setBounds(10, 45, 152, 23);
 		contentPane.add(btnNewButton);
-		
+
 		JButton btnSendBill = new JButton("Send Bill");
 		btnSendBill.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -61,7 +61,7 @@ public class StaffShowBill extends JFrame {
 		});
 		btnSendBill.setBounds(10, 95, 152, 23);
 		contentPane.add(btnSendBill);
-		
+
 		JButton btnYearlyReport = new JButton("Yearly Report");
 		btnYearlyReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -69,16 +69,16 @@ public class StaffShowBill extends JFrame {
 		});
 		btnYearlyReport.setBounds(10, 145, 152, 23);
 		contentPane.add(btnYearlyReport);
-		
+
 		JTextArea textArea = new JTextArea();
 		textArea.setBounds(198, 10, 228, 243);
 		contentPane.add(textArea);
-		
+
 		JButton btnNewButton_2_1 = new JButton("Back");
 		btnNewButton_2_1.addActionListener(this::btnBackActionPerformed);
 		btnNewButton_2_1.setBounds(10, 195, 70, 23);
 		contentPane.add(btnNewButton_2_1);
-		
+
 		JButton btnNewButton_2_1_1 = new JButton("Exit");
 		btnNewButton_2_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

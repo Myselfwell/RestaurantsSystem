@@ -31,7 +31,7 @@ public class CustomerPayment extends JFrame {
     private Customer cus;
     private int method;
     private Boolean isTakeOut;
-    private String display;
+    private String display="";
     private double price;
     private JRadioButton rdbtn_Cash;
     private JRadioButton rdbtn_Card;
@@ -94,7 +94,7 @@ public class CustomerPayment extends JFrame {
         for(int i = 1; i <= dishNum; i++){
             Dish dish = cus.getOrder(i);
             if(dish.isIsvalid()) {
-                display = dish.getNoodles() + "\n";
+                display = display+dish.getNoodles() + "\n";
                 price = price + dish.calculationPrice();
             }
         }

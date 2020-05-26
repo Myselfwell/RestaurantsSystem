@@ -170,11 +170,11 @@ public class UserList {
     //写入全部用户信息包括编号，密码，姓名，邮箱，电话，是否为管理员，以及持有多少Stamps
     public static void exportCsv() {
         List<String> dataList=new ArrayList<String>();
-        dataList.add("membershipNumber,password,firstName,surName,email,phoneNumber,isAdmin,virtualStamps");
+        dataList.add("membershipNumber,password,firstName,surnName,email,phoneNumber,isAdmin,virtualStamps");
         dataList.add("12345678,123456,San,Zhang,110@qq.com,12345678910,true,0");
         dataList.add("87654321,654321,Si,Li,120@qq.com,01987654321,false,5");
         dataList.add("12365478,111111,Wu,Wang,119@qq.com,11111111111,false,9");
-        boolean isSuccess=UserList.exportCsv(new File("src/Database/UserList.csv"), dataList);
+        boolean isSuccess=UserList.exportCsv(new File("UserList.csv"), dataList);
         System.out.println(isSuccess);
     }
 

@@ -43,27 +43,27 @@ public class StaffModifyMenu extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 10, 354, 378);
 		contentPane.add(panel);
-		
+
 		JLabel lblNewLabel = new JLabel("Menu");
 		panel.add(lblNewLabel);
-		
+
 		JButton btnChangeName = new JButton("Change Name");
 		btnChangeName.setBounds(415, 35, 158, 42);
 		contentPane.add(btnChangeName);
-		
+
 		JButton btnChangePrice = new JButton("Change Price");
 		btnChangePrice.setBounds(415, 110, 158, 42);
 		contentPane.add(btnChangePrice);
-		
+
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(this::btnBackActionPerformed);
 		btnBack.setBounds(415, 185, 158, 42);
 		contentPane.add(btnBack);
-		
+
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(this::btnExitActionPerformed);
 		btnExit.setBounds(415, 260, 158, 42);
