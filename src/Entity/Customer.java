@@ -131,18 +131,20 @@ public class Customer
         List<User> userList = UserList.getUserList();
 
         if(userList != null && !userList.isEmpty()) {
+            System.out.println("yes");
             for(int i = 0; i < userList.size(); i++) {
-                if(Integer.parseInt(this.loyaltyNum) == userList.get(i).getMembershipNumber())
+                if(Integer.parseInt(this.loyaltyNum) == userList.get(i).getMembershipNumber()) {
                     userList.get(i).setPassword(this.password);
-                userList.get(i).setFirstName(this.firstName);
-                userList.get(i).setSurName(this.lastName);
-                userList.get(i).setEmail(this.emailAdr);
-                userList.get(i).setPhoneNumber(this.phoneNum);
-                userList.get(i).setVirtualStamps(this.vStamp);
+                    userList.get(i).setFirstName(this.firstName);
+                    userList.get(i).setSurName(this.lastName);
+                    userList.get(i).setEmail(this.emailAdr);
+                    userList.get(i).setPhoneNumber(this.phoneNum);
+                    userList.get(i).setVirtualStamps(this.vStamp);
+                }
             }
         }
 
-        boolean isSuccess=UserList.exportCsv(new File("UserList.csv"), UserList.setUserList(userList));
+        boolean isSuccess=UserList.exportCsv(new File("src/Database/UserList.csv"), UserList.setUserList(userList));
 
         if(isSuccess){
             System.out.println("Logs:Success to write UserList.");

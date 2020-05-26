@@ -152,6 +152,7 @@ public class CustomerRegister extends JFrame {
             s += pNum.getText();s += ",";//phone
             s += "false,";//isAdmin
             s += Integer.toString(0);		//Vs
+            System.out.println(s);
             checkRegister.saveData(s);
             this.dispose();
             EventQueue.invokeLater(() -> {

@@ -116,10 +116,11 @@ public class Dish {
         this.exChashu = exChashu;
     }
     public double calculationPrice () {
+
         double allPrice = 9.9;
         List<Menu> menuList = MenuList.getMenuList();
         if(menuList != null && !menuList.isEmpty()) {
-            for(int i = 0; i < menuList.size()+1; i++) {
+            for(int i = 0; i < menuList.size(); i++) {
                 if(menuList.get(i).getType().equals("AddOne")) {
                     if(menuList.get(i).getName().equals("Nori")){
                         allPrice += this.exNori * menuList.get(i).getPrice();

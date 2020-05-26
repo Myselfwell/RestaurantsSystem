@@ -86,7 +86,7 @@ public class MenuList {
 
     public static List<Menu> getMenuList () {//使用方法List<Menu> menuList = MenuList.getMenuList();
 
-        List<String> dataList=MenuList.importCsv(new File("/src/database/MenuList.csv"));
+        List<String> dataList=MenuList.importCsv(new File("src/Database/MenuList.csv"));
         List<Menu> menuList = new ArrayList<Menu>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
@@ -160,39 +160,10 @@ public class MenuList {
     }
 
     public static void main(String[] args){
+        List<Menu> menuList = MenuList.getMenuList();
+        boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(menuList));
 
 
-    }
-
-    public static void exportCsv() {
-        List<String> dataList=new ArrayList<String>();
-        dataList.add("Type,Name,Leave,Price,Sales,Inventory");
-        dataList.add("Soup,Tonkotsu,1,0,0,100");
-        dataList.add("Soup,Shoyu,1,0,0,100");
-        dataList.add("Soup,Shio,1,0,0,100");
-        dataList.add("Noodles,Soft,1,0,0,100");
-        dataList.add("Noodles,Medium,1,0,0,100");
-        dataList.add("Noodles,Firm,1,0,0,100");
-        dataList.add("Onion,No,1,0,0,-1");
-        dataList.add("Onion,Onion,1,0,0,100");
-        dataList.add("Onion,Onion,2,0,0,50");
-        dataList.add("Nori,Nori,1,0,0,100");
-        dataList.add("Nori,No,1,0,0,-1");
-        dataList.add("Chashu,Chasu,1,0,0,100");
-        dataList.add("Chashu,No,1,0,0,-1");
-        dataList.add("Egg,Egg,1,0,0,100");
-        dataList.add("Egg,No,1,0,0,-1");
-        dataList.add("Spiciness,Spiciness,1,0,0,-1");
-        dataList.add("Spiciness,Spiciness,2,0,0,-1");
-        dataList.add("Spiciness,Spiciness,3,0,0,-1");
-        dataList.add("Spiciness,Spiciness,4,0,0,-1");
-        dataList.add("Spiciness,Spiciness,5,0,0,-1");
-        dataList.add("AddOne,Nori,1,1,0,100");
-        dataList.add("AddOne,Egg,1,1,0,100");
-        dataList.add("AddOne,Bamboo,1,1,0,100");
-        dataList.add("AddOne,Chashu,1,2,0,100");
-        boolean isSuccess=UserList.exportCsv(new File("MenuList.csv"), dataList);
-        System.out.println(isSuccess);
     }
 
 }

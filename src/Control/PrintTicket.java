@@ -50,7 +50,6 @@ public class PrintTicket
         prt.writeTxt("Your have been order :");
 
         if(vStamp < 10){
-            customer.incVStamp();
             customer.update();
         }
         else{
