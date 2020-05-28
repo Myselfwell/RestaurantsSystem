@@ -82,8 +82,8 @@ public class StaffModifyMenu extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("name");
-		lblNewLabel_1.setBounds(67, 0, 26, 29);
+		JLabel lblNewLabel_1 = new JLabel("Name");
+		lblNewLabel_1.setBounds(67, 0, 130, 29);
 		panel_1.add(lblNewLabel_1);
 		
 		textField = new JTextField();
