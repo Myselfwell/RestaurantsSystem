@@ -21,6 +21,8 @@ public class StaffModifyMenu extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private String name;
+	private String price;
 
 	/**
 	 * Launch the application.
@@ -121,6 +123,7 @@ public class StaffModifyMenu extends JFrame {
 	}
 
 	private void btnChangePricePerformed(ActionEvent actionEvent){
-
+		name = textField.getText();
+		price = textField_1.getText();
 	}
 }
