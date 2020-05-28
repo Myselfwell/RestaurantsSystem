@@ -17,6 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
+import javax.swing.JList;
+import javax.swing.JTable;
+import java.awt.Font;
 
 public class StaffModifyMenu extends JFrame {
 
@@ -25,6 +28,8 @@ public class StaffModifyMenu extends JFrame {
 	private JTextField textField_1;
 	private String name;
 	private String price;
+	private JTextField txtDish;
+	private JTextField txtPrice;
 
 	/**
 	 * Launch the application.
@@ -55,12 +60,34 @@ public class StaffModifyMenu extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 10, 354, 378);
+		panel.setBounds(0, 10, 354, 378);
 		contentPane.add(panel);
+		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Menu");
+		lblNewLabel.setFont(new Font("Trajan Pro", Font.PLAIN, 20));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(124, 10, 111, 38);
 		panel.add(lblNewLabel);
 		
+		txtDish = new JTextField();
+		txtDish.setFont(new Font("Trajan Pro", Font.PLAIN, 14));
+		txtDish.setHorizontalAlignment(SwingConstants.CENTER);
+		txtDish.setText("Dish");
+		txtDish.setBounds(10, 50, 213, 38);
+		panel.add(txtDish);
+		txtDish.setColumns(10);
+		txtDish.setEditable(false);
+
+		txtPrice = new JTextField();
+		txtPrice.setFont(new Font("Trajan Pro", Font.PLAIN, 14));
+		txtPrice.setText("Price");
+		txtPrice.setHorizontalAlignment(SwingConstants.CENTER);
+		txtPrice.setColumns(10);
+		txtPrice.setBounds(233, 50, 111, 38);
+		panel.add(txtPrice);
+		txtPrice.setEditable(false);
+
 		JButton btnChangePrice = new JButton("Change Price");
 		btnChangePrice.setBounds(415, 193, 158, 42);
 		contentPane.add(btnChangePrice);
@@ -78,32 +105,43 @@ public class StaffModifyMenu extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setToolTipText("");
-		panel_1.setBounds(415, 21, 158, 58);
+		panel_1.setBounds(415, 10, 158, 81);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("name");
-		lblNewLabel_1.setBounds(67, 0, 26, 29);
+		lblNewLabel_1.setBounds(64, 10, 121, 29);
 		panel_1.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(10, 27, 138, 21);
+		textField.setBounds(10, 31, 138, 40);
 		panel_1.add(textField);
 		textField.setColumns(10);
 		
 		JPanel panel_1_1 = new JPanel();
-		panel_1_1.setBounds(415, 89, 158, 58);
+		panel_1_1.setBounds(415, 101, 158, 82);
 		contentPane.add(panel_1_1);
 		panel_1_1.setLayout(null);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("New Price");
-		lblNewLabel_1_1.setBounds(57, 10, 58, 15);
+		lblNewLabel_1_1.setBounds(50, 11, 134, 15);
 		panel_1_1.add(lblNewLabel_1_1);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(14, 27, 134, 21);
+		textField_1.setBounds(14, 36, 134, 36);
 		textField_1.setColumns(10);
 		panel_1_1.add(textField_1);
+
+		/**
+		 * to be finished
+		 * Read (Dish, Price) from data base
+		 * Then, new a JtextField to display this (Dish, Price)
+		 * And, be careful for the allocation of the textField.
+		 * when you new a New JtextField,
+		 * it should under the last JtextField
+		 * For expamle, the Bounds of the last JtextField is (14, 36, 134, 36)
+		 * the next JtextField should at the position maybe (14, 80, 134,36)
+		 */
 	}
 
 	private void btnBackActionPerformed(ActionEvent actionEvent) {
@@ -131,5 +169,18 @@ public class StaffModifyMenu extends JFrame {
 			System.out.println("No such Dish");
 		}
 		else Menu.changeMenuPrice(name,Integer.parseInt(price));
+
+		this.dispose();
+		EventQueue.invokeLater(()->{
+			StaffModifyMenu staffModifyMenu = new StaffModifyMenu();
+			staffModifyMenu.addWindowListener(new WindowAdapter() {
+				@Override
+				public void windowClosing(WindowEvent e) {
+					System.exit(0);
+				}
+			});
+			staffModifyMenu.setVisible(true);
+		});
+
 	}
 }
