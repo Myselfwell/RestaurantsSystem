@@ -98,7 +98,7 @@ public class CustomerRegister extends JFrame {
         //确认密码标签和文本区
         remind = new JLabel("");
         remind.setForeground(Color.RED);
-        remind.setBounds(71, 159, 289, 18);
+        remind.setBounds(71, 185, 350, 18);
         pan_C.add(remind);
         //提示标签，用于注册条件不符合时进行提醒
         JButton btnSubmit = new JButton("Submit");
