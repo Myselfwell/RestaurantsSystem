@@ -1,5 +1,8 @@
 package Data;
 
+import java.io.File;
+import java.util.List;
+
 public class Menu {
     String type;
     String name;
@@ -68,7 +71,32 @@ public class Menu {
         return this.inventory;
     }
 
+    public static boolean findMenuName(String name) {//检测是否存在相同Name,若存在返回true,反之false
+        List<Menu> menuList = MenuList.getMenuList();
+        if(menuList != null && !menuList.isEmpty()) {//遍历list
+            for(int i = 0; i < menuList.size()+1; i++) {
+                if(i != 0) {
+                    if(name.equals(menuList.get(i-1).getName())) {
+                            return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
-
+    public static void changeMenuPrice(String name, int price) {//检测是否存在相同Name,若存在返回true,反之false
+        List<Menu> menuList = MenuList.getMenuList();
+        if(menuList != null && !menuList.isEmpty()) {//遍历list
+            for(int i = 0; i < menuList.size()+1; i++) {
+                if(i != 0) {
+                    if(name.equals(menuList.get(i-1).getName())) {
+                        menuList.get(i-1).setPrice(price);
+                    }
+                }
+            }
+        }
+        MenuList.exportCsv(new File("src/Database/MenuList.csv"), MenuList.setMenuList(menuList));
+    }
 
 }

@@ -1,5 +1,7 @@
 package Boundary;
 
+import Data.Menu;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -21,6 +23,8 @@ public class StaffModifyMenu extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private String name;
+	private String price;
 
 	/**
 	 * Launch the application.
@@ -121,6 +125,11 @@ public class StaffModifyMenu extends JFrame {
 	}
 
 	private void btnChangePricePerformed(ActionEvent actionEvent){
-
+		name = textField.getText();
+		price = textField_1.getText();
+		if (!Menu.findMenuName(name)){
+			System.out.println("No such Dish");
+		}
+		else Menu.changeMenuPrice(name,Integer.parseInt(price));
 	}
 }

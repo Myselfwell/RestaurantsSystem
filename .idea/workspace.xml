@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffLoginIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffLoginIn.java" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,19 +78,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.StaffLoginIn">
+  <component name="RunManager" selected="Application.Begin">
     <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.Begin" />
       <module name="RestaurantsSystem" />
@@ -121,8 +105,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerPayment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerPayment" />
+    <configuration name="CustomerOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerOrder" />
       <module name="RestaurantsSystem" />
       <extension name="coverage">
         <pattern>
@@ -134,8 +118,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StaffLoginIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Boundary.StaffLoginIn" />
+    <configuration name="CustomerPayment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Boundary.CustomerPayment" />
       <module name="RestaurantsSystem" />
       <extension name="coverage">
         <pattern>
@@ -162,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StaffLoginIn" />
-        <item itemvalue="Application.StaffModifyMenu" />
-        <item itemvalue="Application.CustomerLoginIn" />
         <item itemvalue="Application.Begin" />
+        <item itemvalue="Application.CustomerLoginIn" />
+        <item itemvalue="Application.StaffModifyMenu" />
         <item itemvalue="Application.CustomerPayment" />
+        <item itemvalue="Application.CustomerOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -212,6 +196,9 @@
       <workItem from="1590402692711" duration="2658000" />
       <workItem from="1590415740912" duration="2974000" />
       <workItem from="1590637894314" duration="641000" />
+      <workItem from="1590640129346" duration="877000" />
+      <workItem from="1590641223622" duration="68000" />
+      <workItem from="1590642277528" duration="333000" />
     </task>
     <task id="LOCAL-00001" summary="init repo">
       <created>1585061384078</created>
@@ -381,31 +368,23 @@
       <option name="project" value="LOCAL" />
       <updated>1590639153015</updated>
     </task>
-    <task id="LOCAL-00025" summary="add method [isStaff]">
-      <created>1590640127028</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1590640127028</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -428,8 +407,7 @@
     <MESSAGE value="redesign the btn size" />
     <MESSAGE value="delete [btn change name], add 2 textfield" />
     <MESSAGE value="please do not commit [dir out/production]" />
-    <MESSAGE value="add method [isStaff]" />
-    <option name="LAST_COMMIT_MESSAGE" value="add method [isStaff]" />
+    <option name="LAST_COMMIT_MESSAGE" value="please do not commit [dir out/production]" />
   </component>
   <component name="WindowStateProjectService">
     <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590288217276">
@@ -440,31 +418,35 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="364" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590291099693" />
-    <state width="1358" height="241" key="GridCell.Tab.0.bottom" timestamp="1590418732990">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1358" height="247" key="GridCell.Tab.0.bottom" timestamp="1590642611002">
+      <screen x="0" y="23" width="1680" height="947" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="247" key="GridCell.Tab.0.bottom/0.23.1680.947@0.23.1680.947" timestamp="1590642611002" />
     <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1590418732990" />
     <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1590416379085" />
     <state width="1358" height="241" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1590321723400" />
-    <state width="1358" height="241" key="GridCell.Tab.0.center" timestamp="1590418732990">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1358" height="247" key="GridCell.Tab.0.center" timestamp="1590642611002">
+      <screen x="0" y="23" width="1680" height="947" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="247" key="GridCell.Tab.0.center/0.23.1680.947@0.23.1680.947" timestamp="1590642611002" />
     <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1590418732990" />
     <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1590416379085" />
     <state width="1358" height="241" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1590321723399" />
-    <state width="1358" height="241" key="GridCell.Tab.0.left" timestamp="1590418732989">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1358" height="247" key="GridCell.Tab.0.left" timestamp="1590642611002">
+      <screen x="0" y="23" width="1680" height="947" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="247" key="GridCell.Tab.0.left/0.23.1680.947@0.23.1680.947" timestamp="1590642611002" />
     <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1590418732989" />
     <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1590416379084" />
     <state width="1358" height="241" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1590321723398" />
-    <state width="1358" height="241" key="GridCell.Tab.0.right" timestamp="1590418732990">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1358" height="247" key="GridCell.Tab.0.right" timestamp="1590642611002">
+      <screen x="0" y="23" width="1680" height="947" />
     </state>
     <state width="746" height="58" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590245919623" />
+    <state width="1358" height="247" key="GridCell.Tab.0.right/0.23.1680.947@0.23.1680.947" timestamp="1590642611002" />
     <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1590418732990" />
     <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1590416379085" />
     <state width="1358" height="241" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1590321723399" />
