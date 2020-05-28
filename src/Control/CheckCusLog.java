@@ -26,6 +26,14 @@ public class CheckCusLog {
             return false;
     }
 
+    public boolean isStaff(List<String> userInfo){
+        if(userInfo.get(6).equals("true")){
+            return false;
+        }
+        else
+            return true;
+    }
+
     public List<String> returnUserInfo(){
 
         return userInfo;
