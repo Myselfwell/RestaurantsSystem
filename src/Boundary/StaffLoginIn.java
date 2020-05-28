@@ -1,21 +1,15 @@
 package Boundary;
 
-import java.awt.EventQueue;
+import Control.CheckCusLog;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.SystemColor;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JTextArea;
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import javax.swing.JPasswordField;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StaffLoginIn extends JFrame {
 
@@ -63,11 +57,11 @@ public class StaffLoginIn extends JFrame {
 		contentPane.add(UserName);
 		UserName.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Confirm");
-		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton.addActionListener(this::btnNewButtonActionPerformed);
-		btnNewButton.setBounds(171, 220, 100, 33);
-		contentPane.add(btnNewButton);
+		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnConfirm.addActionListener(this::btnConfirmActionPerformed);
+		btnConfirm.setBounds(171, 220, 100, 33);
+		contentPane.add(btnConfirm);
 		
 		JTextArea txtrUserName = new JTextArea();
 		txtrUserName.setFont(new Font("Times New Roman", Font.PLAIN, 14));
@@ -104,18 +98,34 @@ public class StaffLoginIn extends JFrame {
 		contentPane.add(password);
 	}
 
-	private void btnNewButtonActionPerformed(ActionEvent actionEvent) {
-		this.dispose();
-		EventQueue.invokeLater(() -> {
-			StaffOption staffOption = new StaffOption();
-			staffOption.addWindowListener(new WindowAdapter() {
-				@Override
-				public void windowClosing(WindowEvent e) {
-					System.exit(0);
-				}
-			});
-			staffOption.setVisible(true);
-		});
+	private void btnConfirmActionPerformed(ActionEvent actionEvent) {
+		List<String> userInfo = new ArrayList<>();
+		CheckCusLog checkCusLog = new CheckCusLog();
+        if (UserName.getText()!=null&&UserName.getText()!=""){
+            userInfo=checkCusLog.isAccount(UserName.getText());
+        }
+        else
+            userInfo=null;
+        if(userInfo != null){
+            if(checkCusLog.isStaff(userInfo) && userInfo.get(1).equals(password.getPassword())){
+                this.dispose();
+                EventQueue.invokeLater(() -> {
+                    StaffOption staffOption = new StaffOption();
+                    staffOption.addWindowListener(new WindowAdapter() {
+                        @Override
+                        public void windowClosing(WindowEvent e) {
+                            System.exit(0);
+                        }
+                    });
+                    staffOption.setVisible(true);
+                });
+            }
+            else JOptionPane.showMessageDialog(null, "invalid username or incorrect password");
+
+        }
+        else JOptionPane.showMessageDialog(null, "invalid username or incorrect password");
+
+
 	}
 
 	private void btnBackActionPerformed(ActionEvent actionEvent) {
