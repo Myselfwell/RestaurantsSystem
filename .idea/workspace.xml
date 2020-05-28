@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" afterDir="false" />
-    </list>
+    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,7 +364,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590420718268</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="delete [btn change name], add 2 textfield">
+      <created>1590639029330</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1590639029330</updated>
+    </task>
+    <task id="LOCAL-00024" summary="please do not commit [dir out/production]">
+      <created>1590639153015</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1590639153015</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +416,9 @@
     <MESSAGE value="remove dir [out]" />
     <MESSAGE value="remove [btn new] [btn delete] in staffModifyMenu" />
     <MESSAGE value="redesign the btn size" />
-    <option name="LAST_COMMIT_MESSAGE" value="redesign the btn size" />
+    <MESSAGE value="delete [btn change name], add 2 textfield" />
+    <MESSAGE value="please do not commit [dir out/production]" />
+    <option name="LAST_COMMIT_MESSAGE" value="please do not commit [dir out/production]" />
   </component>
   <component name="WindowStateProjectService">
     <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590288217276">
