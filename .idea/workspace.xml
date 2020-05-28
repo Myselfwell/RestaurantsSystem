@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffModifyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/StaffShowBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/StaffShowBill.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,6 +211,7 @@
       <workItem from="1590402588104" duration="71000" />
       <workItem from="1590402692711" duration="2658000" />
       <workItem from="1590415740912" duration="2974000" />
+      <workItem from="1590637894314" duration="641000" />
     </task>
     <task id="LOCAL-00001" summary="init repo">
       <created>1585061384078</created>
@@ -351,11 +353,25 @@
       <option name="project" value="LOCAL" />
       <updated>1588935906001</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="remove [btn new] [btn delete] in staffModifyMenu">
+      <created>1590420690749</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1590420690749</updated>
+    </task>
+    <task id="LOCAL-00022" summary="redesign the btn size">
+      <created>1590420718268</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1590420718268</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -387,7 +403,9 @@
     <MESSAGE value="update Entities" />
     <MESSAGE value="update TODO List" />
     <MESSAGE value="remove dir [out]" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove dir [out]" />
+    <MESSAGE value="remove [btn new] [btn delete] in staffModifyMenu" />
+    <MESSAGE value="redesign the btn size" />
+    <option name="LAST_COMMIT_MESSAGE" value="redesign the btn size" />
   </component>
   <component name="WindowStateProjectService">
     <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590288217276">
