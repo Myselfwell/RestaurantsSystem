@@ -21,7 +21,41 @@ public class Menu {
         this.setInventory(Integer.parseInt(as[5]));
     }
 
+    public static String findAddOneName (int j) {
+        List<Menu> menrList = MenuList.getMenuList();//全user list
+        int count= 0;
+        if(menrList != null && !menrList.isEmpty()) {//遍历list
+            for(int i = 0; i < menrList.size()+1; i++) {
+                if(i != 0) {
+                    if(menrList.get(i).getType().equals("AddOne")) {
+                        if( count == j){
+                            return menrList.get(i).getName();
+                        }
+                        else count++;
+                    }
+                }
+            }
+        }
+        return null;
+    }
 
+    public static int findAddOnePrice (int j) {
+        List<Menu> menrList = MenuList.getMenuList();//全user list
+        int count= 0;
+        if(menrList != null && !menrList.isEmpty()) {//遍历list
+            for(int i = 0; i < menrList.size()+1; i++) {
+                if(i != 0) {
+                    if(menrList.get(i).getType().equals("AddOne")) {
+                        if( count == j){
+                            return menrList.get(i).getPrice();
+                        }
+                        else count++;
+                    }
+                }
+            }
+        }
+        return 0;
+    }
 
     public void setType (String t) {
         this.type = t;

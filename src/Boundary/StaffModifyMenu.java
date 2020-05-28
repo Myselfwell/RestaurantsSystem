@@ -20,6 +20,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JList;
 import javax.swing.JTable;
 import java.awt.Font;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class StaffModifyMenu extends JFrame {
 
@@ -30,6 +32,8 @@ public class StaffModifyMenu extends JFrame {
 	private String price;
 	private JTextField txtDish;
 	private JTextField txtPrice;
+	private ArrayList<JTextField> muneNameField = new ArrayList<JTextField>();
+	private ArrayList<JTextField> munePriceField= new ArrayList<JTextField>();
 
 	/**
 	 * Launch the application.
@@ -132,16 +136,24 @@ public class StaffModifyMenu extends JFrame {
 		textField_1.setColumns(10);
 		panel_1_1.add(textField_1);
 
-		/**
-		 * to be finished
-		 * Read (Dish, Price) from data base
-		 * Then, new a JTextField to display this (Dish, Price)
-		 * And, be careful for the allocation of the textField.
-		 * when you new a New JTextField,
-		 * it should under the last JTextField
-		 * For example, the Bounds of the last JTextField is (14, 36, 134, 36)
-		 * the next JTextField should at the position maybe (14, 80, 134,36)
-		 */
+
+		for(int i = 0;i < 4;i++) {
+			JTextField muneNField = new JTextField();
+			muneNField.setBounds(10, 90+i*38, 213, 38);
+			muneNField.setColumns(10);
+			panel.add(muneNField);
+			muneNameField.add(muneNField);
+			muneNameField.get(i).setText(Menu.findAddOneName(i));
+
+			JTextField munePField = new JTextField();
+			munePField.setBounds(233, 90+i*38, 111, 38);
+			munePField.setColumns(10);
+			panel.add(munePField);
+			munePriceField.add(munePField);
+			munePriceField.get(i).setText(Integer.toString(Menu.findAddOnePrice(i)));
+		}
+
+		
 	}
 
 	private void btnBackActionPerformed(ActionEvent actionEvent) {
