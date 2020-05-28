@@ -1,4 +1,4 @@
-package Data;
+package Control;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -88,7 +88,7 @@ public class BillList {
         List<String> dataList=BillList.importCsv(new File("src/Database/BillList.csv"));
         List<Bill> billList = new ArrayList<Bill>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
-            //打印所有数据
+            //print all the data
             for(int i=0; i<dataList.size();i++ ){
                 if(i!=0){
                     String s=dataList.get(i);
@@ -136,7 +136,7 @@ public class BillList {
     public static void importCsv()  {
         List<String> dataList=UserList.importCsv(new File("src/Database/BillList.csv"));
         if(dataList!=null && !dataList.isEmpty()){
-            //打印所有数据
+            //print all data
             for(int i=0; i<dataList.size();i++ ){
                 if(i!=0){
                     String s=dataList.get(i);

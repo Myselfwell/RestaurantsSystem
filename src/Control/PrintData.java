@@ -1,4 +1,4 @@
-package Data;
+package Control;
 
 import java.io.*;
 

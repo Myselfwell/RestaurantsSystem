@@ -1,6 +1,5 @@
 package Control;
 
-import Data.User;
 import java.util.*;
 
 public class CheckCusLog {

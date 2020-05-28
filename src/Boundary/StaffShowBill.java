@@ -1,6 +1,6 @@
 package Boundary;
 
-import Data.PrintStatisticsDate;
+import Control.PrintStatisticsDate;
 
 import java.awt.EventQueue;
 
