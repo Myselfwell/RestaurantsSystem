@@ -135,12 +135,12 @@ public class StaffModifyMenu extends JFrame {
 		/**
 		 * to be finished
 		 * Read (Dish, Price) from data base
-		 * Then, new a JtextField to display this (Dish, Price)
+		 * Then, new a JTextField to display this (Dish, Price)
 		 * And, be careful for the allocation of the textField.
-		 * when you new a New JtextField,
-		 * it should under the last JtextField
-		 * For expamle, the Bounds of the last JtextField is (14, 36, 134, 36)
-		 * the next JtextField should at the position maybe (14, 80, 134,36)
+		 * when you new a New JTextField,
+		 * it should under the last JTextField
+		 * For example, the Bounds of the last JTextField is (14, 36, 134, 36)
+		 * the next JTextField should at the position maybe (14, 80, 134,36)
 		 */
 	}
 
