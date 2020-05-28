@@ -108,7 +108,7 @@ public class BillList {
                     dataList.add("BillNumber,MenbershipNumber,Data,Price,Payment,TakeOut");
                 }
                 else {
-                    String s = Integer.toString(billList.get(i-1).getBillNumber());s += ",";
+                    String s = billList.get(i-1).getBillNumber();s += ",";
                     s += Integer.toString(billList.get(i-1).getMenbershipNumber());s += ",";
                     s += billList.get(i-1).getData();s += ",";
                     s += Double.toString(billList.get(i-1).getPrice());s += ",";

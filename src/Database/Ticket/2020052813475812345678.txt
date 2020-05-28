@@ -1,0 +1,10 @@
+Welcome to the restaurant SanZhang
+Order Number : 2020052813475812345678
+Date : 2020-05-28 13:47:58
+Loyalty Number : 12345678
+Your have been order :
+Medium     19.9
+Medium     25.9
+Total Price : 45.8
+Number of Virtual Stamp : 8
+Eat in   By Cash

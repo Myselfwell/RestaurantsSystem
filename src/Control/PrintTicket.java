@@ -1,8 +1,11 @@
 package Control;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
+
 import Entity.*;
 import Data.*;
 
@@ -10,6 +13,7 @@ public class PrintTicket
 {
     private Customer customer;
     private PrintData prt;
+    private List<String> bill;
 
     private String loyaltyNum;
     private String firstName;
@@ -30,8 +34,10 @@ public class PrintTicket
     public void printTic() throws IOException{
 
         SimpleDateFormat datePtrn = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat billdatePtrn = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat orderDatePtrn = new SimpleDateFormat("yyyyMMddHHmmss");
         String time = datePtrn.format(new Date());
+        String billTime = billdatePtrn.format(new Date());
         orderNum = orderDatePtrn.format(new Date()) + customer.getLoyaltyNum();
 
         prt = new PrintData("src/Database/Ticket/");
@@ -95,9 +101,19 @@ public class PrintTicket
             }
             else prt.writeTxt("Eat in   By Virtual Stamp");
         }
-        /*测试用*/
 
+        bill = new ArrayList<String>();
+        bill.add(orderNum);
+        System.out.println(bill.get(0));
+        bill.add(loyaltyNum);
+        bill.add(billTime);
+        bill.add(String.valueOf(price));
+        bill.add(String.valueOf(method));
+        if(istakeout){
+            bill.add("true");
+        }else bill.add("false");
 
-        /******/
+        Bill billins = new Bill();
+        billins .setOrder(bill);
     }
 }
