@@ -67,7 +67,7 @@ public class StaffLoginIn extends JFrame {
 		txtrUserName.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		txtrUserName.setBackground(SystemColor.inactiveCaptionBorder);
 		txtrUserName.setForeground(SystemColor.desktop);
-		txtrUserName.setText("User Name");
+		txtrUserName.setText("LoyaltyNum");
 		txtrUserName.setBounds(10, 78, 82, 24);
 		contentPane.add(txtrUserName);
 		
@@ -82,7 +82,7 @@ public class StaffLoginIn extends JFrame {
 		txtrStaffLoginIn = new JTextArea();
 		txtrStaffLoginIn.setFont(new Font("Monospaced", Font.BOLD, 23));
 		txtrStaffLoginIn.setBackground(SystemColor.inactiveCaptionBorder);
-		txtrStaffLoginIn.setText("Staff Login In");
+		txtrStaffLoginIn.setText("Staff Log In");
 		txtrStaffLoginIn.setBounds(119, 10, 197, 33);
 		contentPane.add(txtrStaffLoginIn);
 		
