@@ -76,7 +76,7 @@ public class StaffShowBill extends JFrame {
 		textArea.setBounds(198, 10, 228, 243);
 		contentPane.add(textArea);
 
-		JButton btnYearlyReport = new JButton("Yearly Report");
+		JButton btnYearlyReport = new JButton("Weekly Report");
 		btnYearlyReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
