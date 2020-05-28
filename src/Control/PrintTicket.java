@@ -9,7 +9,7 @@ import Data.*;
 public class PrintTicket
 {
     private Customer customer;
-    private PrintBill prt;
+    private PrintData prt;
 
     private String loyaltyNum;
     private String firstName;
@@ -28,12 +28,13 @@ public class PrintTicket
     }
 
     public void printTic() throws IOException{
+
         SimpleDateFormat datePtrn = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         SimpleDateFormat orderDatePtrn = new SimpleDateFormat("yyyyMMddHHmmss");
         String time = datePtrn.format(new Date());
         orderNum = orderDatePtrn.format(new Date()) + customer.getLoyaltyNum();
 
-        prt = new PrintBill();
+        prt = new PrintData("src/Database/Ticket/");
         prt.creatTxt(orderNum);
 
 
@@ -50,7 +51,6 @@ public class PrintTicket
         prt.writeTxt("Your have been order :");
 
         if(vStamp < 10){
-            customer.incVStamp();
             customer.update();
         }
         else{
@@ -65,6 +65,7 @@ public class PrintTicket
             if(dish.isIsvalid()){
                 price = price + dish.calculationPrice();
                 prt.writeTxt(dish.getNoodles() + "     " + dish.calculationPrice());
+                dish.updateSale();
                 customer.incVStamp();
             }
         }
@@ -94,7 +95,9 @@ public class PrintTicket
             }
             else prt.writeTxt("Eat in   By Virtual Stamp");
         }
+        /*测试用*/
 
 
+        /******/
     }
 }

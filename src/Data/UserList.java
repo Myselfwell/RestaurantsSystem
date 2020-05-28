@@ -109,6 +109,7 @@ public class UserList {
 
     public static List<String> setUserList (List<User> userList){//使用方法boolean isSuccess=UserList.exportCsv(new File("UserList.csv"), UserList.setUserList(userList));
         List<String> dataList=new ArrayList<String>();
+        System.out.println(userList != null && !userList.isEmpty());
         if(userList != null && !userList.isEmpty()) {
             for(int i = 0; i < userList.size()+1; i++) {
                 if(i == 0) {
@@ -140,7 +141,8 @@ public class UserList {
 
 
     public static void main(String[] args){
-        exportCsv();
+        List<User> userList = UserList.getUserList();
+        boolean isSuccess=UserList.exportCsv(new File("src/Database/UserList.csv"), UserList.setUserList(userList));
     }
 
 /*测试用函数

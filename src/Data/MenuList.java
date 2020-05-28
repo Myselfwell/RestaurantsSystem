@@ -10,6 +10,8 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.round;
+
 public class MenuList {
     public static boolean exportCsv(File file, List<String> dataList){//返回值为是否写入成功
         boolean isSucess=false;
@@ -86,7 +88,7 @@ public class MenuList {
 
     public static List<Menu> getMenuList () {//使用方法List<Menu> menuList = MenuList.getMenuList();
 
-        List<String> dataList=MenuList.importCsv(new File("/src/database/MenuList.csv"));
+        List<String> dataList=MenuList.importCsv(new File("src/Database/MenuList.csv"));
         List<Menu> menuList = new ArrayList<Menu>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
@@ -101,9 +103,8 @@ public class MenuList {
         return menuList;
     }
 
-    public static List<String> setMenuList (List<Menu> mList){//使用方法boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(MenuList));
+    public static List<String> setMenuList (List<Menu> menuList){//使用方法boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(MenuList));
         List<String> dataList= new ArrayList<String>();
-        List<Menu> menuList = new ArrayList<Menu>(MenuList.checkInventory(mList));
         if(menuList != null && !menuList.isEmpty()) {
             for(int i = 0; i < menuList.size()+1; i++) {
                 if(i == 0) {
@@ -142,15 +143,10 @@ public class MenuList {
     public static List<Menu> checkInventory (List<Menu> menuList) {//使用方法List<Menu> menuList = new ArrayList<Menu>(MenuList.checkInventory(mList));
         if(menuList != null && !menuList.isEmpty()) {
             for(int i = 0; i < menuList.size(); i++) {
-                if(menuList.get(i).getInventory() >= 0) {
+                if(menuList.get(i).getInventory() >= 0 && menuList.get(i).getSales() != 0) {
                     for(int j = 0; j < menuList.size(); j++) {
                         if(menuList.get(j).getName().equals(menuList.get(i).getName())) {
-                            if(menuList.get(j).getInventory()*menuList.get(j).getLevel() < menuList.get(i).getInventory()*menuList.get(i).getLevel()) {
-                                menuList.get(i).setInventory(menuList.get(j).getInventory()*menuList.get(j).getLevel() / menuList.get(i).getLevel());
-                            }
-                            else {
-                                menuList.get(j).setInventory(menuList.get(i).getInventory()*menuList.get(i).getLevel() / menuList.get(j).getLevel());
-                            }
+                            menuList.get(j).setInventory(round(menuList.get(j).getInventory() - menuList.get(i).getSales() / menuList.get(j).getLevel()));
                         }
                     }
                 }
@@ -161,38 +157,6 @@ public class MenuList {
 
     public static void main(String[] args){
 
-
-    }
-
-    public static void exportCsv() {
-        List<String> dataList=new ArrayList<String>();
-        dataList.add("Type,Name,Leave,Price,Sales,Inventory");
-        dataList.add("Soup,Tonkotsu,1,0,0,100");
-        dataList.add("Soup,Shoyu,1,0,0,100");
-        dataList.add("Soup,Shio,1,0,0,100");
-        dataList.add("Noodles,Soft,1,0,0,100");
-        dataList.add("Noodles,Medium,1,0,0,100");
-        dataList.add("Noodles,Firm,1,0,0,100");
-        dataList.add("Onion,No,1,0,0,-1");
-        dataList.add("Onion,Onion,1,0,0,100");
-        dataList.add("Onion,Onion,2,0,0,50");
-        dataList.add("Nori,Nori,1,0,0,100");
-        dataList.add("Nori,No,1,0,0,-1");
-        dataList.add("Chashu,Chasu,1,0,0,100");
-        dataList.add("Chashu,No,1,0,0,-1");
-        dataList.add("Egg,Egg,1,0,0,100");
-        dataList.add("Egg,No,1,0,0,-1");
-        dataList.add("Spiciness,Spiciness,1,0,0,-1");
-        dataList.add("Spiciness,Spiciness,2,0,0,-1");
-        dataList.add("Spiciness,Spiciness,3,0,0,-1");
-        dataList.add("Spiciness,Spiciness,4,0,0,-1");
-        dataList.add("Spiciness,Spiciness,5,0,0,-1");
-        dataList.add("AddOne,Nori,1,1,0,100");
-        dataList.add("AddOne,Egg,1,1,0,100");
-        dataList.add("AddOne,Bamboo,1,1,0,100");
-        dataList.add("AddOne,Chashu,1,2,0,100");
-        boolean isSuccess=UserList.exportCsv(new File("MenuList.csv"), dataList);
-        System.out.println(isSuccess);
     }
 
 }

@@ -403,7 +403,7 @@ public class CustomerOrder extends JFrame {
         panel_Info.setLayout(new GridLayout(10,1));
         btn_OK.addActionListener(new ShowABowl(panel_Info,group1, group2,group3,group4,
                 chckbx_Nori,chckbx_Chashu,chckbx_Egg,
-                lbl_NoriNum,lbl_EggNum,lbl_BambooNum,lbl_ChashuNum));
+                lbl_NoriNum,lbl_EggNum,lbl_BambooNum,lbl_ChashuNum,this.customer));
         JScrollPane sp=new JScrollPane(panel_Info);
         panel_C.add(sp);
     }
@@ -441,8 +441,9 @@ class ShowABowl implements ActionListener{ //展示一碗面
     private ButtonGroup group1,group2,group3,group4;
     private JCheckBox chckbx_Nori,chckbx_Chashu,chckbx_Egg;
     private JLabel lbl_NoriNum,lbl_EggNum,lbl_BambooNum,lbl_ChashuNum;
+    private Customer customer;
 
-    public ShowABowl(JPanel where, ButtonGroup group1, ButtonGroup group2, ButtonGroup group3, ButtonGroup group4, JCheckBox chckbx_Nori, JCheckBox chckbx_Chashu, JCheckBox chckbx_Egg, JLabel lbl_NoriNum, JLabel lbl_EggNum, JLabel lbl_BambooNum, JLabel lbl_ChashuNum) {
+    public ShowABowl(JPanel where, ButtonGroup group1, ButtonGroup group2, ButtonGroup group3, ButtonGroup group4, JCheckBox chckbx_Nori, JCheckBox chckbx_Chashu, JCheckBox chckbx_Egg, JLabel lbl_NoriNum, JLabel lbl_EggNum, JLabel lbl_BambooNum, JLabel lbl_ChashuNum,Customer customer) {
         this.where = where;
         this.group1 = group1;
         this.group2 = group2;
@@ -455,6 +456,7 @@ class ShowABowl implements ActionListener{ //展示一碗面
         this.lbl_EggNum = lbl_EggNum;
         this.lbl_BambooNum = lbl_BambooNum;
         this.lbl_ChashuNum = lbl_ChashuNum;
+        this.customer=customer;
     }
 
     @Override
@@ -465,6 +467,7 @@ class ShowABowl implements ActionListener{ //展示一碗面
                 Integer.parseInt(group4.getSelection().getActionCommand()),
                 Integer.parseInt(lbl_NoriNum.getText()),Integer.parseInt(lbl_EggNum.getText()),
                 Integer.parseInt(lbl_BambooNum.getText()),Integer.parseInt(lbl_ChashuNum.getText()));
+        customer.setOrder(this.dish);
         where.add(new ANoodle(where,dish));
         where.validate();
     }

@@ -2,7 +2,9 @@ package Entity;
 
 import Data.Menu;
 import Data.MenuList;
+import Data.PrintStatisticsDate;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,10 +118,11 @@ public class Dish {
         this.exChashu = exChashu;
     }
     public double calculationPrice () {
+
         double allPrice = 9.9;
         List<Menu> menuList = MenuList.getMenuList();
         if(menuList != null && !menuList.isEmpty()) {
-            for(int i = 0; i < menuList.size()+1; i++) {
+            for(int i = 0; i < menuList.size(); i++) {
                 if(menuList.get(i).getType().equals("AddOne")) {
                     if(menuList.get(i).getName().equals("Nori")){
                         allPrice += this.exNori * menuList.get(i).getPrice();
@@ -146,4 +149,112 @@ public class Dish {
     public void setIsvalid(boolean isvalid) {
         this.isvalid = isvalid;
     }
+
+
+    public  void showAll (){
+        System.out.println(this.soup);
+        System.out.println(this.noodles);
+        System.out.println(this.onion);
+    }
+
+    public  void updateSale (){
+
+        List<Menu> menuList = MenuList.getMenuList();
+        if(menuList != null && !menuList.isEmpty()) {
+            for(int i = 0; i < menuList.size(); i++) {
+                menuList.get(i).setSales(0);
+            }//清空list
+            for(int i = 0; i < menuList.size(); i++) {
+                if(menuList.get(i).getType().equals("Soup")){
+                    if(menuList.get(i).getName().equals("Tonkotsu") && this.soup.equals("Tonkotsu")){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("Shoyu") && this.soup.equals("Shoyu")){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("Shio") && this.soup.equals("Shio")){
+                        menuList.get(i).setSales(1);
+                    }
+                }
+                if(menuList.get(i).getType().equals("Noodles")){
+                    if(menuList.get(i).getName().equals("Soft") && this.noodles.equals("Soft")){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("Medium") && this.noodles.equals("Medium")){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("Firm") && this.noodles.equals("Firm")){
+                        menuList.get(i).setSales(1);
+                    }
+                }
+                if(menuList.get(i).getType().equals("Onion")){
+                    if(menuList.get(i).getName().equals("No") && this.onion.equals("No")){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("Onion") && menuList.get(i).getLevel() == 1 && this.onion.equals("Little")){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("Firm") && menuList.get(i).getLevel() == 2 && this.onion.equals("Lot")){
+                        menuList.get(i).setSales(1);
+                    }
+                }
+                if(menuList.get(i).getType().equals("Nori")){
+                    if(menuList.get(i).getName().equals("Nori") && this.origNori){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("No") && !this.origNori){
+                        menuList.get(i).setSales(1);
+                    }
+                }
+                if(menuList.get(i).getType().equals("Chashu")){
+                    if(menuList.get(i).getName().equals("Chashu") && this.chashu){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("No") && !this.chashu){
+                        menuList.get(i).setSales(1);
+                    }
+                }
+                if(menuList.get(i).getType().equals("Egg")){
+                    if(menuList.get(i).getName().equals("Egg") && this.boiledEgg){
+                        menuList.get(i).setSales(1);
+                    }
+                    if(menuList.get(i).getName().equals("No") && !this.boiledEgg){
+                        menuList.get(i).setSales(1);
+                    }
+                }
+                if(menuList.get(i).getType().equals("Spiciness")){
+                    if(menuList.get(i).getLevel() == this.spiciness){
+                        menuList.get(i).setSales(1);
+                    }
+                }
+                if(menuList.get(i).getType().equals("AddOne")){
+                    if(menuList.get(i).getName().equals("Nori")){
+                        menuList.get(i).setSales(exNori);
+                    }
+                    if(menuList.get(i).getName().equals("Egg")){
+                        menuList.get(i).setSales(exEgg);
+                    }
+                    if(menuList.get(i).getName().equals("Bamboo")){
+                        menuList.get(i).setSales(exBamboo);
+                    }
+                    if(menuList.get(i).getName().equals("Chashu")){
+                        menuList.get(i).setSales(exChashu);
+                    }
+                }
+            }
+            menuList = MenuList.checkInventory(menuList);
+            List<Menu> newMenuList = MenuList.getMenuList();
+            if(newMenuList != null && !newMenuList.isEmpty()) {
+                for (int i = 0; i < newMenuList.size(); i++) {
+                    newMenuList.get(i).setSales(newMenuList.get(i).getSales() + menuList.get(i).getSales());
+                    newMenuList.get(i).setInventory(menuList.get(i).getInventory());
+                }
+            }
+            MenuList.exportCsv(new File("src/Database/MenuList.csv"), MenuList.setMenuList(newMenuList));
+        }
+    }
+
 }
+
+
+

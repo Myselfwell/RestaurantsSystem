@@ -85,7 +85,7 @@ public class BillList {
     }
 
     public static List<Bill> getBillList () {
-        List<String> dataList=BillList.importCsv(new File("BillList.csv"));
+        List<String> dataList=BillList.importCsv(new File("src/Database/BillList.csv"));
         List<Bill> billList = new ArrayList<Bill>(dataList.size());
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
@@ -110,7 +110,7 @@ public class BillList {
                 else {
                     String s = Integer.toString(billList.get(i-1).getBillNumber());s += ",";
                     s += Integer.toString(billList.get(i-1).getMenbershipNumber());s += ",";
-                    s += Integer.toString(billList.get(i-1).getData());s += ",";
+                    s += billList.get(i-1).getData();s += ",";
                     s += Double.toString(billList.get(i-1).getPrice());s += ",";
                     s += Integer.toString(billList.get(i-1).getPayment());s += ",";
 
@@ -124,20 +124,17 @@ public class BillList {
                 }
             }
         }
-
-
         return dataList;
     }
 
 
-
     public static void main(String[] args){
+        exportCsv();
 
     }
 
-
     public static void importCsv()  {
-        List<String> dataList=UserList.importCsv(new File("BillList.csv"));
+        List<String> dataList=UserList.importCsv(new File("src/Database/BillList.csv"));
         if(dataList!=null && !dataList.isEmpty()){
             //打印所有数据
             for(int i=0; i<dataList.size();i++ ){
@@ -160,8 +157,23 @@ public class BillList {
     public static void exportCsv() {
         List<String> dataList=new ArrayList<String>();
         dataList.add("BillNumber,MenbershipNumber,Data,Price,Payment,TakeOut");
-        dataList.add("11111111,11111111,20200331,9.9,1,true");
-        boolean isSuccess=BillList.exportCsv(new File("BillList.csv"), dataList);
+        dataList.add("11111111,11111111,2020-03-21,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-22,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-23,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-23,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-24,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-25,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-26,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-27,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-28,9.9,1,true");
+        dataList.add("11111111,11111111,2020-03-28,9.9,1,true");
+        dataList.add("11111111,11111111,2020-05-20,9.9,1,true");
+        dataList.add("11111111,11111111,2020-05-21,9.9,1,true");
+        dataList.add("11111111,11111111,2020-05-25,9.9,1,true");
+        dataList.add("11111111,11111111,2020-05-27,9.9,1,true");
+        dataList.add("11111111,11111111,2020-05-28,9.9,1,true");
+
+        boolean isSuccess=BillList.exportCsv(new File("src/Database/BillList.csv"), dataList);
         System.out.println(isSuccess);
     }
 
