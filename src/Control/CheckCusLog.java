@@ -27,11 +27,14 @@ public class CheckCusLog {
     }
 
     public boolean isStaff(List<String> userInfo){
-        if(userInfo.get(6).equals("true")){
+        if(userInfo.get(6).equals("false")){
+            System.out.println(userInfo.get(6));
             return false;
         }
-        else
+        else{
+            System.out.println(userInfo.get(6));
             return true;
+        }
     }
 
     public List<String> returnUserInfo(){
