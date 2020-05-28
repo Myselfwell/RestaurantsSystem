@@ -107,8 +107,9 @@ public class StaffLoginIn extends JFrame {
         else
             userInfo=null;
         if(userInfo != null){
-            if(checkCusLog.isStaff(userInfo) && userInfo.get(1).equals(password.getPassword())){
-                this.dispose();
+
+            if(checkCusLog.isStaff(userInfo) && userInfo.get(1).equals(new String(password.getPassword()))){
+            	this.dispose();
                 EventQueue.invokeLater(() -> {
                     StaffOption staffOption = new StaffOption();
                     staffOption.addWindowListener(new WindowAdapter() {
@@ -120,10 +121,10 @@ public class StaffLoginIn extends JFrame {
                     staffOption.setVisible(true);
                 });
             }
-            else JOptionPane.showMessageDialog(null, "invalid username or incorrect password");
+            else JOptionPane.showMessageDialog(null, "You are not a staff or incorrect password");
 
         }
-        else JOptionPane.showMessageDialog(null, "invalid username or incorrect password");
+        else JOptionPane.showMessageDialog(null, "Invalid username");
 
 
 	}
