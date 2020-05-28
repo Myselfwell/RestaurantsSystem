@@ -1,10 +1,20 @@
 package Data;
+import Entity.Dish;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class Bill {
     //membershipNumber,password,firstName,surname,email,phoneNumber,isAdmin,virtualStamps
     int BillNumber;
     int MembershipNumber;
-    int Data;
+    String Data;
     double Price;
     int Payment;
     boolean TakeOut;
@@ -13,7 +23,7 @@ public class Bill {
         String[] as = s.split(",");
         this.setBillNumber(Integer.parseInt(as[0]));
         this.setMenbershipNumber(Integer.parseInt(as[1]));
-        this.setData(Integer.parseInt(as[2]));
+        this.setData(as[2]);
         this.setPrice(Double.valueOf(as[3]));
         this.setPayment(Integer.parseInt(as[4]));
         this.setTakeOut(as[5].equals("true"));
@@ -27,8 +37,8 @@ public class Bill {
         this.MembershipNumber = m;
     }
 
-    public void setData (int v) {
-        this.Data = v;
+    public void setData (String d) {
+        this.Data = d;
     }
 
     public void setPrice (double v) {
@@ -51,7 +61,7 @@ public class Bill {
         return this.MembershipNumber;
     }
 
-    public int getData () {
+    public String getData () {
         return this.Data;
     }
 
@@ -66,4 +76,9 @@ public class Bill {
     public boolean getTakeOut () {
         return this.TakeOut;
     }
+
 }
+
+
+
+

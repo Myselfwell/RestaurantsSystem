@@ -10,6 +10,8 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.round;
+
 public class MenuList {
     public static boolean exportCsv(File file, List<String> dataList){//返回值为是否写入成功
         boolean isSucess=false;
@@ -101,9 +103,8 @@ public class MenuList {
         return menuList;
     }
 
-    public static List<String> setMenuList (List<Menu> mList){//使用方法boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(MenuList));
+    public static List<String> setMenuList (List<Menu> menuList){//使用方法boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(MenuList));
         List<String> dataList= new ArrayList<String>();
-        List<Menu> menuList = new ArrayList<Menu>(MenuList.checkInventory(mList));
         if(menuList != null && !menuList.isEmpty()) {
             for(int i = 0; i < menuList.size()+1; i++) {
                 if(i == 0) {
@@ -142,15 +143,10 @@ public class MenuList {
     public static List<Menu> checkInventory (List<Menu> menuList) {//使用方法List<Menu> menuList = new ArrayList<Menu>(MenuList.checkInventory(mList));
         if(menuList != null && !menuList.isEmpty()) {
             for(int i = 0; i < menuList.size(); i++) {
-                if(menuList.get(i).getInventory() >= 0) {
+                if(menuList.get(i).getInventory() >= 0 && menuList.get(i).getSales() != 0) {
                     for(int j = 0; j < menuList.size(); j++) {
                         if(menuList.get(j).getName().equals(menuList.get(i).getName())) {
-                            if(menuList.get(j).getInventory()*menuList.get(j).getLevel() < menuList.get(i).getInventory()*menuList.get(i).getLevel()) {
-                                menuList.get(i).setInventory(menuList.get(j).getInventory()*menuList.get(j).getLevel() / menuList.get(i).getLevel());
-                            }
-                            else {
-                                menuList.get(j).setInventory(menuList.get(i).getInventory()*menuList.get(i).getLevel() / menuList.get(j).getLevel());
-                            }
+                            menuList.get(j).setInventory(round(menuList.get(j).getInventory() - menuList.get(i).getSales() / menuList.get(j).getLevel()));
                         }
                     }
                 }
@@ -160,9 +156,6 @@ public class MenuList {
     }
 
     public static void main(String[] args){
-        List<Menu> menuList = MenuList.getMenuList();
-        boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(menuList));
-
 
     }
 

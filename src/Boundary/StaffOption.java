@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 public class StaffOption extends JFrame {
 
@@ -52,7 +53,12 @@ public class StaffOption extends JFrame {
 	private void btnShowBillsActionPerformed(ActionEvent actionEvent) {
 		this.dispose();
 		EventQueue.invokeLater(()->{
-			StaffShowBill staffShowBill = new StaffShowBill();
+			StaffShowBill staffShowBill = null;
+			try {
+				staffShowBill = new StaffShowBill();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			staffShowBill.addWindowListener(new WindowAdapter() {
 				@Override
 				public void windowClosing(WindowEvent e) {

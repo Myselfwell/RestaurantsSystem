@@ -1,5 +1,7 @@
 package Boundary;
 
+import Data.PrintStatisticsDate;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 public class StaffShowBill extends JFrame {
 
@@ -36,7 +39,7 @@ public class StaffShowBill extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StaffShowBill() {
+	public StaffShowBill() throws IOException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -49,6 +52,7 @@ public class StaffShowBill extends JFrame {
 		JButton btnNewButton = new JButton("Change Menu");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 			}
 		});
 		btnNewButton.setBounds(10, 45, 152, 23);
@@ -57,22 +61,37 @@ public class StaffShowBill extends JFrame {
 		JButton btnSendBill = new JButton("Send Bill");
 		btnSendBill.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				try {
+					PrintStatisticsDate.printWeekBill();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
 			}
 		});
 		btnSendBill.setBounds(10, 95, 152, 23);
 		contentPane.add(btnSendBill);
 
+		JTextArea textArea = new JTextArea(PrintStatisticsDate.showWeekBill());
+		textArea.setBounds(198, 10, 228, 243);
+		contentPane.add(textArea);
+
 		JButton btnYearlyReport = new JButton("Yearly Report");
 		btnYearlyReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				try {
+					textArea.setText("");
+					textArea.setText(PrintStatisticsDate.showBeastSale());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
 			}
 		});
 		btnYearlyReport.setBounds(10, 145, 152, 23);
 		contentPane.add(btnYearlyReport);
 
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(198, 10, 228, 243);
-		contentPane.add(textArea);
+
 
 		JButton btnNewButton_2_1 = new JButton("Back");
 		btnNewButton_2_1.addActionListener(this::btnBackActionPerformed);
