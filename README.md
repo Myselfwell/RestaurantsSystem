@@ -48,9 +48,9 @@ It is a Coursework
 - [x] Calculations and statistics
 - [x] Finish methods of classes in Entity
 
-## Thanks for All contributors !
+## Thanks for All Contributors !
 
-## Our Coursework is perfectly finished !
+## Our Coursework is Perfectly Finished !
 
-finished on 2020/5/29
+Finished on 2020/5/29
 
