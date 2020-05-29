@@ -1,25 +1,26 @@
 package Control;
 
+import Data.User;
 import java.util.*;
 
 public class CheckCusLog {
 
-    List<String> userInfo = new ArrayList <String>();//存储该用户所有信息
+    List<String> userInfo = new ArrayList <String>();//The information of this user
 
-    public List<String> isAccount(String account){//检查account是否在csv中
+    public List<String> isAccount(String account){//Check if this loyalty number exists in CSV file
         if (account==null){
             return null;
         }
         boolean isAccount = User.findUserNum(account);
         if(isAccount){
-            userInfo = User.findUser(account);//根据用户名找到的用户其他信息
+            userInfo = User.findUser(account);//Other information of this user found by loyalty number
             return userInfo;
         }else
             return null;
     }
 
-    public boolean isPwd(String pwd,List<String> userInfo){//检查密码是否正确
-        if(userInfo.get(1).equals(pwd))//密码正确则返回所有信息
+    public boolean isPwd(String pwd,List<String> userInfo){//Validate the password
+        if(userInfo.get(1).equals(pwd))
             return true;
         else
             return false;

@@ -1,6 +1,9 @@
 package Control;
 
-import java.io.*;
+import Data.User;
+import Data.UserList;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -11,22 +14,21 @@ public class CheckRegister {
     private User user;
     List<User> userList = UserList.getUserList();
     private  String saccount;
-    private List<String> newUser = new ArrayList <String>();//用于储存新用户所有信息
+    private List<String> newUser = new ArrayList <String>();//Used for storing all new users' information
 
-    ArrayList<String> content;//从用户注册gui的field中读取的数据
 
-    public String assignAccount(){//系统随机分配8位数字作为loyalty number，应该把所有变量都返回回来，并且添加到list中
+    public String assignAccount(){//Assign 8 bits number randomly as loyalty number
         while (true) {
             int account = (int) ((Math.random() * 9 + 1) * 10000000);
             saccount = String.valueOf(account);
-            if (!user.findUserNum(saccount)) {//判断是否存在相同帐号，若不存在，则返回生成的帐号
+            if (!user.findUserNum(saccount)) {
                 break;
             }
         }
         return saccount;
     }
 
-    public boolean isPhone(String phone){//验证是否为（中国）手机号，若是返回true
+    public boolean isPhone(String phone){//Validate if the format of mobile phone is correct
         String regex = "^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|(166)|(17[0,1,3,5,6,7,8])|(18[0-9])|(19[8|9]))\\d{8}$";
         boolean isMatch;
         if(phone.length()!=11){
@@ -44,7 +46,7 @@ public class CheckRegister {
         }
     }
 
-    public boolean isEmail(String email){//验证邮箱格式
+    public boolean isEmail(String email){//Validate the format of email
         String regex = "^\\w+((-\\w+)|(\\.\\w+))*@\\w+(\\.\\w{2,3}){1,3}$";
         Pattern p = Pattern.compile(regex);
         Matcher m=p.matcher(email);
@@ -54,7 +56,7 @@ public class CheckRegister {
             return false;
     }
 
-    public boolean isPwd(char[] pwd){//验证密码格式，8-16位，必须同时包含数字字母
+    public boolean isPwd(char[] pwd){//Valid the format of password, the length should be between 8 and 16, must containing both character and digit.
         String regex = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$";
         String s=String .valueOf(pwd);
         Pattern p = Pattern.compile(regex);
@@ -65,7 +67,7 @@ public class CheckRegister {
             return false;
     }
 
-    public boolean reCheck(char[] pwd, char[] repwd){//再次输入密码
+    public boolean reCheck(char[] pwd, char[] repwd){//Re-input password
         if(!new String(pwd).equals(new String(repwd))){
             return false;
         }
@@ -73,7 +75,7 @@ public class CheckRegister {
             return true;
     }
 
-    public boolean isName(String name){//判读姓名格式,无空格即可
+    public boolean isName(String name){//Judge the format of name
         Pattern pattern = Pattern.compile("[0-9a-zA-Z\\u4E00-\\u9FA5]+");
         Matcher matcher = pattern.matcher(name);
         if (matcher.matches()) {
@@ -82,7 +84,7 @@ public class CheckRegister {
         else
             return false;
     }
-    public void saveData(String s){//需要将newUser这个list存入UserList
+    public void saveData(String s){//Store the data into CSV file
         User nuser = new User(s);
         userList.add(nuser);
         UserList.exportCsv(new File("src/Database/UserList.csv"), UserList.setUserList(userList));//存入csv
