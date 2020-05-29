@@ -1,11 +1,13 @@
 package Entity;
-
-import Data.Menu;
-import Data.MenuList;
-import Data.PrintStatisticsDate;
+/**
+ * @ClassName: Dish
+ * @description: This class is used to record the options of the customer
+ *
+ **/
+import Control.Menu;
+import Control.MenuList;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Dish {
@@ -27,7 +29,7 @@ public class Dish {
         this.exEgg = exEgg;
         this.exBamboo = exBamboo;
         this.exChashu = exChashu;
-        this.isvalid=true;
+        this.isvalid=true; //false means the customer delete the item
     }
 
     public String getSoup() {

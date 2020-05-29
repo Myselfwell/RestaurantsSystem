@@ -1,6 +1,9 @@
 package Entity;
 import java.util.*;
-import Data.*;
+
+import Control.User;
+import Control.UserList;
+
 import java.io.File;
 
 public class Customer

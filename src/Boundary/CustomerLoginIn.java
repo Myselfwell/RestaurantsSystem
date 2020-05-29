@@ -60,7 +60,7 @@ public class CustomerLoginIn extends JFrame {
         JPanel panel_N = new JPanel();
         contentPane.add(panel_N, BorderLayout.NORTH);
         //设置上部panel
-        JLabel lblNewLabel = new JLabel("Welcome to Login");
+        JLabel lblNewLabel = new JLabel("Customer Log In");
         lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 20));
         panel_N.add(lblNewLabel);
         //设置上部panel中的label
@@ -68,9 +68,9 @@ public class CustomerLoginIn extends JFrame {
         contentPane.add(panel_C, BorderLayout.CENTER);
         panel_C.setLayout(null);
         //设置中部的panel
-        JLabel lbl_Username = new JLabel("Loyalty Num");
+        JLabel lbl_Username = new JLabel("LoyaltyNum");
         lbl_Username.setFont(new Font("SimSun", Font.PLAIN, 15));
-        lbl_Username.setBounds(54, 26, 72, 18);
+        lbl_Username.setBounds(54, 26, 100, 18);
         panel_C.add(lbl_Username);
         LoyaltyNum = new JTextField();
         LoyaltyNum.setBounds(140, 23, 200, 24);
@@ -113,7 +113,7 @@ public class CustomerLoginIn extends JFrame {
         CheckCusLog checkCusLog=new CheckCusLog();
         if (LoyaltyNum.getText()!=null&&LoyaltyNum.getText()!=""){
             userInfo=checkCusLog.isAccount(LoyaltyNum.getText());
-            }
+        }
         else
             userInfo=null;
         if (userInfo!=null){
