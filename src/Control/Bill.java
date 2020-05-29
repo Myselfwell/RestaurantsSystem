@@ -84,7 +84,7 @@ public class Bill {
         newBill.setMenbershipNumber(Integer.parseInt(order.get(1)));
         newBill.setData(order.get(2));//yyyy-mm-dd
         newBill.setPrice(Double.valueOf(order.get(3)));
-        newBill.setPayment(Integer.parseInt(order.get(4)));//cash-0,card-1,virtualStamps-2，
+        newBill.setPayment(Integer.parseInt(order.get(4)));//cash-0,card-1,virtualStamps-2,
         newBill.setTakeOut(order.get(5).equals("true"));
 
         List<Bill> billList = BillList.getBillList();

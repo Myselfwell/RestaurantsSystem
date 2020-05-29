@@ -55,7 +55,6 @@ public class PrintData {
             for (int j = 1; (temp = br.readLine()) != null; j++) {
                 buf.append(temp);
                 // System.getProperty("line.separator")
-                // “\n”
                 buf = buf.append(System.getProperty("line.separator"));
             }
             buf.append(filein);
