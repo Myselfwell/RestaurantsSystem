@@ -1,6 +1,5 @@
 package Control;
 
-import Data.User;
 import java.util.*;
 
 public class CheckCusLog {
@@ -24,6 +23,17 @@ public class CheckCusLog {
             return true;
         else
             return false;
+    }
+
+    public boolean isStaff(List<String> userInfo){
+        if(userInfo.get(6).equals("false")){
+            System.out.println(userInfo.get(6));
+            return false;
+        }
+        else{
+            System.out.println(userInfo.get(6));
+            return true;
+        }
     }
 
     public List<String> returnUserInfo(){

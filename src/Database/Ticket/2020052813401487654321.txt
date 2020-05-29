@@ -1,0 +1,9 @@
+Welcome to the restaurant SiLi
+Order Number : 2020052813401487654321
+Date : 2020-05-28 13:40:14
+Loyalty Number : 87654321
+Your have been order :
+Soft     9.9
+Total Price : 9.9
+Number of Virtual Stamp : 8
+Take out   By Card

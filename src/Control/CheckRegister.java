@@ -1,11 +1,8 @@
 package Control;
 
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import Data.User;
-import Data.UserList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,9 +66,11 @@ public class CheckRegister {
     }
 
     public boolean reCheck(char[] pwd, char[] repwd){//再次输入密码
-        if(!pwd.equals(repwd))
+        if(!new String(pwd).equals(new String(repwd))){
             return false;
-        return true;
+        }
+        else
+            return true;
     }
 
     public boolean isName(String name){//判读姓名格式,无空格即可
@@ -86,6 +85,6 @@ public class CheckRegister {
     public void saveData(String s){//需要将newUser这个list存入UserList
         User nuser = new User(s);
         userList.add(nuser);
-        UserList.exportCsv(new File("UserList.csv"), UserList.setUserList(userList));//存入csv
+        UserList.exportCsv(new File("src/Database/UserList.csv"), UserList.setUserList(userList));//存入csv
     }
 }
