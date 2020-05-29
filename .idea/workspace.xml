@@ -19,7 +19,48 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="" />
+    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/Bill.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/BillList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/Menu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/MenuList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/PrintData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/PrintStatisticsDate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Data/UserList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/ANoodle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/ANoodle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerLoginIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/CustomerOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Deleitem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/Deleitem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/ShowABowl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/ShowABowl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffLoginIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffModifyMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Boundary/StaffShowBill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/CheckCusLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/CheckCusLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/CheckRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/CheckRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/PrintTicket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Control/PrintTicket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/BillList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/BillList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/MenuList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/MenuList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/UserList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Database/UserList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RestaurantsSystem/Entity/Dish.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590739393167</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="just test">
+      <created>1590739674900</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1590739674900</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,6 +507,7 @@
     <MESSAGE value="update actionListener of [btn ChangePrice], a new function to be finished is commented at the end of [StaffModifyMenu()]" />
     <MESSAGE value="just test" />
     <option name="LAST_COMMIT_MESSAGE" value="just test" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590288217276">
