@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="update actionListener of [btn ChangePrice], a new function to be finished is commented at the end of [StaffModifyMenu()]">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -409,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590657341673</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="just test">
+      <created>1590739393167</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1590739393167</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +457,8 @@
     <MESSAGE value="add method [isStaff]" />
     <MESSAGE value="add validation in [StaffLogin.btnConfirm]" />
     <MESSAGE value="update actionListener of [btn ChangePrice], a new function to be finished is commented at the end of [StaffModifyMenu()]" />
-    <option name="LAST_COMMIT_MESSAGE" value="update actionListener of [btn ChangePrice], a new function to be finished is commented at the end of [StaffModifyMenu()]" />
+    <MESSAGE value="just test" />
+    <option name="LAST_COMMIT_MESSAGE" value="just test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590288217276">
