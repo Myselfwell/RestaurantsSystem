@@ -90,6 +90,6 @@ public class CheckRegister {
     public void saveData(String s){//Store the data into CSV file
         User nuser = new User(s);
         userList.add(nuser);
-        UserList.exportCsv(new File("src/Database/UserList.csv"), UserList.setUserList(userList));//存入csv
+        UserList.exportCsv(new File("src/Database/UserList.csv"), UserList.setUserList(userList));
     }
 }

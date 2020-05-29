@@ -19,7 +19,7 @@ import java.util.List;
 
 public class UserList {
 
-    public static boolean exportCsv(File file, List<String> dataList){//返回值为是否写入成功
+    public static boolean exportCsv(File file, List<String> dataList){//r
         boolean isSucess=false;
 
         FileOutputStream out=null;
@@ -68,7 +68,7 @@ public class UserList {
     }
 
 
-    public static List<String> importCsv(File file){//读取数据返回值为全部数据，注意！第一行为表头
+    public static List<String> importCsv(File file){//read all the data from database
         List<String> dataList=new ArrayList<String>();
 
         BufferedReader br=null;
@@ -93,7 +93,7 @@ public class UserList {
         return dataList;
     }
 
-    public static List<User> getUserList () {//使用方法List<User> userList = UserList.getUserList();
+    public static List<User> getUserList () {//List<User> userList = UserList.getUserList();
 
         List<String> dataList=UserList.importCsv(new File("src/Database/UserList.csv"));
         List<User> userList = new ArrayList<User>(dataList.size());
@@ -111,7 +111,7 @@ public class UserList {
         return userList;
     }
 
-    public static List<String> setUserList (List<User> userList){//使用方法boolean isSuccess=UserList.exportCsv(new File("UserList.csv"), UserList.setUserList(userList));
+    public static List<String> setUserList (List<User> userList){//boolean isSuccess=UserList.exportCsv(new File("UserList.csv"), UserList.setUserList(userList));
         List<String> dataList=new ArrayList<String>();
         System.out.println(userList != null && !userList.isEmpty());
         if(userList != null && !userList.isEmpty()) {
@@ -149,12 +149,12 @@ public class UserList {
         boolean isSuccess=UserList.exportCsv(new File("src/Database/UserList.csv"), UserList.setUserList(userList));
     }
 
-/*测试用函数
-//读取全部用户信息
+/*for test
+//read all info
     public static void importCsv()  {
         List<String> dataList=UserList.importCsv(new File("UserList.csv"));
         if(dataList!=null && !dataList.isEmpty()){
-        	//打印所有数据
+        	//print all info
             for(int i=0; i<dataList.size();i++ ){
                 if(i!=0){
                     String s=dataList.get(i);
@@ -173,7 +173,7 @@ public class UserList {
         }
     }*/
 
-    //写入全部用户信息包括编号，密码，姓名，邮箱，电话，是否为管理员，以及持有多少Stamps
+    //write to database
     public static void exportCsv() {
         List<String> dataList=new ArrayList<String>();
         dataList.add("membershipNumber,password,firstName,surnName,email,phoneNumber,isAdmin,virtualStamps");

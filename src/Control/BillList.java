@@ -65,7 +65,7 @@ public class BillList {
     }
 
 
-    public static List<String> importCsv(File file){//读取数据返回值为全部数据，注意！第一行为表头
+    public static List<String> importCsv(File file){//read all the file from database
         List<String> dataList=new ArrayList<String>();
 
         BufferedReader br=null;
