@@ -113,7 +113,7 @@ public class CustomerLoginIn extends JFrame {
         CheckCusLog checkCusLog=new CheckCusLog();
         if (LoyaltyNum.getText()!=null&&LoyaltyNum.getText()!=""){
             userInfo=checkCusLog.isAccount(LoyaltyNum.getText());
-            }
+        }
         else
             userInfo=null;
         if (userInfo!=null){

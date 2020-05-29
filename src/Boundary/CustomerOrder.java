@@ -42,7 +42,7 @@ public class CustomerOrder extends JFrame {
      */
     public CustomerOrder(Customer customer) {
         this.customer=customer;
-        setTitle("Welcome xxx!");
+        setTitle("Welcome guest!");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 638, 709);
         contentPane = new JPanel();
@@ -71,17 +71,17 @@ public class CustomerOrder extends JFrame {
         contentPane.add(panel_S, BorderLayout.SOUTH);
         panel_S.setLayout(new BorderLayout(0, 0));
         //下部的pane
-        JLabel lblTotal = new JLabel("Total");
-        lblTotal.setHorizontalAlignment(SwingConstants.LEFT);
-        panel_S.add(lblTotal, BorderLayout.WEST);
+//        JLabel lblTotal = new JLabel("Total");
+//        lblTotal.setHorizontalAlignment(SwingConstants.LEFT);
+//        panel_S.add(lblTotal, BorderLayout.WEST);
         //消费的总价格信息
         JButton btnCheck = new JButton("Check");
         btnCheck.addActionListener(this::btnCheckActionPerformed);
         panel_S.add(btnCheck, BorderLayout.EAST);
 
-        JLabel lbl_Total_Price = new JLabel("0");
-        lbl_Total_Price.setHorizontalAlignment(SwingConstants.CENTER);
-        panel_S.add(lbl_Total_Price, BorderLayout.CENTER);
+//        JLabel lbl_Total_Price = new JLabel("0");
+//        lbl_Total_Price.setHorizontalAlignment(SwingConstants.CENTER);
+//        panel_S.add(lbl_Total_Price, BorderLayout.CENTER);
         //查看已点的菜的信息
         JPanel panel_C = new JPanel();
         contentPane.add(panel_C, BorderLayout.CENTER);
@@ -431,8 +431,13 @@ public class CustomerOrder extends JFrame {
     }
 
 }
-class ShowABowl implements ActionListener{ //展示一碗面
-    private JPanel where;
+/**
+ * @ClassName: ShowABowel
+ * @description: This panel is presented when the customer press the button
+ *
+ **/
+class ShowABowl implements ActionListener{
+    private JPanel where; //where to show the dish
     private Dish dish;
     private ButtonGroup group1,group2,group3,group4;
     private JCheckBox chckbx_Nori,chckbx_Chashu,chckbx_Egg;
@@ -463,11 +468,17 @@ class ShowABowl implements ActionListener{ //展示一碗面
                 Integer.parseInt(group4.getSelection().getActionCommand()),
                 Integer.parseInt(lbl_NoriNum.getText()),Integer.parseInt(lbl_EggNum.getText()),
                 Integer.parseInt(lbl_BambooNum.getText()),Integer.parseInt(lbl_ChashuNum.getText()));
-        customer.setOrder(this.dish);
+        //generate an instance of dish with customer's option
+        customer.setOrder(this.dish); //add this dish to the customer
         where.add(new ANoodle(where,dish));
-        where.validate();
+        where.validate(); //repaint the panel
     }
 }
+/**
+ * @ClassName: Deleitem
+ * @description: This class is used to delete a noodle if customer doesn't want
+ *
+ **/
 class Deleitem implements ActionListener{
     private ANoodle anoodle;
     private JPanel parent;
@@ -479,12 +490,17 @@ class Deleitem implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        dish.setIsvalid(false);
-        parent.remove(anoodle.parePanel);
-        parent.revalidate();
+        dish.setIsvalid(false); //false means the customer delete the dish
+        parent.remove(anoodle.parePanel); //remove the dish from the panel
+        parent.revalidate(); //repaint again
         parent.repaint();
     }
 }
+/**
+ * @ClassName: ANoodle
+ * @description: This panel is used to show the details of the customer's option
+ *
+ **/
 class ANoodle extends JPanel{
     JButton delebutton=new JButton("Delete");
     JPanel parePanel=this;
@@ -494,11 +510,11 @@ class ANoodle extends JPanel{
         this.dish=dish;
         this.parent=parent;
         this.add(new JLabel(dish.getSoup()+"   "+dish.getNoodles()+"  "+"  onion  "+dish.getOnion()
-                +"  Nori: "+dish.isOrigNori()+"Chashu   "+dish.isChashu()
+                +"  Nori: "+dish.isOrigNori()+"  Chashu   "+dish.isChashu()
                 +"  BoiledEgg: "+dish.isBoiledEgg()+"  Spiciness: "+dish.getSpiciness()
                 +"  exNori: "+dish.getExNori()+"  exEgg: "+dish.getExEgg()
                 +"  exBamboo: "+dish.getExBamboo()+"  exChashu: "+dish.getExChashu()),BorderLayout.CENTER);
-        this.add(delebutton,BorderLayout.EAST);
+        this.add(delebutton,BorderLayout.EAST); //show the details
         delebutton.addActionListener(new Deleitem(this,parent,dish));
     }
 }

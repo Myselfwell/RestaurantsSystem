@@ -1,5 +1,9 @@
 package Entity;
-
+/**
+ * @ClassName: Dish
+ * @description: This class is used to record the options of the customer
+ *
+ **/
 import Control.Menu;
 import Control.MenuList;
 
@@ -25,7 +29,7 @@ public class Dish {
         this.exEgg = exEgg;
         this.exBamboo = exBamboo;
         this.exChashu = exChashu;
-        this.isvalid=true;
+        this.isvalid=true; //false means the customer delete the item
     }
 
     public String getSoup() {
