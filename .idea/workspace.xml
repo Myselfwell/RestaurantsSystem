@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="" />
+    <list default="true" id="7d6627ae-ba56-4fc3-b866-483f875b3a45" name="Default Changelist" comment="update actionListener of [btn ChangePrice], a new function to be finished is commented at the end of [StaffModifyMenu()]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StaffModifyMenu">
+  <component name="RunManager" selected="Application.CustomerLoginIn">
     <configuration name="Begin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Boundary.Begin" />
       <module name="RestaurantsSystem" />
@@ -159,9 +161,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CustomerLoginIn" />
         <item itemvalue="Application.StaffModifyMenu" />
         <item itemvalue="Application.StaffLoginIn" />
-        <item itemvalue="Application.CustomerLoginIn" />
         <item itemvalue="Application.Begin" />
         <item itemvalue="Application.CustomerPayment" />
       </list>
