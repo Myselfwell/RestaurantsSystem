@@ -1,7 +1,7 @@
 package Control;
 
-import Data.User;
-import Data.UserList;
+import Control.User;
+import Control.UserList;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -9,7 +9,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+/**
+ * @ClassName: CheckRegister
+ * @description: Used to check the data format when user creat an account
+ */
 public class CheckRegister {
     private User user;
     List<User> userList = UserList.getUserList();

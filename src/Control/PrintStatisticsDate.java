@@ -8,10 +8,14 @@ import java.util.Date;
 import java.util.List;
 
 public class PrintStatisticsDate {
+    /**
+     * @ClassName: PrintStatisticDate
+     * @description: creat and store the statistic information in database
+     */
 
     public static String dateToWeek(String datetime) {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
-        String[] weekDays = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+        String[] weekDays = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
         Calendar cal = Calendar.getInstance(); // 获得一个日历
         Date datet = null;
         try {
@@ -20,14 +24,14 @@ public class PrintStatisticsDate {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        int w = cal.get(Calendar.DAY_OF_WEEK) - 1; // 指示一个星期中的某天。
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1; // someday in a week
         if (w < 0)
             w = 0;
         return weekDays[w];
     }
 
-    public static void printWeekBill()throws IOException {//使用例： PrintStatisticsDate.printWeekBill(日期);日期格式为yyyy-mm-dd
-        Date date=new Date();//取时间
+    public static void printWeekBill()throws IOException {//PrintStatisticsDate.printWeekBill(date);yyyy-mm-dd
+        Date date=new Date();//read time
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String datetime = formatter.format(date);
         PrintData ptr = new PrintData("src/Database/Statistics/");
@@ -84,8 +88,8 @@ public class PrintStatisticsDate {
         }
     }
 
-    public static String showWeekBill()throws IOException {//使用例： PrintStatisticsDate.printWeekBill(日期);日期格式为yyyy-mm-dd
-        Date date=new Date();//取时间
+    public static String showWeekBill()throws IOException {//PrintStatisticsDate.printWeekBill(date);yyyy-mm-dd
+        Date date=new Date();//read time
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String datetime = formatter.format(date);
         System.out.println(date);
@@ -143,7 +147,7 @@ public class PrintStatisticsDate {
     }
 
 
-    public static String showBeastSale()throws IOException {//使用例 PrintStatisticsDate.printBeastSale();直接用没关系的
+    public static String showBeastSale()throws IOException {//PrintStatisticsDate.printBeastSale();
         StringBuilder list = new StringBuilder();
         List<Menu> menuList = MenuList.getMenuList();
         int temp = 0;

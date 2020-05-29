@@ -12,6 +12,10 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @ClassName: UserList
+ * @description: read and search user from the database
+ */
 
 public class UserList {
 

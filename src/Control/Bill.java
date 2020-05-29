@@ -3,6 +3,10 @@ package Control;
 import java.io.File;
 import java.util.List;
 
+/**
+ * @ClassName: Bill
+ * @description: Used to store the user information from the database
+ */
 public class Bill {
     //membershipNumber,password,firstName,surname,email,phoneNumber,isAdmin,virtualStamps
     String BillNumber;
@@ -74,13 +78,13 @@ public class Bill {
         return this.TakeOut;
     }
 
-    public void  setOrder(List<String> order){//用法，Bill.setOrder(所有信息的list);信息顺序为订单号，会员号，日期，价格，交易方式，是否外带。
+    public void  setOrder(List<String> order){//
         Bill newBill = new Bill();
         newBill.setBillNumber(order.get(0));
         newBill.setMenbershipNumber(Integer.parseInt(order.get(1)));
-        newBill.setData(order.get(2));//格式yyyy-mm-dd
+        newBill.setData(order.get(2));//yyyy-mm-dd
         newBill.setPrice(Double.valueOf(order.get(3)));
-        newBill.setPayment(Integer.parseInt(order.get(4)));//如果现金，为0，如果刷卡，为1，如果是用virtualStamps，则为2，
+        newBill.setPayment(Integer.parseInt(order.get(4)));//cash-0,card-1,virtualStamps-2，
         newBill.setTakeOut(order.get(5).equals("true"));
 
         List<Bill> billList = BillList.getBillList();

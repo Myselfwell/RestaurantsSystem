@@ -8,6 +8,11 @@ import java.util.List;
 
 import Entity.*;
 
+/**
+ * @ClassName: PrintTicket
+ * @description: generate the ticket as txt
+ */
+
 public class PrintTicket
 {
     private Customer customer;
