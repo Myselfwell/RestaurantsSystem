@@ -12,6 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
+/**
+ * @ClassName: ShowLoyaltyNum
+ * @description: This page is to display the loyalty number after successful registration
+ */
 public class ShowLoyaltyNum extends JFrame {
 
     private JPanel contentPane;
@@ -34,7 +38,9 @@ public class ShowLoyaltyNum extends JFrame {
 
     /**
      * Create the frame.
+     * @param LoyaltyNum loyalty number
      */
+
     public ShowLoyaltyNum(String LoyaltyNum) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
@@ -42,15 +48,23 @@ public class ShowLoyaltyNum extends JFrame {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
+        //set up contentPane.
 
         JLabel lblNewLabel = new JLabel("<html><body>Your LoyaltyNum is: "+ LoyaltyNum+"<br>"+"If you remember your loyalty number, please click OK<body></html>");
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         contentPane.add(lblNewLabel, BorderLayout.CENTER);
+        //show loyalty number.
 
         JButton btnNewButton = new JButton("OK");
         btnNewButton.addActionListener(this::btnOkActionPerformed);
         contentPane.add(btnNewButton, BorderLayout.SOUTH);
+
     }
+
+    /**
+     * I've memorized the loyalty number and started to log in
+     * @param evt Click
+     */
     private void btnOkActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {

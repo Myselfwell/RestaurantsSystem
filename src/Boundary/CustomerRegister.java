@@ -15,6 +15,11 @@ import java.awt.event.WindowEvent;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+
+/**
+ * @ClassName: CustomerRegister
+ * @description: This is the customer's registration interface. When all the registration information meets the requirements, you can register as a member/
+ */
 public class CustomerRegister extends JFrame {
 
     private JPanel contentPane;
@@ -52,12 +57,13 @@ public class CustomerRegister extends JFrame {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
+        //Set contentPane layout.
 
-        //contentPane布局
         JPanel pan_C = new JPanel();
         contentPane.add(pan_C, BorderLayout.CENTER);
         pan_C.setLayout(null);
-        //中部的panel
+        //ser up central panel
+
         JLabel lbl_Fname = new JLabel("First name");
         lbl_Fname.setBounds(40, 13, 106, 18);
         pan_C.add(lbl_Fname);
@@ -65,15 +71,26 @@ public class CustomerRegister extends JFrame {
         Fname.setBounds(160, 10, 200, 24);
         pan_C.add(Fname);
         Fname.setColumns(10);
-        //用户名标签和文本区
+        //First name label and its text area.
+
+        JLabel lbl_Surname = new JLabel("Surname");
+        lbl_Surname.setBounds(40, 43, 72, 18);
+        pan_C.add(lbl_Surname);
+        Surname = new JTextField();
+        Surname.setBounds(160, 40, 200, 24);
+        pan_C.add(Surname);
+        Surname.setColumns(10);
+        //Sur name label and its text area.
+
         JLabel lbl_PhoneNum = new JLabel("Phone num");
         lbl_PhoneNum.setBounds(40, 73, 72, 18);
         pan_C.add(lbl_PhoneNum);
         pNum = new JTextField();
+        pNum.setColumns(10);
         pNum.setBounds(160, 70, 200, 24);
         pan_C.add(pNum);
-        pNum.setColumns(10);
-        //电话号码标签和文本区
+        //Phone number label and its text area.
+
         JLabel lbl_Email = new JLabel("Email");
         lbl_Email.setBounds(40, 103, 72, 18);
         pan_C.add(lbl_Email);
@@ -81,68 +98,70 @@ public class CustomerRegister extends JFrame {
         Email.setBounds(160, 100, 200, 24);
         pan_C.add(Email);
         Email.setColumns(10);
-        //email标签和文本区
+        //Email label and its text area.
+
         JLabel lbl_pwd = new JLabel("Password");
         lbl_pwd.setBounds(40, 133, 72, 18);
         pan_C.add(lbl_pwd);
         pwd = new JPasswordField();
         pwd.setBounds(160, 130, 200, 24);
         pan_C.add(pwd);
-        //密码标签和文本区
+        //Password label and its password field.
+
         JLabel lbl_Confirm = new JLabel("Confirm");
         lbl_Confirm.setBounds(40, 163, 72, 18);
         pan_C.add(lbl_Confirm);
         confirm = new JPasswordField();
         confirm.setBounds(160, 160, 200, 24);
         pan_C.add(confirm);
-        //确认密码标签和文本区
+        //Confirm password.
+
         remind = new JLabel("");
         remind.setForeground(Color.RED);
         remind.setBounds(71, 185, 350, 18);
         pan_C.add(remind);
-        //提示标签，用于注册条件不符合时进行提醒
+        //Prompt label, used to remind when the registration conditions are not met
+
         JButton btnSubmit = new JButton("Submit");
         btnSubmit.setBounds(55, 210, 113, 27);
         btnSubmit.addActionListener(this::btnSubmitActionPerformed);
         pan_C.add(btnSubmit);
-        //提交按钮，保存信息并进入登录界面
+        //Submit button, save the information and enter the login interface.
+
         JButton btnBack = new JButton("Back");
         btnBack.setBounds(247, 210, 113, 27);
         btnBack.addActionListener(this::btnBackActionPerformed);
         pan_C.add(btnBack);
+       //Back button, return to the begin interface
 
-        JLabel lbl_Surname = new JLabel("Surname");
-        lbl_Surname.setBounds(40, 43, 72, 18);
-        pan_C.add(lbl_Surname);
-
-        Surname = new JTextField();
-        Surname.setBounds(160, 40, 200, 24);
-        pan_C.add(Surname);
-        Surname.setColumns(10);
-        //back按钮回到主界面
         JPanel pan_N = new JPanel();
         contentPane.add(pan_N, BorderLayout.NORTH);
-        //上部的panel
+        //Set up northern panel
         JLabel label1 = new JLabel("Welcome to Register");
         label1.setFont(new Font("Times New Roman", Font.BOLD, 20));
         pan_N.add(label1);
         label1.setBackground(new Color(240, 240, 240));
     }
+
+    /**
+     * This is the event listener for the submit button. When the submit button is pressed, Save all user information and generate loyalty number.
+     * @param evt Click
+     */
     private void btnSubmitActionPerformed(ActionEvent evt) {
         CheckRegister checkRegister=new CheckRegister();
-        if (!checkRegister.isPwd(pwd.getPassword()))
+        if (!checkRegister.isPwd(pwd.getPassword()))//Check password format.
             remind.setText("Password format error, please re-enter.");
-        else if(!checkRegister.reCheck(pwd.getPassword(),confirm.getPassword()))
+        else if(!checkRegister.reCheck(pwd.getPassword(),confirm.getPassword()))//Check whether the two password entries are consistent.
             remind.setText("The two passwords do not match, please re-enter.");
-        else if (!checkRegister.isName(Fname.getText()))
+        else if (!checkRegister.isName(Fname.getText()))//Check first name format.
             remind.setText("Your first name is not in the correct format. Please re-enter it");
-        else if (!checkRegister.isName(Surname.getText()))
+        else if (!checkRegister.isName(Surname.getText()))//Check surname format.
             remind.setText("Your surname is not in the correct format. Please re-enter it");
-        else if (!checkRegister.isEmail(Email.getText()))
+        else if (!checkRegister.isEmail(Email.getText()))//Check email format.
             remind.setText("Your e-mail is not in the correct format. Please re-enter it");
-        else if (!checkRegister.isPhone(pNum.getText()))
+        else if (!checkRegister.isPhone(pNum.getText()))//Check phone number format.
             remind.setText("Your phone is not in the correct format. Please re-enter it");
-        else {
+        else {//If all meet the requirements.
             String LoyaltyNum=checkRegister.assignAccount();
             String s = LoyaltyNum;s += ",";//loyalty number
             s += new String(pwd.getPassword());s += ",";//pwd
@@ -153,10 +172,10 @@ public class CustomerRegister extends JFrame {
             s += "false,";//isAdmin
             s += Integer.toString(0);		//Vs
             System.out.println(s);
-            checkRegister.saveData(s);
+            checkRegister.saveData(s);//save user information.
             this.dispose();
             EventQueue.invokeLater(() -> {
-                ShowLoyaltyNum showLoyaltyNum = new ShowLoyaltyNum(LoyaltyNum);
+                ShowLoyaltyNum showLoyaltyNum = new ShowLoyaltyNum(LoyaltyNum);//show Loyalty number
                 showLoyaltyNum.addWindowListener(new WindowAdapter() {
                     @Override
                     public void windowClosing(WindowEvent e) {
@@ -167,6 +186,11 @@ public class CustomerRegister extends JFrame {
             });
         }
     }
+
+    /**
+     * This is the event listener for the back button. When the back button is pressed, back to the beginning page.
+     * @param evt Click
+     */
     private void btnBackActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {

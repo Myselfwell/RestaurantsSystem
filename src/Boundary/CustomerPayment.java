@@ -24,7 +24,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.swing.border.LineBorder;
-
+/**
+ * @ClassName: CustomerPayment
+ * @description: This page is used to view the ordered dishes and select the payment method, select the hall food or take out, pay the bill, and print the small ticket.
+ */
 public class CustomerPayment extends JFrame {
 
     private JPanel contentPane;
@@ -55,7 +58,8 @@ public class CustomerPayment extends JFrame {
     }
 
     /**
-     * Create the frame.
+     * Create a frame.
+     * @param cus Ordering customer information
      */
     public CustomerPayment(Customer cus) {
         this.cus = cus;
@@ -69,21 +73,22 @@ public class CustomerPayment extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(new BorderLayout(0, 0));
         //content pane
+
         JPanel panel_N = new JPanel();
         panel_N.setBorder(new LineBorder(new Color(0, 0, 0)));
         contentPane.add(panel_N, BorderLayout.NORTH);
         panel_N.setLayout(new BorderLayout(0, 0));
-        //上部的pane
+        //set up northern pane
         JButton btnBack = new JButton("Back");
         btnBack.addActionListener(this::btnBackActionPerformed);
         panel_N.add(btnBack, BorderLayout.WEST);
-        //返回键，返回order
+        //back button
         JPanel panel_C = new JPanel();
         panel_C.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_C.setBackground(Color.WHITE);
         contentPane.add(panel_C, BorderLayout.CENTER);
         panel_C.setLayout(new BorderLayout(0, 0));
-        //中部的pane
+        //set up central pane
         JLabel lblNewLabel = new JLabel("view.Payment information");
         lblNewLabel.setBackground(SystemColor.menu);
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -100,31 +105,30 @@ public class CustomerPayment extends JFrame {
             }
         }
         System.out.println(display);
-
         JLabel lbl_Info = new JLabel(display + "<br/>" + "Total price is $" + price + "</html>");
-
-
         lbl_Info.setForeground(new Color(0, 0, 0));
         lbl_Info.setBackground(Color.WHITE);
         lbl_Info.setVerticalAlignment(SwingConstants.TOP);
         lbl_Info.setHorizontalAlignment(SwingConstants.LEFT);
         lbl_Info.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_C.add(lbl_Info, BorderLayout.CENTER);
-        //
+        //Display dish
+
         JPanel panel_S = new JPanel();
         contentPane.add(panel_S, BorderLayout.SOUTH);
         panel_S.setLayout(new BorderLayout(0, 0));
-        //下部的pane
+        //set up southern pane
         JPanel panel_select = new JPanel();
         panel_select.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_S.add(panel_select, BorderLayout.CENTER);
         panel_select.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        //选择堂食外带和支付方式的pane
+        //Panel for choosing eat in or take out and payment method.
         JPanel panel_E = new JPanel();
         panel_E.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_select.add(panel_E);
         panel_E.setLayout(new BorderLayout(0, 0));
-        //堂食or外带
+        //eat in or take out
+
         rdbtn_Here = new JRadioButton("for here");
         panel_E.add(rdbtn_Here, BorderLayout.NORTH);
 
@@ -134,7 +138,8 @@ public class CustomerPayment extends JFrame {
         ButtonGroup group1=new ButtonGroup();
         group1.add(rdbtn_Here);
         group1.add(rdbtn_Out);
-        //选择堂食还是外带
+        //single choice
+
         JPanel panel_W = new JPanel();
         panel_W.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_select.add(panel_W);
@@ -149,7 +154,8 @@ public class CustomerPayment extends JFrame {
         ButtonGroup group2=new ButtonGroup();
         group2.add(rdbtn_Card);
         group2.add(rdbtn_Cash);
-        //选择支付方式
+        //single choice
+
         JPanel panel_pay = new JPanel();
         panel_S.add(panel_pay, BorderLayout.SOUTH);
         panel_pay.setLayout(new BorderLayout(0, 0));
@@ -157,20 +163,26 @@ public class CustomerPayment extends JFrame {
         JButton btnConfirm = new JButton("Confirm payment");
         btnConfirm.addActionListener(this::btnConfirmActionPerformed);
         panel_pay.add(btnConfirm, BorderLayout.SOUTH);
-        //确认支付
+        //confirm
+
         lbl_Remind = new JLabel("");
         lbl_Remind.setForeground(Color.RED);
         panel_pay.add(lbl_Remind, BorderLayout.CENTER);
-        //没有选择堂食还是外带或支付方式的时候进行提醒
+        //Remind when there is no choice
     }
+
+    /**
+     * Confirm payment
+     * @param evt Click
+     */
     private void btnConfirmActionPerformed(ActionEvent evt) {
-        if (!rdbtn_Here.isSelected()&&!rdbtn_Out.isSelected()){
+        if (!rdbtn_Here.isSelected()&&!rdbtn_Out.isSelected()){//Verify whether the eat here or take out is selected
             lbl_Remind.setText("Please choose to take out or eat here.");
         }
-        else if (!rdbtn_Cash.isSelected()&&!rdbtn_Card.isSelected()){
+        else if (!rdbtn_Cash.isSelected()&&!rdbtn_Card.isSelected()){//Verify whether payment method is selected
             lbl_Remind.setText("Please choose cash payment or card payment.");
         }
-        else {
+        else {//print small ticket
             this.isTakeOut=rdbtn_Out.isSelected();
             if (rdbtn_Cash.isSelected()) {
                 this.method = 0;
@@ -196,6 +208,11 @@ public class CustomerPayment extends JFrame {
             });
         }
     }
+
+    /**
+     * Back to order interface.
+     * @param evt Click
+     */
     private void btnBackActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {

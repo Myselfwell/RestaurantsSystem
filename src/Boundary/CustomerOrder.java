@@ -17,6 +17,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+/**
+ * @ClassName: CustomerOrder
+ * @description: This page is used by customers to order.
+ */
+
 public class CustomerOrder extends JFrame {
 
     private JPanel contentPane;
@@ -38,7 +43,8 @@ public class CustomerOrder extends JFrame {
     }
 
     /**
-     * Create the frame.
+     * Create frame.
+     * @param customer Ordering customer information
      */
     public CustomerOrder(Customer customer) {
         this.customer=customer;
@@ -49,58 +55,58 @@ public class CustomerOrder extends JFrame {
         contentPane.setBorder(new LineBorder(new Color(0, 0, 0)));
         setContentPane(contentPane);
         contentPane.setLayout(new BorderLayout(0, 0));
-        //主页面
+        //Set up contentPane.
+
         JPanel panel_N = new JPanel();
         panel_N.setBorder(new LineBorder(new Color(0, 0, 0)));
         contentPane.add(panel_N, BorderLayout.NORTH);
         panel_N.setLayout(new BorderLayout(0, 0));
-        //上部的pane
+        //Set up northern pane.
+
         JButton btnBack = new JButton("Back");
         btnBack.setHorizontalAlignment(SwingConstants.LEFT);
         btnBack.addActionListener(this::btnBackActionPerformed);
         panel_N.add(btnBack, BorderLayout.WEST);
-        //返回键
+        //Back button
+
         JLabel lblStamp = new JLabel("stamps:");
         lblStamp.setHorizontalAlignment(SwingConstants.RIGHT);
         panel_N.add(lblStamp, BorderLayout.CENTER);
-
         JLabel lblStampNum = new JLabel(String.valueOf(customer.getVStamp()));
         panel_N.add(lblStampNum, BorderLayout.EAST);
-        //用户的虚拟邮票信息
+        //User's virtual stamp information.
+
         JPanel panel_S = new JPanel();
         contentPane.add(panel_S, BorderLayout.SOUTH);
         panel_S.setLayout(new BorderLayout(0, 0));
-        //下部的pane
-//        JLabel lblTotal = new JLabel("Total");
-//        lblTotal.setHorizontalAlignment(SwingConstants.LEFT);
-//        panel_S.add(lblTotal, BorderLayout.WEST);
-        //消费的总价格信息
+        //Set up southern pane
+
         JButton btnCheck = new JButton("Check");
         btnCheck.addActionListener(this::btnCheckActionPerformed);
         panel_S.add(btnCheck, BorderLayout.EAST);
+        //Check button
 
-//        JLabel lbl_Total_Price = new JLabel("0");
-//        lbl_Total_Price.setHorizontalAlignment(SwingConstants.CENTER);
-//        panel_S.add(lbl_Total_Price, BorderLayout.CENTER);
-        //查看已点的菜的信息
         JPanel panel_C = new JPanel();
         contentPane.add(panel_C, BorderLayout.CENTER);
         panel_C.setLayout(new GridLayout(0, 1, 0, 0));
-        //中部的pane
+        //Set central pane
         JPanel panel_Menu = new JPanel();
         panel_Menu.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_C.add(panel_Menu);
         panel_Menu.setLayout(new GridLayout(10, 0, 0, 0));
-        //菜单pane
+        //Set menu pane
+
         JLabel lbl_SingleDish = new JLabel("Single Dish  \u00A39.99");
         lbl_SingleDish.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_Menu.add(lbl_SingleDish);
-        //single dish的label
+        //Single dish label
+
         JPanel panel_Soup = new JPanel();
         panel_Soup.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Menu.add(panel_Soup);
         panel_Soup.setLayout(new GridLayout(0, 4, 0, 0));
-        //选汤的pane
+        //Soup pane
+
         JLabel lbl_Soup = new JLabel("Soup");
         lbl_Soup.setBackground(new Color(0, 0, 0));
         lbl_Soup.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -108,108 +114,123 @@ public class CustomerOrder extends JFrame {
         //soup的label
         JRadioButton rdbtn_Soup1 = new JRadioButton("Tonkotsu");
         rdbtn_Soup1.setActionCommand("Tonkotsu");
-        //rdbtn_Soup1.setSelected(true);
         panel_Soup.add(rdbtn_Soup1);
-        //第一种汤
+        //Tonkoutsu Soup
+
         JRadioButton rdbtn_Soup2 = new JRadioButton("Shoyu");
         rdbtn_Soup2.setActionCommand("Shoyu");
         rdbtn_Soup2.setSelected(true);
         panel_Soup.add(rdbtn_Soup2);
-        //第二种汤
+        //Shoyu soup
+
         JRadioButton rdbtn_Soup3 = new JRadioButton("Shio");
         rdbtn_Soup3.setActionCommand("Shio");
         panel_Soup.add(rdbtn_Soup3);
-        //第三种汤
+        //Shio soup
+
         ButtonGroup group1=new ButtonGroup();
         group1.add(rdbtn_Soup1);
         group1.add(rdbtn_Soup2);
         group1.add(rdbtn_Soup3);
-        //设置单选
+        //Single choice
 
         JPanel panel_Noodles = new JPanel();
         panel_Noodles.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Menu.add(panel_Noodles);
         panel_Noodles.setLayout(new GridLayout(0, 4, 0, 0));
-        //选面的pane
+        //Panel for selecting noodles
         JLabel lbl_Noodles = new JLabel("Noodles");
         lbl_Noodles.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_Noodles.add(lbl_Noodles);
-        //面的label
+        //label for selecting noodles
         JRadioButton rdbtn_Noodles1 = new JRadioButton("Soft");
         rdbtn_Noodles1.setActionCommand("Soft");
         rdbtn_Noodles1.setSelected(true);
         panel_Noodles.add(rdbtn_Noodles1);
-        //第一种面
+        //Soft noodles
+
         JRadioButton rdbtn_Noodles2 = new JRadioButton("Medium");
         rdbtn_Noodles2.setActionCommand("Medium");
         panel_Noodles.add(rdbtn_Noodles2);
-        //第二种面
+        //Medium noodles
+
         JRadioButton rdbtn_Noodles3 = new JRadioButton("Firm");
         rdbtn_Noodles3.setActionCommand("Firm");
         panel_Noodles.add(rdbtn_Noodles3);
-        //第三种面
+        //Firm noodles
+
         ButtonGroup group2=new ButtonGroup();
         group2.add(rdbtn_Noodles1);
         group2.add(rdbtn_Noodles2);
         group2.add(rdbtn_Noodles3);
-        //设置单选
+        //Single choice
 
         JPanel panel_Spring = new JPanel();
         panel_Spring.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Menu.add(panel_Spring);
         panel_Spring.setLayout(new GridLayout(0, 4, 0, 0));
-        //选面的pane
+        //Panel for selecting spring onion
+
         JLabel lbl_Spring = new JLabel("Spring onion");
         lbl_Spring.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_Spring.add(lbl_Spring);
-        //面的label
+        //label for selecting spring onion
+
         JRadioButton rdbtn_Spring1 = new JRadioButton("No please");
         rdbtn_Spring1.setActionCommand("No");
         rdbtn_Spring1.setSelected(true);
         panel_Spring.add(rdbtn_Spring1);
-        //第一种面
+        //No spring onion.
+
         JRadioButton rdbtn_Spring2 = new JRadioButton(" A little");
         rdbtn_Spring2.setActionCommand("Little");
         panel_Spring.add(rdbtn_Spring2);
-        //第二种面
+        //A little spring onion.
+
         JRadioButton rdbtn_Spring3 = new JRadioButton("A lot!");
         rdbtn_Spring3.setActionCommand("Lot");
         panel_Spring.add(rdbtn_Spring3);
-        //第三种面
+        //A lot of spring onion.
+
         ButtonGroup group3=new ButtonGroup();
         group3.add(rdbtn_Spring1);
         group3.add(rdbtn_Spring2);
         group3.add(rdbtn_Spring3);
-        //设置单选
+        //Single choice
 
         JPanel panel_adds = new JPanel();
         panel_adds.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Menu.add(panel_adds);
         panel_adds.setLayout(new GridLayout(0, 4, 0, 0));
-        //附加品
+        //Adds on
+
         JLabel lbl_Adds = new JLabel("Adds");
         panel_adds.add(lbl_Adds);
         lbl_Adds.setBorder(BorderFactory.createLineBorder(Color.black));
         //label
         JCheckBox chckbx_Nori = new JCheckBox("Nori");
         panel_adds.add(chckbx_Nori);
-        //紫菜
+        //Nori
+
         JCheckBox chckbx_Chashu = new JCheckBox("Chashu");
         panel_adds.add(chckbx_Chashu);
         //chashu
         JCheckBox chckbx_Egg = new JCheckBox("Boiled egg");
         panel_adds.add(chckbx_Egg);
-        //蛋
+        //Bolied egg
+
         JPanel panel_Spiciness = new JPanel();
         panel_Spiciness.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Menu.add(panel_Spiciness);
         panel_Spiciness.setLayout(new GridLayout(0, 7, 0, 0));
-        //辣度pane
+        //Panel for selecting spiciness
+
         JLabel lbl_Spiciness = new JLabel("Spiciness");
         lbl_Spiciness.setBackground(Color.RED);
         lbl_Spiciness.setBorder(BorderFactory.createLineBorder(Color.black));
         panel_Spiciness.add(lbl_Spiciness);
-        //辣度label
+        //Label for selecting spiciness
+
         JRadioButton rdbtn_Spiciness0 = new JRadioButton("0(No)");
         rdbtn_Spiciness0.setActionCommand("0");
         rdbtn_Spiciness0.setSelected(true);
@@ -242,7 +263,8 @@ public class CustomerOrder extends JFrame {
         group4.add(rdbtn_Spiciness3);
         group4.add(rdbtn_Spiciness4);
         group4.add(rdbtn_Spiciness5);
-        //设置单选
+        //Single choice
+
         JLabel lbl_Addson = new JLabel("Adds on");
         panel_Menu.add(lbl_Addson);
         //adds on label
@@ -250,11 +272,11 @@ public class CustomerOrder extends JFrame {
         panel_addson1.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Menu.add(panel_addson1);
         panel_addson1.setLayout(new GridLayout(0, 2, 0, 0));
-        //第一个adds on面板
+        //first adds on panel
         JPanel panel_Nori = new JPanel();
         panel_Nori.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_addson1.add(panel_Nori);
-        //Nori面板
+        //Nori panel
         JLabel lbl_XrNori = new JLabel("Extra Nori(\u00A3"+ MenuList.getAddonePrice("Nori") + " )");
         panel_Nori.add(lbl_XrNori);
         JLabel lbl_NoriNum = new JLabel("0");
@@ -301,7 +323,8 @@ public class CustomerOrder extends JFrame {
         panel_egg.add(btn_Add2);
         //+1 button
         panel_egg.add(lbl_EggNum);
-        //鸡蛋的数量
+        //Number of boiled eggs
+
         JButton btn_Reduce2 = new JButton("-1");
         btn_Reduce2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -318,14 +341,14 @@ public class CustomerOrder extends JFrame {
         panel_addson2.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Menu.add(panel_addson2);
         panel_addson2.setLayout(new GridLayout(0, 2, 0, 0));
-        //第二个adds on面板
+        //Second adds on panel
         JPanel panel_Bamboo = new JPanel();
         panel_Bamboo.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_addson2.add(panel_Bamboo);
-        //竹子面板
+        //panel of bamboo shoots
         JLabel lbl_Bamboo = new JLabel("Bamboo shoots(\u00A3"+ MenuList.getAddonePrice("Bamboo") + ")");
         panel_Bamboo.add(lbl_Bamboo);
-        //竹子标签
+        //label of bamboo shoots
         JLabel lbl_BambooNum = new JLabel("0");
         JButton btnAdd3 = new JButton("+1");
         btnAdd3.addActionListener(new ActionListener() {
@@ -338,7 +361,8 @@ public class CustomerOrder extends JFrame {
         panel_Bamboo.add(btnAdd3);
         //+1 button
         panel_Bamboo.add(lbl_BambooNum);
-        //竹子的数量
+        //number of bamboo shoots
+
         JButton btn_reduce3 = new JButton("-1");
         btn_reduce3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -355,10 +379,10 @@ public class CustomerOrder extends JFrame {
         panel_Chashu.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_addson2.add(panel_Chashu);
         panel_Chashu.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        //chashu面板
+        //chashu panel
         JLabel lbl_Chashu = new JLabel("Extra Chashu(\u00A3"+ MenuList.getAddonePrice("Chashu") + ")");
         panel_Chashu.add(lbl_Chashu);
-        //chashu标签
+        //chashu label
         JLabel lbl_ChashuNum = new JLabel("0");
         JButton btn_Add4 = new JButton("+1");
         btn_Add4.addActionListener(new ActionListener() {
@@ -373,6 +397,7 @@ public class CustomerOrder extends JFrame {
 
         panel_Chashu.add(lbl_ChashuNum);
         //chashu Num
+
         JButton btn_redece = new JButton("-1");
         btn_redece.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -389,11 +414,11 @@ public class CustomerOrder extends JFrame {
         //-1 button
         JButton btn_OK = new JButton("OK");
         panel.add(btn_OK, BorderLayout.EAST);
-        //选择结束按钮
+        //ok button
         JLabel lbl_Remind = new JLabel("");
         lbl_Remind.setForeground(Color.RED);
         panel.add(lbl_Remind, BorderLayout.CENTER);
-        //提醒的label
+        //remind label
         JPanel panel_Info = new JPanel();
         panel_Info.setBorder(new LineBorder(new Color(0, 0, 0)));
         panel_Info.setLayout(new GridLayout(10,1));
@@ -403,6 +428,11 @@ public class CustomerOrder extends JFrame {
         JScrollPane sp=new JScrollPane(panel_Info);
         panel_C.add(sp);
     }
+
+    /**
+     * End of order, view the ordered menu
+     * @param evt Click
+     */
     private void btnCheckActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {
@@ -416,6 +446,11 @@ public class CustomerOrder extends JFrame {
             customerPayment.setVisible(true);
         });
     }
+
+    /**
+     * Back to login interface.
+     * @param evt
+     */
     private void btnBackActionPerformed(ActionEvent evt) {
         this.dispose();
         EventQueue.invokeLater(() -> {
@@ -496,8 +531,8 @@ class Deleitem implements ActionListener{
         parent.repaint();
     }
 }
-/**
- * @ClassName: ANoodle
+/**@ClassName:
+ *  ANoodle
  * @description: This panel is used to show the details of the customer's option
  *
  **/
