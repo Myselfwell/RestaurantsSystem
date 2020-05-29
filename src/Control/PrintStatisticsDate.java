@@ -16,7 +16,7 @@ public class PrintStatisticsDate {
     public static String dateToWeek(String datetime) {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         String[] weekDays = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
-        Calendar cal = Calendar.getInstance(); // get a date
+        Calendar cal = Calendar.getInstance(); // Acquire a calender 
         Date datet = null;
         try {
             datet = f.parse(datetime);

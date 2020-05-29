@@ -2,26 +2,55 @@
 
 It is a Coursework
 
-### Project structure
+- ## Quick Start
 
-- #### RestaurantsSystem: program entrance
+  Before you do the following commands, make sure that your Java version should be Java 8.0+
 
-- ##### Boundary: includes classes about GUI.
+  
 
-- ##### Control: the classes related to calculations and statistics. 
+  1. To call the command line.
 
-- ##### Data: includes classes about data processing.  
+     `win + R `
 
-- ##### Entity: about information
-- ......
+  2.  Get the application
 
-​	
+     `git clone https://github.com/CristinaZN/RestaurantsSystem.git` 
+
+  3. Cd to the source directory
+
+     `cd src`
+
+  4. Compile the source code
+
+     `javac RestaurantsSystem.java`
+
+  5. Run the application
+
+     `java RestaurantsSystem`
+
+  ## Project Structure
+
+  - ./RestaurantsSystem
+    - /.idea	------------------------------------------- about setting IDE
+    - /src       ------------------------------------------- including all source file
+      - RestaurantsSystem.java ------------- entrance of the application
+      - /Boundary  -------------------------------- related to GUI
+      - /Control      -------------------------------- related to operation
+      - /Database  -------------------------------- all data file saved here
+      - /Entity        --------------------------------- three main classes defined here
 
 ### TODO
 
-- [ ] Customer GUI
-- [ ] Staff GUI
-- [ ] Database
-- [ ] Actions of Buttons in every class
-- [ ] Calculations and statistics
-- [ ] Finish methods of classes in Entity
+- [x] Customer GUI
+- [x] Staff GUI
+- [x] Database
+- [x] Actions of Buttons in every class
+- [x] Calculations and statistics
+- [x] Finish methods of classes in Entity
+
+## Thanks for All contributors !
+
+## Our Coursework is perfectly finished !
+
+finished on 2020/5/29
+
