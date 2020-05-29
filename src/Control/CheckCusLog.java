@@ -1,8 +1,11 @@
 package Control;
 
-import Data.User;
+import Control.User;
 import java.util.*;
-
+/**
+ * @ClassName: CheckCusLog
+ * @description: Used to check customer login information, and generate a list contain information
+ */
 public class CheckCusLog {
 
     List<String> userInfo = new ArrayList <String>();//The information of this user

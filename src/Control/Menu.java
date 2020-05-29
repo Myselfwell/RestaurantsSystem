@@ -3,6 +3,10 @@ package Control;
 import java.io.File;
 import java.util.List;
 
+/**
+ * @ClassName: Menu
+ * @description: Store the menu information
+ */
 public class Menu {
     String type;
     String name;
@@ -22,9 +26,9 @@ public class Menu {
     }
 
     public static String findAddOneName (int j) {
-        List<Menu> menrList = MenuList.getMenuList();//全user list
+        List<Menu> menrList = MenuList.getMenuList();//user list
         int count= 0;
-        if(menrList != null && !menrList.isEmpty()) {//遍历list
+        if(menrList != null && !menrList.isEmpty()) {//list
             for(int i = 0; i < menrList.size()+1; i++) {
                 if(i != 0) {
                     if(menrList.get(i).getType().equals("AddOne")) {
@@ -40,9 +44,9 @@ public class Menu {
     }
 
     public static int findAddOnePrice (int j) {
-        List<Menu> menrList = MenuList.getMenuList();//全user list
+        List<Menu> menrList = MenuList.getMenuList();//user list
         int count= 0;
-        if(menrList != null && !menrList.isEmpty()) {//遍历list
+        if(menrList != null && !menrList.isEmpty()) {//list
             for(int i = 0; i < menrList.size()+1; i++) {
                 if(i != 0) {
                     if(menrList.get(i).getType().equals("AddOne")) {
@@ -105,9 +109,9 @@ public class Menu {
         return this.inventory;
     }
 
-    public static boolean findMenuName(String name) {//检测是否存在相同Name,若存在返回true,反之false
+    public static boolean findMenuName(String name) {//check is there a same name in database
         List<Menu> menuList = MenuList.getMenuList();
-        if(menuList != null && !menuList.isEmpty()) {//遍历list
+        if(menuList != null && !menuList.isEmpty()) {//list
             for(int i = 0; i < menuList.size()+1; i++) {
                 if(i != 0) {
                     if(name.equals(menuList.get(i-1).getName())) {
@@ -119,9 +123,9 @@ public class Menu {
         return false;
     }
 
-    public static void changeMenuPrice(String name, int price) {//检测是否存在相同Name,若存在返回true,反之false
+    public static void changeMenuPrice(String name, int price) {//check is there a same name in database
         List<Menu> menuList = MenuList.getMenuList();
-        if(menuList != null && !menuList.isEmpty()) {//遍历list
+        if(menuList != null && !menuList.isEmpty()) {//list
             for(int i = 0; i < menuList.size()+1; i++) {
                 if(i != 0) {
                     if(name.equals(menuList.get(i-1).getName())) {

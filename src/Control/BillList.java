@@ -9,8 +9,14 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @ClassName: Bill List
+ * @description: Read and search bill information from the database
+ */
 public class BillList {
-    public static boolean exportCsv(File file, List<String> dataList){//返回值为是否写入成功
+    //success-true
+    public static boolean exportCsv(File file, List<String> dataList){
+
         boolean isSucess=false;
 
         FileOutputStream out=null;

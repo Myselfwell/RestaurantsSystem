@@ -2,8 +2,13 @@ package Control;
 
 import java.io.*;
 
+/**
+ * @ClassName: PrintData
+ * @description: creat and write a txt
+ */
+
 public class PrintData {
-    private static String path;//文件保存路径，记得写，别忘了，不然用不了
+    private static String path;//the path of txt
     private static String filenameTemp;
 
     public PrintData(String path){
@@ -11,13 +16,12 @@ public class PrintData {
     }
 
     public static void creatTxt(String fName) throws IOException {
-        // 防止文件建立或读取失败，用catch捕捉错误并打印，也可以throw
-        /* 写入Txt文件 */
+
         try{
             filenameTemp =  path + fName + ".txt";
-            File writename = new File(filenameTemp);// 相对路径，如果没有则要建立一个新的output。txt文件
+            File writename = new File(filenameTemp);// pathname
             if(!writename.exists()){
-                writename.createNewFile(); // 创建新文件
+                writename.createNewFile(); // creat new file
             }
         }
         catch (IOException e1) {
@@ -27,7 +31,7 @@ public class PrintData {
     }
 
     public static void writeTxt(String newStr) throws IOException {
-        // 先读取原有文件内容，然后进行写入操作
+        // read the current content and write new content
 
         String filein = newStr + "\r\n";
         String temp = "";
@@ -39,19 +43,19 @@ public class PrintData {
         FileOutputStream fos = null;
         PrintWriter pw = null;
         try {
-            // 文件路径
+            // path
             File file = new File(filenameTemp);
-            // 将文件读入输入流
+            // read file
             fis = new FileInputStream(file);
             isr = new InputStreamReader(fis);
             br = new BufferedReader(isr);
             StringBuffer buf = new StringBuffer();
 
-            // 保存该文件原有的内容
+            // store current content
             for (int j = 1; (temp = br.readLine()) != null; j++) {
                 buf.append(temp);
                 // System.getProperty("line.separator")
-                // 行与行之间的分隔符 相当于“\n”
+                // “\n”
                 buf = buf.append(System.getProperty("line.separator"));
             }
             buf.append(filein);

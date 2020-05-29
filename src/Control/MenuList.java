@@ -12,8 +12,12 @@ import java.util.List;
 
 import static java.lang.Math.round;
 
+/**
+ * @ClassName: CheckCusLog
+ * @description: read and search menu from the database
+ */
 public class MenuList {
-    public static boolean exportCsv(File file, List<String> dataList){//返回值为是否写入成功
+    public static boolean exportCsv(File file, List<String> dataList){//success-true
         boolean isSucess=false;
 
         FileOutputStream out=null;
@@ -61,7 +65,7 @@ public class MenuList {
         return isSucess;
     }
 
-    public static List<String> importCsv(File file){//读取数据返回值为全部数据，注意！第一行为表头
+    public static List<String> importCsv(File file){//read all the data
         List<String> dataList=new ArrayList<String>();
 
         BufferedReader br=null;
@@ -86,7 +90,7 @@ public class MenuList {
         return dataList;
     }
 
-    public static List<Menu> getMenuList () {//使用方法List<Menu> menuList = MenuList.getMenuList();
+    public static List<Menu> getMenuList () {//List<Menu> menuList = MenuList.getMenuList();
 
         List<String> dataList=MenuList.importCsv(new File("src/Database/MenuList.csv"));
         List<Menu> menuList = new ArrayList<Menu>(dataList.size());
@@ -103,7 +107,7 @@ public class MenuList {
         return menuList;
     }
 
-    public static List<String> setMenuList (List<Menu> menuList){//使用方法boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(MenuList));
+    public static List<String> setMenuList (List<Menu> menuList){//boolean isSuccess=MenuList.exportCsv(new File("MenuList.csv"), MenuList.setMenuList(MenuList));
         List<String> dataList= new ArrayList<String>();
         if(menuList != null && !menuList.isEmpty()) {
             for(int i = 0; i < menuList.size()+1; i++) {
@@ -125,7 +129,7 @@ public class MenuList {
         return dataList;
     }
 
-    public static int getAddonePrice (String name) {//用法 getAddonePrice("Nori")
+    public static int getAddonePrice (String name) {//getAddonePrice("Nori")
         String type = "AddOne";
         List<Menu> menuList = MenuList.getMenuList();
         if(menuList != null && !menuList.isEmpty()) {
@@ -140,7 +144,7 @@ public class MenuList {
         return -1;
     }
 
-    public static List<Menu> checkInventory (List<Menu> menuList) {//使用方法List<Menu> menuList = new ArrayList<Menu>(MenuList.checkInventory(mList));
+    public static List<Menu> checkInventory (List<Menu> menuList) {//List<Menu> menuList = new ArrayList<Menu>(MenuList.checkInventory(mList));
         if(menuList != null && !menuList.isEmpty()) {
             for(int i = 0; i < menuList.size(); i++) {
                 if(menuList.get(i).getInventory() >= 0 && menuList.get(i).getSales() != 0) {
